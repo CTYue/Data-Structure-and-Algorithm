@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+//From <C++ Prime P119>
+// Compare Null-terminated string(C string) with standard string
+// Null-terminated string
+	const char *pc ="a very long literal string";
+	const size_t len = strlen(pc);
+// Performance test on string allocation and copy
+//	for( size_t ix = 0; ix != 100000; ++ix){
+//		char *pc2 = new char[len+1];
+//		strcpy( pc2,pc );
+//		if (strcmp(pc2,pc))
+//			;
+//		delete [] pc2;
+//	}
+//Standard string
+//	string str("a very long literal string");
+//Performance test on string allocation and copy
+//	for( int ix = 0; ix != 100000; ++ix){
+//		string str2 = str;
+//		if(str != str2)
+//			;
+//	}
+//	size_t a = 8;
+//	a = a << 1;
+//	cout << a << endl;
+	int *p = new int[100]();
+	delete [] p;
+	return 0;
+}

@@ -1,0 +1,6 @@
+17:54:24 **** Incremental Build of configuration Debug for project IP_to_CIDR ****
+make all 
+make: Nothing to be done for `all'.
+
+17:54:24 Build Finished (took 87ms)
+

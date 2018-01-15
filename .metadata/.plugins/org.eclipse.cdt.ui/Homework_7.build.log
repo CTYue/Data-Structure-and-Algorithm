@@ -1,0 +1,14 @@
+17:54:23 **** Incremental Build of configuration Debug for project Homework_7 ****
+make all 
+Building target: Homework_7
+Invoking: MacOS X C++ Linker
+g++  -o "Homework_7"  ./main.o   
+Undefined symbols for architecture x86_64:
+  "two34_tree::break_3_value_node(node*)", referenced from:
+      two34_tree::find(int) in main.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Homework_7] Error 1
+
+17:54:24 Build Finished (took 140ms)
+

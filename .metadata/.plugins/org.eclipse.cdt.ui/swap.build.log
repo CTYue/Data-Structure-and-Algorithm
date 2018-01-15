@@ -1,0 +1,15 @@
+18:18:20 **** Incremental Build of configuration Debug for project swap ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: swap
+Invoking: MacOS X C++ Linker
+g++  -o "swap"  ./main.o   
+Finished building target: swap
+ 
+
+18:18:20 Build Finished (took 510ms)
+

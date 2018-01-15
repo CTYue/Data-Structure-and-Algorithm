@@ -1,0 +1,86 @@
+17:54:24 **** Incremental Build of configuration Debug for project Leetcode_contest ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:21:10: error: expected ';' at end of declaration
+                vec
+                   ^
+                   ;
+../main.cpp:46:8: error: reference to overloaded function could not be resolved; did you mean to call it?
+                        count += t1;
+                        ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:50:9: error: reference to overloaded function could not be resolved; did you mean to call it?
+                                count += t2;
+                                ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:53:10: error: reference to overloaded function could not be resolved; did you mean to call it?
+                                        count += t3;
+                                        ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:56:11: error: reference to overloaded function could not be resolved; did you mean to call it?
+                                                count += t4;
+                                                ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:59:11: error: reference to overloaded function could not be resolved; did you mean to call it?
+                                                count += 1;
+                                                ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:62:10: error: reference to overloaded function could not be resolved; did you mean to call it?
+                                        count += 2;
+                                        ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:65:9: error: reference to overloaded function could not be resolved; did you mean to call it?
+                                count += 3;
+                                ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+../main.cpp:68:8: error: reference to overloaded function could not be resolved; did you mean to call it?
+                        count += 4;
+                        ^~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1138:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:305:1: note: possible target for call
+count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __last, const _Tp& __value_)
+^
+9 errors generated.
+make: *** [main.o] Error 1
+
+17:54:24 Build Finished (took 496ms)
+
