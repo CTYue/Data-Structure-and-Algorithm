@@ -1,6 +1,22 @@
-17:54:23 **** Incremental Build of configuration Debug for project Homework_3 ****
+16:13:08 **** Build of configuration Debug for project Homework_3 ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:198:8: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                for (auto currentNeighbor : graph[checkedNode])
+                     ^
+../main.cpp:198:29: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+                for (auto currentNeighbor : graph[checkedNode])
+                                          ^
+2 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: Homework_3
+Invoking: MacOS X C++ Linker
+g++  -o "Homework_3"  ./main.o   
+Finished building target: Homework_3
+ 
 
-17:54:23 Build Finished (took 83ms)
+16:13:09 Build Finished (took 862ms)
 

@@ -4,6 +4,7 @@
  *  Created on: Jan 13, 2018
  *      Author: yuzidong
  */
+//Please be advised that negative numbers are not palindrome numbers.
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -11,41 +12,39 @@ class Solution {
 public:
     bool isPalindrome(int x)
     {
-    		int k = 10;
-    		int l = 1/10;
+    		long int k = 10;
+    		long int l = 1;
     		int res = 0;
     		int i = 0;
-    		while(x/(k/10) != 0)
+    		while(x/l != 0)//division by zero
     		{
-    			k *= 10;
     			l *= 10;
     			i++;
-    			cout << "Value of l:" << l << endl;
-    		}
-    		k = 10;
-    		while(x/(k/10) != 0)
+//    	cout << "Value of l:"<< l << endl;
+   		}
+
+    		l /= 10;
+//    	cout << endl;
+    		while(x/(k/10) != 0)//division by zero
     		{
-//    			res += (x % k / (k/10)) * l;
     			int temp = (x % k / (k/10));
     			res += temp * l;
     			k *= 10;
     			l /= 10;
-    			cout << endl;
-    			cout << "Value of k:"<< k << endl;
-    			cout << "Value of l:"<< l << endl;
-    			cout << "Value of temp:" << temp << endl;
-    			cout << res << endl << endl;
+//    	cout << "Value of k:"<< k << endl;
     		}
+    		if( x >= 0 && res >= 0 && x == res)
+    			return true;
+    		else
+    			return false;
     }
 };
 
 int main(void)
 {
 	Solution s;
-	int x = 123456789;
+	int x = -2147447412;
 	cout << x << endl << endl;
 	bool result = s.isPalindrome(x);
-//	cout << result << endl;
+	cout << result << endl;
 }
-
-

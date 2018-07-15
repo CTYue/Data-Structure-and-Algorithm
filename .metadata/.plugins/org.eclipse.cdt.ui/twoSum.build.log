@@ -1,6 +1,19 @@
-17:54:25 **** Incremental Build of configuration Debug for project twoSum ****
+16:13:18 **** Build of configuration Debug for project twoSum ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:29:6: warning: control may reach end of non-void function [-Wreturn-type]
+        }
+        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: twoSum
+Invoking: MacOS X C++ Linker
+g++  -o "twoSum"  ./main.o   
+Finished building target: twoSum
+ 
 
-17:54:25 Build Finished (took 86ms)
+16:13:18 Build Finished (took 617ms)
 

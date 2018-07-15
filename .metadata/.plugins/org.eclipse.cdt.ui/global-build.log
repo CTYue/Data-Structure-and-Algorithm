@@ -1,1573 +1,999 @@
-00:10:42 **** Incremental Build of configuration Debug for project Palindrome_number ****
+16:35:46 **** Build of configuration Debug for project 554_HW1 ****
 make all 
-make: Nothing to be done for `all'.
-00:10:45 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-00:11:08 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
+Building file: ../InsertAtEnd.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InsertAtEnd.d" -MT"InsertAtEnd.o" -o "InsertAtEnd.o" "../InsertAtEnd.cpp"
+Finished building: ../InsertAtEnd.cpp
+ 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:26:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:32:10: warning: implicit conversion from 'long' to 'int' changes value from 12345654321 to -539247567 [-Wconstant-conversion]
-        int x = 12345654321;
-            ~   ^~~~~~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:11:28 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:27:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:33:10: warning: implicit conversion from 'long' to 'int' changes value from 12345654321 to -539247567 [-Wconstant-conversion]
-        int x = 12345654321;
-            ~   ^~~~~~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:11:58 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:27:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:33:10: warning: implicit conversion from 'long' to 'int' changes value from 12345654321 to -539247567 [-Wconstant-conversion]
-        int x = 12345654321;
-            ~   ^~~~~~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:12:00 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-00:30:48 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 12345654321 to -539247567 [-Wconstant-conversion]
-        int x = 12345654321;
-            ~   ^~~~~~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:31:16 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:32:25 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:6: error: expected expression
-        case:0 cout << "false" << endl;
+../main.cpp:44:6: warning: unused variable 'i' [-Wunused-variable]
+        int i = 0;//my code
             ^
-../main.cpp:41:8: error: expected ';' after expression
-        case:0 cout << "false" << endl;
-              ^
-              ;
-../main.cpp:42:6: error: expected expression
-        case:1 cout << "true" << endl;
+../main.cpp:64:6: warning: unused variable 'temp_coef' [-Wunused-variable]
+        int temp_coef, temp_power;
             ^
-../main.cpp:42:8: error: expected ';' after expression
-        case:1 cout << "true" << endl;
-              ^
-              ;
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-2 warnings and 4 errors generated.
+../main.cpp:64:17: warning: unused variable 'temp_power' [-Wunused-variable]
+        int temp_coef, temp_power;
+                       ^
+3 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+16:35:50 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+16:38:29 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:44:6: warning: unused variable 'i' [-Wunused-variable]
+        int i = 0;//my code
+            ^
+../main.cpp:64:6: warning: unused variable 'temp_coef' [-Wunused-variable]
+        int temp_coef, temp_power;
+            ^
+../main.cpp:64:17: warning: unused variable 'temp_power' [-Wunused-variable]
+        int temp_coef, temp_power;
+                       ^
+3 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+16:40:57 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:44:6: warning: unused variable 'i' [-Wunused-variable]
+        int i = 0;//my code
+            ^
+../main.cpp:64:17: warning: unused variable 'temp_power' [-Wunused-variable]
+        int temp_coef, temp_power;
+                       ^
+../main.cpp:64:6: warning: unused variable 'temp_coef' [-Wunused-variable]
+        int temp_coef, temp_power;
+            ^
+3 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+16:42:54 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:44:6: warning: unused variable 'i' [-Wunused-variable]
+        int i = 0;//my code
+            ^
+../main.cpp:64:17: warning: unused variable 'temp_power' [-Wunused-variable]
+        int temp_coef, temp_power;
+                       ^
+../main.cpp:64:6: warning: unused variable 'temp_coef' [-Wunused-variable]
+        int temp_coef, temp_power;
+            ^
+3 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+16:47:54 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:80:3: warning: variable 'tail' is uninitialized when used here [-Wuninitialized]
+                tail->next = new_term;
+                ^~~~
+../main.cpp:72:12: note: initialize the variable 'tail' to silence this warning
+        term *tail;
+                  ^
+                   = NULL
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+16:48:17 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+../main.cpp:80:3: warning: variable 'tail' is uninitialized when used here [-Wuninitialized]
+                tail->next = new_term;
+                ^~~~
+../main.cpp:72:12: note: initialize the variable 'tail' to silence this warning
+        term *tail;
+                  ^
+                   = NULL
+../main.cpp:111:1: error: extraneous closing brace ('}')
+}
+^
+2 warnings and 1 error generated.
 make: *** [main.o] Error 1
-00:33:12 **** Incremental Build of configuration Debug for project Palindrome_number ****
+16:48:42 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-../main.cpp:42:2: error: 'case' statement not in switch statement
-        case 1: cout << "true" << endl;
-        ^
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-3 warnings and 1 error generated.
-make: *** [main.o] Error 1
-00:33:51 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-3 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:34:35 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-3 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:35:21 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-3 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:35:45 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-3 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:35:51 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-../main.cpp:38:10: warning: implicit conversion from 'long' to 'int' changes value from 9876543210 to 1286608618 [-Wconstant-conversion]
-        int x = 9876543210;
-            ~   ^~~~~~~~~~
-3 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:35:53 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-00:36:18 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:36:53 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:42:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:37:00 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:31:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:42:57 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:31:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:43:32 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:43:56 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:44:08 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control may reach end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:45:42 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:46:06 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:48:35 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:48:48 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:48:11 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:46:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:48:40 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:48:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:49:21 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:48:2: warning: switch condition has boolean value [-Wswitch-bool]
-        switch(result)
-        ^      ~~~~~~
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:55:34 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-01:55:46 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:47:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:57:50 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-01:58:01 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:47:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:58:12 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:47:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:58:23 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:47:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:58:28 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:47:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-01:59:53 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:42:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:50:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:00:20 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:42:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:50:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:00:37 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:34:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:42:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:00:56 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:34:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:42:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:01:03 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:34:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:42:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:05:11 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-02:05:30 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:05:46 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-02:06:38 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-20:49:43 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-20:50:40 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-20:51:13 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-21:46:47 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-21:46:56 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-21:47:10 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-1 warning generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-21:47:41 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-1 warning generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:33:26 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-22:40:54 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-1 warning generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:44:09 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-22:44:36 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-1 warning generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:44:57 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-1 warning generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:45:08 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:39:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:45:16 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:39:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:45:20 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:39:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:45:31 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:39:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:45:47 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-22:45:54 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:45:57 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-23:48:05 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-make: Nothing to be done for `all'.
-23:49:27 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:32:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:40:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:50:00 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:50:30 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:33:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:41:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:51:05 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:34:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:42:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:51:13 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:34:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:42:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:53:11 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:36:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:44:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:53:28 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:36:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:44:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:53:53 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:29:14: error: expected expression
-                        res + = temp;
-                              ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+../main.cpp:111:1: error: extraneous closing brace ('}')
+}
+^
 1 warning and 1 error generated.
 make: *** [main.o] Error 1
-23:54:10 **** Incremental Build of configuration Debug for project Palindrome_number ****
+16:48:57 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+1 warning generated.
 Finished building: ../main.cpp
  
-Building target: Palindrome_number
+Building target: 554_HW1
 Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
  
-23:54:25 **** Incremental Build of configuration Debug for project Palindrome_number ****
+16:52:09 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+1 warning generated.
 Finished building: ../main.cpp
  
-Building target: Palindrome_number
+Building target: 554_HW1
 Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
  
-23:54:30 **** Incremental Build of configuration Debug for project Palindrome_number ****
+17:07:06 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 make: Nothing to be done for `all'.
-23:54:52 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:55:38 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:56:58 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:57:42 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-23:58:01 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:09:02 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:09:43 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:09:49 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:09:54 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:19:14 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:19:22 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:15:15: warning: implicit conversion from 'double' to 'int' changes value from 0.1 to 0 [-Wliteral-conversion]
-                int l = 0.1;
-                    ~   ^~~
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-3 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:19:31 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:19:42 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:20:36 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:20:43 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:37:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:45:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-00:21:11 **** Incremental Build of configuration Debug for project Palindrome_number ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:38:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:46:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: Palindrome_number
-Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
- 
-14:14:57 **** Incremental Build of configuration Debug for project Palindrome_number ****
+17:07:20 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 make: Nothing to be done for `all'.
-14:15:22 **** Incremental Build of configuration Debug for project Palindrome_number ****
+17:10:07 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:38:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:46:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+1 warning generated.
 Finished building: ../main.cpp
  
-Building target: Palindrome_number
+Building target: 554_HW1
 Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
  
-14:15:57 **** Incremental Build of configuration Debug for project Palindrome_number ****
+17:10:26 **** Incremental Build of configuration Debug for project 554_HW1 ****
 make all 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-../main.cpp:39:5: warning: control reaches end of non-void function [-Wreturn-type]
-    }
-    ^
-../main.cpp:47:7: warning: unused variable 'result' [-Wunused-variable]
-        bool result = s.isPalindrome(x);
-             ^
-2 warnings generated.
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+../main.cpp:63:13: warning: unused variable 'p2' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                   ^
+../main.cpp:63:8: warning: unused variable 'p1' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+              ^
+../main.cpp:63:24: warning: unused variable 'ptr' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                              ^
+4 warnings generated.
 Finished building: ../main.cpp
  
-Building target: Palindrome_number
+Building target: 554_HW1
 Invoking: MacOS X C++ Linker
-g++  -o "Palindrome_number"  ./main.o   
-Finished building target: Palindrome_number
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+18:48:41 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+../main.cpp:63:13: warning: unused variable 'p2' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                   ^
+../main.cpp:63:8: warning: unused variable 'p1' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+              ^
+../main.cpp:63:24: warning: unused variable 'ptr' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                              ^
+4 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+18:54:48 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+../main.cpp:63:13: warning: unused variable 'p2' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                   ^
+../main.cpp:63:8: warning: unused variable 'p1' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+              ^
+../main.cpp:63:24: warning: unused variable 'ptr' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                              ^
+4 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+18:55:01 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+19:02:16 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+19:19:07 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+19:20:52 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:8: warning: unused variable 'p1' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+              ^
+../main.cpp:63:24: warning: unused variable 'ptr' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                              ^
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                        ^
+../main.cpp:63:13: warning: unused variable 'p2' [-Wunused-variable]
+        term *p1, *p2, *temp,*ptr;
+                   ^
+4 warnings generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:22:00 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:73:2: error: use of undeclared identifier 'ptr'
+        ptr = head;
+        ^
+../main.cpp:75:6: error: use of undeclared identifier 'ptr'
+        if (ptr->next != nullptr)
+            ^
+../main.cpp:89:14: error: use of undeclared identifier 'ptr'
+                p2->next = ptr->next;
+                           ^
+3 errors generated.
+make: *** [main.o] Error 1
+19:22:46 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:23:18 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:24:09 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:25:01 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:25:25 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+19:26:00 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:26:55 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:28:44 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:29:31 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:88:17: error: use of undeclared identifier 'power'
+                if( p == head-power)
+                              ^
+1 error generated.
+make: *** [main.o] Error 1
+19:29:38 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:30:00 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:31:35 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+19:33:13 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:19:59 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:20:39 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:20:50 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+21:21:37 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:22:27 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:76:11: error: no member named 'swap' in 'term'
+                if( p1->swap < p2->power)
+                    ~~  ^
+1 error generated.
+make: *** [main.o] Error 1
+21:22:32 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:23:36 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:23:56 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:24:49 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:25:04 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:26:20 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:30:38 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:31:34 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:31:48 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:33:14 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:33:44 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:37:05 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:37:13 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+21:37:25 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+21:37:46 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:39:11 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+21:39:36 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+21:43:09 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+21:52:16 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:52:58 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+21:55:05 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:27:17 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+10:27:47 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:29:17 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:29:33 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+10:29:40 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+10:29:50 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+10:30:45 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:32:29 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:32:52 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:36:49 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:38:03 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:38:35 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:48:58 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:49:32 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:49:58 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:50:17 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+10:50:48 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:51:33 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:54:17 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+make: Nothing to be done for `all'.
+10:54:45 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
+ 
+10:55:24 **** Incremental Build of configuration Debug for project 554_HW1 ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp:63:18: warning: unused variable 'temp' [-Wunused-variable]
+        term *p1, *p2, *temp;
+                        ^
+1 warning generated.
+Finished building: ../main.cpp
+ 
+Building target: 554_HW1
+Invoking: MacOS X C++ Linker
+g++  -o "554_HW1"  ./InsertAtEnd.o ./main.o   
+Finished building target: 554_HW1
  

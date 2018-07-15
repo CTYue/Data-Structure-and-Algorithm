@@ -1,4 +1,4 @@
-17:54:24 **** Incremental Build of configuration Debug for project Leetcode_contest ****
+16:13:12 **** Build of configuration Debug for project Leetcode_contest ****
 make all 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
@@ -82,5 +82,5 @@ count(__bit_iterator<_Cp, _IsConst> __first, __bit_iterator<_Cp, _IsConst> __las
 9 errors generated.
 make: *** [main.o] Error 1
 
-17:54:24 Build Finished (took 496ms)
+16:13:13 Build Finished (took 554ms)
 

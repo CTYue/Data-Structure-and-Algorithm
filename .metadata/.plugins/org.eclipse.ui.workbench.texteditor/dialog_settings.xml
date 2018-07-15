@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="cout" key="selection"/>
+		<item value="reverse" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="reverse"/>
+			<item value="print"/>
+			<item value="operator"/>
+			<item value="number of nodes"/>
+			<item value="create_linked"/>
 			<item value="cout"/>
 			<item value="v4"/>
 			<item value="return (temp"/>
@@ -18,11 +23,6 @@
 			<item value="(temp"/>
 			<item value="//(temp"/>
 			<item value="//"/>
-			<item value="9999"/>
-			<item value="merge_sort"/>
-			<item value="merge("/>
-			<item value="merge"/>
-			<item value="zhang"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -31,7 +31,7 @@
 		<item value="290" key="DIALOG_WIDTH"/>
 		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
 		<item value="409" key="DIALOG_HEIGHT"/>
-		<item value="-129" key="DIALOG_X_ORIGIN"/>
+		<item value="-1" key="DIALOG_X_ORIGIN"/>
 		<item value="193" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
