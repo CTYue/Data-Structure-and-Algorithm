@@ -48,7 +48,7 @@ int Partition(node* head, node* low, node* high)
         pivot = pivot->next;
 
     node *ptr = head;//这里有问题!
-    cout << "ptr in Partition Function: " << ptr << endl;
+    cout << "ptr in Partition Function: " << ptr << endl;//有问题
     
     node *ll_index = head;
     int index = 0;

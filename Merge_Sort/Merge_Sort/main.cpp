@@ -162,54 +162,8 @@ int main(int argc, const char * argv[])
 {
     
 /*================Test Hub================*/
-//    //Test hub for Merge sort
-//
-//    //Generate a linked list
-//    linked_list *ll = new linked_list();
-//
-//    //Linked list: 19,18,17...0
-//    for(int i = 0; i < 20; i++)
-//    {
-//        ll->add_node(i);
-//    }
-//
-//    node *head = ll->head;
-//    cout << "Original linked list" << endl;
-//    cout << "=====================" << endl;
-//    while(head != nullptr)
-//    {
-//        cout << head->value << " ";
-//        head = head->next;
-//    }
-//    head = ll->head;
-//
-//    //Sort the linked list
-//    //Use merge sort
-//    //Time complexity O(nlogn)
-//    cout << endl;
-//    cout << "Sorted linked list" << endl;
-//    cout << "=====================" << endl;
-//    if(head == nullptr)
-//        return 0;
-//
-//    Sort(head);
-//
-//    node *ptr = head;
-//
-//    while(ptr)
-//    {
-//        cout << ptr->value << " ";
-//        ptr = ptr->next;
-//    }
-//    cout << endl;
-//
-//    getchar();
-//    getchar();
-//    return 0;
-//
-    
-    //Test hub for bubble sort
-    
+    //Test hub for Merge sort
+
     //Generate a linked list
     linked_list *ll = new linked_list();
 
@@ -229,11 +183,26 @@ int main(int argc, const char * argv[])
     }
     head = ll->head;
 
-    
-    
-    
-    
+    //Sort the linked list
+    //Use merge sort
+    //Time complexity O(nlogn)
     cout << endl;
+    cout << "Sorted linked list" << endl;
+    cout << "=====================" << endl;
+    if(head == nullptr)
+        return 0;
+
+    Sort(head);
+
+    node *ptr = head;
+
+    while(ptr)
+    {
+        cout << ptr->value << " ";
+        ptr = ptr->next;
+    }
+    cout << endl;
+
     getchar();
     getchar();
     return 0;
