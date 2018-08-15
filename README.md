@@ -30,7 +30,6 @@ Sorting:
 8.Counting Sort  
 9.Radix Sort  
 
-
 Algorithm:  
 1.Divide and Conquer  
 2.Binary Search  

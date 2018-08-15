@@ -142,7 +142,7 @@ public:
 
 int findBottomLeft_BFS(node* root)
 {
-    queue<node*> queue;//怎样用new？
+    queue<node*> queue;//How to use new expression here？
     queue.push(root);
     
     while(!queue.empty())
@@ -164,11 +164,13 @@ int findBottomLeft_BFS(node* root)
     return root->data;    
 }
 
-int maxDepth = 0;
-int leftMost = 0;
+
 //=========================================================//
 //  DFS Solution
 //=========================================================//
+int maxDepth = 0;
+int leftMost = 0;
+
 int getMaxDepth(node* root, int curDepth)
 {
     if(root == nullptr)
@@ -203,7 +205,6 @@ int findBottomLeft_DFS(node* root)
     
     return leftMost;
 }
-
 
 
 
