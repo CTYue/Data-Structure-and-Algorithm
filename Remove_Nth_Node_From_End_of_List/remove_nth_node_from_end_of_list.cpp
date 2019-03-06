@@ -23,9 +23,11 @@ public:
         //正向遍历还是反向遍历？
         //单链表
         //如果正向遍历，那么时间复杂度会变大
+	int count=0;
         while(head!=nullptr)
         {
-            
+	   count++;
+	   head=head->next;
         }
         
         return temp;
