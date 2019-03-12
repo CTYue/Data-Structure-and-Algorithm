@@ -12,24 +12,43 @@ struct ListNode
 
 class Solution {
 public:
+
+    //Two pass solution
     ListNode* removeNthFromEnd(ListNode* head, int n) 
     {
         if(head==nullptr)
             return nullptr;
-        
-        //删去尾部第N个节点
-        ListNode* temp;
-        
-        //正向遍历还是反向遍历？
-        //单链表
-        //如果正向遍历，那么时间复杂度会变大
-	int count=0;
-        while(head!=nullptr)
+        //Create dummy in order to avoid case when n = count 
+        ListNode* dummy=new ListNode(0);
+        dummy->next=head;
+        ListNode* temp = head;
+
+	    int count=0;//一定要初始化
+
+        while(temp!=nullptr)
         {
-	   count++;
-	   head=head->next;
+            count++;
+            head=head->next;
         }
         
-        return temp;
+        dummy=head;
+        while(count>0)
+        {
+            count--;
+            temp=temp->next;
+        }
+
+        return dummy->next;
     }
+
+
+    // //One pass solution
+    // ListNode* removeNthFromEnd(ListNode* head, int n)
+    // {
+    //     if(head==nullptr)
+    //         return nullptr;
+
+
+    // }
+
 };
