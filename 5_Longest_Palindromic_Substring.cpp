@@ -11,7 +11,7 @@ public:
         //Space complexity:O(1)
         //对odd length palindrom substring 单独做了处理！
         //这种方法对吗?
-        
+
 //         string longestPalindrome(string s) 
 //         {
 //             string res;
@@ -60,6 +60,9 @@ public:
         //Problem:
         //Input:"babad"
         //Outpit:""
+        //Time complexity:
+        //Space complexity:
+        //这个solution还有问题！
         string longestPalindrome(string s) 
         {
             if(s.empty() || s.length()==1)
@@ -82,7 +85,6 @@ public:
                     maxl=2;
                 }
             }
-            
             //对于非相邻元素，maxl>2的情况
             for(int k=3;k<=len;k++)
             {
