@@ -24,10 +24,13 @@ public:
     
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
     {   
+        //Time complexity:?
+        //Space complexity:?
         //应采用进位的思维解题
         //应当考虑以一个或几个0开头，而后面的元素不为0的情况
         //e.g.[0,8,6,5,6,8,3,5,7] and [6,7,8,0,8,5,8,9,7]
-        //input为nu'l
+        //其中input为nullptr时候
+        //将其视作[0]
         ListNode* dummy = new ListNode(0);
         ListNode* p = l1, *q = l2, *curr = dummy;//注意指针型变量的多重声明格式
         int carry = 0;//进位标记位
@@ -40,15 +43,16 @@ public:
             //因为每个位不一定全是one digit
             //e.g. [11,11,11]+[9,9,9]
             carry=sum/10;
-            //
-            curr->next = new ListNode(sum % 10);
+            //前插法or后插法?
+            //还得思考下！
+            curr->next = new ListNode(sum % 10);//取位
             curr = curr->next;
             if (p != nullptr) p = p->next;
             if (q != nullptr) q = q->next;
         }
         //If carry still left
         //append to tail
-        //没怎么理解！
+        //最终的进位，应体现在整数的最高位，即链表的tail
         if (carry > 0) 
             curr->next = new ListNode(carry);
         
