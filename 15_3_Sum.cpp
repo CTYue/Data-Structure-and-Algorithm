@@ -2,49 +2,53 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) 
     {
-        vector<vector<int>> res;
+        //Time complexity:O(n^2)
+        //Space complexity:O(1)
+        //先排序
+         vector<vector<int>> res;
             if(nums.size()==0)
                 return res;
         
-        //使用什么方法做？
-        //1.Brute force
+        //Sort, according to <
+        std::sort(nums.begin(),nums.end());
+        // for(auto i:nums)
+        //     std::cout << i << " ";
         
-        
-        //2.Hashing
-        bool found=false;
-        
-        unordered_set<int> set;
-        int extra=0;
+        vector<int> res_item;
         for(int i=0;i<nums.size();i++)
         {
-            vector<int> s;
-            for(int j=i+1;j<nums.size();j++)
-            {
-                extra=-(nums[i]+nums[j]);
-                
-                if(set.find(extra)!=set.end())
-                {
-                    found=true;
-                }
-                else
-                {          
-                    set.insert(nums[j]);
-                    set.insert(nums[j]);
-                }
-            }
+            int target=-nums[i];
+            int front=i+1;
+            int back=nums.size()-1;
             
-            set.insert(nums[i]);
-            if(found)
+            while(front<back)
             {
-                s.push_back(nums[i]);
-                s.push_back(extra);
+                int sum=nums[front]+nums[back];
                 
-                res.push_back(s);
+                if(sum<target)
+                    front++;
+                
+                else if(sum>target)
+                    back--;
+                
+                else
+                {
+                    vector<int> triplet(3,0);
+                    triplet[0]=nums[i];
+                    triplet[1]=nums[front];
+                    triplet[2]=nums[back];
+
+                    res.push_back(triplet);
+
+                    while(front<back && nums[front]==triplet[1]) front++;
+                    while(front<back && nums[back]==triplet[2])
+                        back--;   
+                }
             }
+            while(i+1<nums.size() && nums[i+1]==nums[i])
+                i++;
         }
-        
+
         return res;
-        
-        //3.Sorting
     }
 };
