@@ -19,7 +19,10 @@ Data Structure:
 10.Graph  
 
 String:
-13. Roman to Integer (Easy)
+No.13 Roman to Integer (Easy)
+No.12 Integer to Roman (Medium)
+No.8. String to Integer ATOI (Medium)
+
 
 Sorting:  
 1.Bubble Sort  
