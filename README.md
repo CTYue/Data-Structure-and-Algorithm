@@ -6,7 +6,6 @@ Author: Z.D. Yu
 -------------------------  
 Guideline  
 -------------------------  
-
 Data Structure:  
 1.String  
 2.Linked List  
@@ -19,6 +18,8 @@ Data Structure:
 9.Map  
 10.Graph  
 
+String:
+13. Roman to Integer (Easy)
 
 Sorting:  
 1.Bubble Sort  
