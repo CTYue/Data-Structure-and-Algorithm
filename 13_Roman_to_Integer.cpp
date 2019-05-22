@@ -9,34 +9,34 @@ public:
     //Space complexity:O(1)
     //Optimal solution
     //Hash map
-//     int romanToInt(string s) 
-//     {
-//         int res=0;
-//         if(s.empty() || s.length()==0)
-//             return res;
+    int romanToInt_app1(string s) 
+    {
+        int res=0;
+        if(s.empty() || s.length()==0)
+            return res;
 
-//         int len=s.length();
-//         unordered_map<char,int> map;
-//         map.insert(std::make_pair<char,int>('I', 1));
-//         map.insert(std::make_pair<char,int>('V', 5));
-//         map.insert(std::make_pair<char,int>('X', 10));
-//         map.insert(std::make_pair<char,int>('L', 50));
-//         map.insert(std::make_pair<char,int>('C', 100));
-//         map.insert(std::make_pair<char,int>('D', 500));
-//         map.insert(std::make_pair<char,int>('M', 1000));
-//         res=map[s[len-1]];
-//         for(int i=len-2;i>=0;i--)
-//         {
-//             //If the left side is bigger than the right side
-//             if(map[s[i]]>=map[s[i+1]])
-//                 res+=map[s[i]];
-//             //if the left side is smaller than the right side
-//             else
-//                 res-=map[s[i]];
-//         }
+        int len=s.length();
+        unordered_map<char,int> map;
+        map.insert(std::make_pair<char,int>('I', 1));
+        map.insert(std::make_pair<char,int>('V', 5));
+        map.insert(std::make_pair<char,int>('X', 10));
+        map.insert(std::make_pair<char,int>('L', 50));
+        map.insert(std::make_pair<char,int>('C', 100));
+        map.insert(std::make_pair<char,int>('D', 500));
+        map.insert(std::make_pair<char,int>('M', 1000));
+        res=map[s[len-1]];
+        for(int i=len-2;i>=0;i--)
+        {
+            //If the left side is bigger than the right side
+            if(map[s[i]]>=map[s[i+1]])
+                res+=map[s[i]];
+            //if the left side is smaller than the right side
+            else
+                res-=map[s[i]];
+        }
         
-//         return res;
-//     }
+        return res;
+    }
     
     //Approach 2
     //Time complexity: O(n)
@@ -44,7 +44,7 @@ public:
     //Approach 2 is better than approach 1
     //in both time comlexity and 
     //space complexity
-    int romanToInt(string s)
+    int romanToInt_app2(string s)
     {
         int res=0;
         if(s.empty() || s.length()==0)
@@ -104,7 +104,7 @@ int main() {
     while (getline(cin, line)) {
         string s = stringToString(line);
         
-        int ret = Solution().romanToInt(s);
+        int ret = Solution().romanToInt_app1(s);
 
         string out = to_string(ret);
         cout << out << endl;
