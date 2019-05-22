@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+#include <unordered_map>
 using namespace std;
+
 class Solution {
 public:    
     
@@ -54,7 +56,7 @@ public:
         if(s.find("IX")!=std::string::npos) res-=2;
         if(s.find("XL")!=std::string::npos) res-=20;
         if(s.find("XC")!=std::string::npos) res-=20;
-        if(s.find("CD")!=std::string::npos) res-=200;//Why CD?
+        if(s.find("CD")!=std::string::npos) res-=200;
         if(s.find("CM")!=std::string::npos) res-=200;
      
         for(int i=0;i<s.length();i++)
