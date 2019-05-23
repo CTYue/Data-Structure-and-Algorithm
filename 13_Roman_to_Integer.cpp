@@ -71,7 +71,6 @@ public:
         }
         return res;
     }
-    
 };
 
 string stringToString(string input) {

@@ -38,25 +38,29 @@ public:
         map.insert(std::make_pair(8,"tuv"));
         map.insert(std::make_pair(9,"wxyz"));
 
-        string sb;
-        dfs(map,digits,sb,res,0);
+        string str;
+        dfs(map,digits,str,res,0);
         
         return res;
     }
     
     //DFS
-    void dfs(unordered_map<int,string> map,string digits, string& sb,vector<string>& res, int index)
+    void dfs(unordered_map<int,string> map,string digits, string& str,vector<string>& res, int index)
     {
         if(index==digits.length())
-            res.push_back(sb);
+            res.push_back(str);
         
         string s = map[(int)(digits[index]-'0')];
-        for(int i=0;i<s.length();i++)
+
+        int len=s.length();
+        for(int i=0;i<len;i++)
         {
-            // std::cout << "s[i] = " << s[i] << std::endl;
-            sb.push_back(s[i]);
-            dfs(map,digits,sb,res,index+1);
-            sb.pop_back();
+            // std::cout << "map[(int)(digits[i]-'0')]" << map[(int)(digits[i]-'0')] << std::endl;
+            str.push_back(s[i]);
+            std::cout << "s[i] = " << s[i] << std::endl;
+            //对于每个
+            dfs(map,index+1,res,digits,str);   
+            str.pop_back();//为什么要pop_back？
         }
     }    
 };
