@@ -25,10 +25,9 @@ public:
         //Generate all possible combinations of selected digits
         //Recursion
         vector<string> res;
-        if(digits.length()==0)
-            return res;
-
-        unordered_map<int,string> map;
+        if(digits.empty())  return res;        
+    
+        unordered_map<int,std::string> map;
         map.insert(std::make_pair(2,"abc"));
         map.insert(std::make_pair(3,"def"));
         map.insert(std::make_pair(4,"ghi"));
@@ -36,33 +35,39 @@ public:
         map.insert(std::make_pair(6,"mno"));
         map.insert(std::make_pair(7,"pqrs"));
         map.insert(std::make_pair(8,"tuv"));
-        map.insert(std::make_pair(9,"wxyz"));
-
+        map.insert(std::make_pair(9,"wzyx"));
+        
+        int index=0;
         string str;
-        dfs(map,digits,str,res,0);
+        dfs(map,index,res,digits,str);
         
         return res;
     }
     
-    //DFS
-    void dfs(unordered_map<int,string> map,string digits, string& str,vector<string>& res, int index)
+    void dfs(unordered_map<int,std::string> map, int index, vector<string>& res, string digits, string& str)
     {
-        if(index==digits.length())
+        if(index==digits.length())  
             res.push_back(str);
-        
-        string s = map[(int)(digits[index]-'0')];
+
+        string s=map[((int)(digits[index]-'0'))];
 
         int len=s.length();
+        
+        //分别取s[i]
         for(int i=0;i<len;i++)
         {
             // std::cout << "map[(int)(digits[i]-'0')]" << map[(int)(digits[i]-'0')] << std::endl;
             str.push_back(s[i]);
             std::cout << "s[i] = " << s[i] << std::endl;
-            //对于每个
+            std::cout << "str = " << str << std::endl;
+            //对于每个s[i]，取str[j]
             dfs(map,index+1,res,digits,str);   
-            str.pop_back();//为什么要pop_back？
+            //为什么要pop_back？
+            //如果不pop，会发生什么？
+            str.pop_back();
         }
-    }    
+        
+    }
 };
 
 //Test Stub
