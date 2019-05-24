@@ -71,6 +71,7 @@ int stringToInteger(string input) {
     return stoi(input);
 }
 
+//Test Stub
 int main() {
     string line;
     while (getline(cin, line)) {
