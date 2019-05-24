@@ -8,6 +8,9 @@ using namespace std;
 
 class Solution {
 public:
+    //Approach 1: Assign chars to row
+    //Time complexity:O(n)
+    //Space complexity:???
     string convert(string s, int numRows) 
     {
         string res="";
@@ -19,6 +22,8 @@ public:
         vector<string> rows(size);
         bool goingDown=false;
         int curRow=0;
+        
+        //将char分配到每个row
         for(int i=0;i<s.length();i++)
         {
             rows[curRow]+=s[i];//append char to each row(string)
@@ -31,6 +36,7 @@ public:
         }
         
         for(int i=0;i<rows.size();i++) res+=rows[i];
+        
         return res;
     }
 };
