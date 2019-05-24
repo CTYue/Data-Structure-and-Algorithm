@@ -66,7 +66,6 @@ public:
             //如果不pop，会发生什么？
             str.pop_back();
         }
-        
     }
 };
 

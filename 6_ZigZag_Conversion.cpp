@@ -10,13 +10,28 @@ class Solution {
 public:
     string convert(string s, int numRows) 
     {
-        string str="";
-        if(numRows<=0)
-            return str;
-        //Read line        
-        // std::cout << "Read by line: " << s << std::endl;
-
-        return str;
+        string res="";
+        if(s.empty())
+            return res;
+        if(numRows==1)  return s;
+        
+        int size=min(numRows,int(s.length()));
+        vector<string> rows(size);
+        bool goingDown=false;
+        int curRow=0;
+        for(int i=0;i<s.length();i++)
+        {
+            rows[curRow]+=s[i];//append char to each row(string)
+            
+            if(curRow==0 || curRow==numRows-1)
+                goingDown=!goingDown;
+            
+            if(goingDown)   curRow++;
+            else curRow--;
+        }
+        
+        for(auto row:rows) res+=row;
+        return res;
     }
 };
 
