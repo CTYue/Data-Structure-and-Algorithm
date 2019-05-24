@@ -30,7 +30,7 @@ public:
             else curRow--;
         }
         
-        for(auto row:rows) res+=row;
+        for(int i=0;i<rows.size();i++) res+=rows[i];
         return res;
     }
 };
