@@ -10,7 +10,7 @@ public:
 
         if(n==1) return "1";
         if(n==2) return "11";
-        
+
         string str="11";
         for(int i=3;i<=n;i++)
         {
@@ -18,9 +18,11 @@ public:
             int len=str.length();
             int count=1;
             string tmp;
-            
+
+            //为什么？
             for(int j=1;j<len;j++)
             {
+                //Handle
                 if(str[j]!=str[j-1])
                 {
                     tmp+=count+'0';
