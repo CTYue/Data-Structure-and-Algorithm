@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution_1 {
 public:
     
     //Approach 1: Recursion
@@ -53,6 +53,27 @@ public:
     }    
 };
 
+class Solution_2
+{
+public:
+    vector<string> generateParenthesis(int n) 
+    {
+        vector<string> res;
+        if(n<1) return res;
+        if(n==1)
+        {
+            res.push_back("()");
+            return res;
+        }
+
+
+
+
+        return res;
+    }
+};
+
+
 int main(int argc, char* argv[])
 {
     if(argc<1)  return 1;
@@ -62,7 +83,7 @@ int main(int argc, char* argv[])
     std::cin >> num;
 
     vector<string> res;
-    Solution s;
+    Solution_1 s;
     res=s.generateParenthesis(num);
 
     for(string item:res)
