@@ -14,24 +14,28 @@ public:
         string str="11";
         for(int i=3;i<=n;i++)
         {
+            //Traversing the nth(n>=3) string 
+            //新建空白str(current string)
             str+='0';//resize the string
             int len=str.length();
             int count=1;
             string tmp;
 
-            //为什么？
+            //Build the current string
+            //填充当前string
             for(int j=1;j<len;j++)
             {
-                //Handle
+                //Non-duplicate number
                 if(str[j]!=str[j-1])
                 {
                     tmp+=count+'0';
                     tmp+=str[j-1];
                     count=1;
                 }
+                //Find duplicate number
                 else count++;
             }
-            //Update str;
+            //Update current string
             str=tmp;
         }
         return str;
