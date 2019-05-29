@@ -24,7 +24,6 @@ public:
                 if(str[j]!=str[j-1])
                 {
                     tmp+=count+'0';
-                    //???
                     tmp+=str[j-1];
                     count=1;
                 }
