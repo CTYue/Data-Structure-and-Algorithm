@@ -29,90 +29,91 @@ public:
  void insertion_sort();
 };
 void linked_list::make_random_list(int k) {
- node * p;
- for (int i = 0; i < k; i++) {
- p = new node(rand() % 100);
- p->next = head;
- head = p;
- num_nodes++;
+    node * p;
+    for (int i = 0; i < k; i++) {
+    p = new node(rand() % 100);
+    p->next = head;
+    head = p;
+    num_nodes++;
  }
 }
 void linked_list::new_make_random_list(int k, int m) {
- node * p;
- for (int i = 0; i < k; i++) {
- p = new node(rand() % m);
- p->next = head;
- head = p;
- num_nodes++;
+    node * p;
+    for (int i = 0; i < k; i++) {
+    p = new node(rand() % m);
+    p->next = head;
+    head = p;
+    num_nodes++;
  }
 }
 void linked_list::print() {
- node * p = head;
- out << endl;
- while (p != nullptr) {
- out << p->value << " ";
- p = p->next;
+    node * p = head;
+    out << endl;
+    while (p != nullptr) {
+    out << p->value << " ";
+    p = p->next;
  }
 }
 void linked_list::selection_sort()
 {
- if ( num_nodes <= 1 )
- {
- return;
- }
- node *startNode = head;
- node *endNode = startNode;//End node of the sorted subarray
- while ( endNode->next != nullptr )
- {
- node *minNode = endNode->next;//minimum node of the unsorted array
- node *p = endNode->next->next;
- while ( p != nullptr )//Find minimum node in unsorted subarray
- {
- if ( p->value < minNode->value )
- {
- minNode = p;
- }
- p = p->next;
- }
+    if ( num_nodes <= 1 )
+    {
+        return;
+    }
+    node *startNode = head;
+    node *endNode = startNode;//End node of the sorted subarray
+    while ( endNode->next != nullptr )
+    {
+        node *minNode = endNode->next;//minimum node of the unsorted array
+        node *p = endNode->next->next;
+    while ( p != nullptr )//Find minimum node in unsorted subarray
+    {
+        if ( p->value < minNode->value )
+        {
+            minNode = p;
+    }
+    p = p->next;
+    }
  //swap(endNode->next->value, minNode->value);
- int temp = 0;
- temp = endNode->next->value;
- endNode->next->value = minNode->value;
- minNode->value =temp;
- endNode = endNode->next;
- }
- head =startNode->next;
+    int temp = 0;
+    temp = endNode->next->value;
+    endNode->next->value = minNode->value;
+    minNode->value =temp;
+    endNode = endNode->next;
+    }
+    head =startNode->next;
 }
 void linked_list::bubble_sort()
 {
- if ( num_nodes <= 1 )
- {
- return;
- }
- node *previousNode = head;
- node *currentNode = head->next;
- for (int i = 0; i < num_nodes; i++)
- {
- while ( currentNode != nullptr )
- {
- if ( previousNode->value > currentNode->value)
- {
- //swap(currentNode->value, previousNode->value);
- int temp = 0;
- temp = currentNode->value;
- currentNode->value = previousNode->value;
- previousNode->value = temp;
- }
- else
- {
- previousNode = currentNode;
- currentNode = previousNode->next;
- }
- }
- previousNode = head;
- currentNode = previousNode->next;
+    if ( num_nodes <= 1 )
+    {
+        return;
+    }
+    node *previousNode = head;
+    node *currentNode = head->next;
+    for (int i = 0; i < num_nodes; i++)
+    {
+    while ( currentNode != nullptr )
+    {
+        if(previousNode->value > currentNode->value)
+    {
+        //swap(currentNode->value, previousNode->value);
+    int temp = 0;
+    temp = currentNode->value;
+    currentNode->value = previousNode->value;
+    previousNode->value = temp;
+    }
+    else
+        {
+            previousNode = currentNode;
+            currentNode = previousNode->next;
+        }
+    }
+    previousNode = head;
+    currentNode = previousNode->next;
  }
 }
+
 void linked_list::insertion_sort()
 {
  if ( num_nodes <= 1 )
@@ -155,26 +156,27 @@ void linked_list::insertion_sort()
         currentNode = previousNode->next;
     }
 }
-int main() {
- //Some examples of tests for your program are given below
- //During grading, other test cases will also be used
- linked_list L1;
- L1.make_random_list(70);
- L1.print();
- L1.bubble_sort();
- L1.print();
- cout << endl;
- linked_list L2;
- L2.make_random_list(70);
- L2.print();
- L2.selection_sort();
- L2.print();
- cout << endl;
- linked_list L3;
- L3.make_random_list(70);
- L3.print();
- L3.insertion_sort();
- L3.print();
- out.close();
- return 0;
+int main() 
+{
+    //Some examples of tests for your program are given below
+    //During grading, other test cases will also be used
+    linked_list L1;
+    L1.make_random_list(70);
+    L1.print();
+    L1.bubble_sort();
+    L1.print();
+    cout << endl;
+    linked_list L2;
+    L2.make_random_list(70);
+    L2.print();
+    L2.selection_sort();
+    L2.print();
+    cout << endl;
+    linked_list L3;
+    L3.make_random_list(70);
+    L3.print();
+    L3.insertion_sort();
+    L3.print();
+    out.close();
+    return 0;
 }
