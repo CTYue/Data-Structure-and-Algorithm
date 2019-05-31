@@ -11,7 +11,10 @@
 using namespace std;
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target)//暴力解法
+    //Brute force Approach
+    //Time Complexity:
+    //Space Complexity:
+    vector<int> twoSum(vector<int>& nums, int target)
 	{
     		vector<int> result;
     		for(int i = 0; i < nums.size();i++)
