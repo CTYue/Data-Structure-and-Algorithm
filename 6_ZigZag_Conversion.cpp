@@ -50,6 +50,7 @@ public:
     //Setp:Oblique Row
     //Time Complexity: O(n^2)
     //Space Complexity: ???
+    //This is a confusing solution!
     string convert(string s, int numRows) 
     {
         if(s.empty() || numRows<=1 || numRows>s.length())   return s;
@@ -93,6 +94,50 @@ public:
     }
 };
 
+
+class Solution_3 {
+public:
+    
+    //Approach 3
+    //Time Complexity: O(n)
+    //Space Complexity: ???
+    string convert(string s, int numRows) 
+    {
+        if(s.empty() || numRows<=1 || numRows>s.length())   return s;
+        
+        int len=s.length();
+        vector<string> sb(numRows,"");
+        string res="";
+        std::cout << "len = " << len << std::endl;
+        
+        int i=0;
+        while(i<len)
+        {
+            // std::cout << "i = " << i << std::endl;
+            
+            //Traversing normal rows
+            for(int index=0;index<numRows && i<len;index++)
+            {
+                std::cout << "index = " << index << std::endl;
+                // std::cout << "i = " << i << std::endl;
+                sb[index].push_back(s[i++]);
+            }
+                
+            //Traversing oblique rows
+            for(int index=numRows-2;index>=1 && i<len;index--)
+            {
+                // std::cout << "index = " << index << std::endl;
+                sb[index].push_back(s[i++]);
+            }
+        }
+        
+        for(int index=0;index<sb.size();index++)
+            res+=sb[index];
+        
+        
+        return res;
+    }
+};
 
 string stringToString(string input) {
     assert(input.length() >= 2);
