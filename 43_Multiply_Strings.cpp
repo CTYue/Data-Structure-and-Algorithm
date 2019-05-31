@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
 
-    //Time complexity:
+    //Time complexity: O(n^2)
     //Space complexity:
     //Brute force Approach
     string multiply(string num1, string num2) 
@@ -32,8 +32,8 @@ public:
                 int tmp=(num1[i]-'0')*(num2[j]-'0');
                 std::cout << "tmp = " << tmp << std::endl;
                 
-                //i+j+1是数字低位
-                //i+j是数字高位
+                //i+j+1:数字低位
+                //i+j:数字高位
                 int sum=tmp+p[i+j+1];
                 
                 p[i+j]+=sum/10;//进位: carry
@@ -52,8 +52,8 @@ public:
         res=os.str();
         os.clear();
         
-        // if(res[0]=='0')
-            // res.erase(res.begin());
+        if(res[0]=='0')
+            res.erase(res.begin());
         
         return res;
     }
