@@ -5,6 +5,7 @@
  *      Author: yuzidong
  */
 
+//Wrong Code
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,8 +18,6 @@ public:
     {	//times of turing wheels to target
     		//deadends cannot appear
     		vector<string> allPath;
-    		vector<string>
-    		vec
     		for(int i=0; i < deadends.size(); i++)
     		{
     			if(deadends[i] == "0000")
@@ -82,108 +81,3 @@ int main()
 	result = s.openLock(test,target);
 	cout << result << endl;
 }
-
-
-
-//Q2
-//class Solution {
-//public:
-//    vector<string> ipToCIDR(string ip, int range)
-//	{
-//    		//Interprete string to separate binary numbers
-//    		string str1,str2,str3,str4;
-//    		int p1,p2,p3,p4;
-//    		int binaryIP;
-//    		str1 = ip.substr(0,3);
-//    		str2 = ip.substr(4,3);
-//    		str3 = ip.substr(8,3);
-//    		str4 = ip.substr(12,3);
-//    		p1 = stoi(str1);
-//    		p2 = stoi(str2);
-//		p3 = stoi(str3);
-//		p4 = stoi(str4);
-//
-////		cout << "strings" << endl;
-////		cout << str1 << endl;
-////		cout << str2 << endl;
-////		cout << str3 << endl;
-////		cout << str4 << endl;
-////
-////		cout << "integers" << endl;
-////		cout << p1 << endl;
-////		cout << p2 << endl;
-////		cout << p3 << endl;
-////		cout << p4 << endl;
-//
-//		//What is range?
-//    }
-//};
-// int main()
-// {
-//	 Solution s;
-//	 string ip = "255.255.255.222";
-//	 s.ipToCIDR(ip,100);
-// }
-
-
-
-//class Solution {
-//public:
-//
-//	int findMax(vector<int>& nums)
-//	{
-//	//find the largest num in array
-//			int max = 0;
-//			int temp;
-//			for(int i = 0 ; i < nums.size(); i++)
-//			{
-//				if(nums[i] > max)
-//					max = nums[i];
-//			}
-//			return max;
-//	}
-//
-//    int dominantIndex(vector<int>& nums)
-//    {
-//    		int max = findMax(nums);
-//    		vector<int> arrayRest;
-//    		for(int i = 0; i < nums.size(); i++)
-//    		{
-//    			if(nums[i] != max)
-//    			{
-//    				arrayRest.push_back(nums[i]);
-//    				//cout << nums[i] << endl;
-//    			}
-//
-//    		}
-//    		int max_rest = findMax(arrayRest);
-//    		if(max >= 2*max_rest)
-//    			//return the index of the max in arrayRest
-//    		{
-//    			for(int i = 0; i < nums.size();i++)
-//    			{
-//    				if(nums[i] == max)
-//    					return i;
-//    			}
-//    		}
-//
-//    		else
-//    			return -1;
-//    }
-//};
-//
-//int main()
-//{
-//	Solution s;
-//	//int nums[] = {3,6,1,0};
-//	int nums[] = {1,2,3,4};
-//	vector<int> a(begin(nums),end(nums));
-//	int result;
-//	result = s.dominantIndex(a);
-////	result = s.findMax(a);
-////	for(int i = 0; i < a.size(); i++)
-////		cout << a[i] << endl;
-//	cout << result << endl;
-//
-//	return 0;
-//}

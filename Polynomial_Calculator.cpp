@@ -151,6 +151,26 @@ polynomial polynomial::operator*(polynomial P)
 
 }
 
+/*
+ //An example screenshot is given below:
+ //Different cases may be used during grading
+ 
+ Enter numer of terms
+ 3
+ Enter all terms
+ 2 2 1 1 4 0
+ 
+ 2 2   1 1   4 0
+ Enter numer of terms
+ 2
+ Enter all terms
+ -6 1 3 0
+ 
+ -6 1   3 0
+ 2 2   -5 1   7 0
+ -12 3   -21 1   12 0
+ */
+
 
 int main() {
     polynomial p1, p2, p3, p4, p5, p6;
@@ -183,25 +203,3 @@ int main() {
     getchar();
     return 0;
 }
-
-
-/*
- //An example screenshot is given below:
- //Different cases may be used during grading
- 
- Enter numer of terms
- 3
- Enter all terms
- 2 2 1 1 4 0
- 
- 2 2   1 1   4 0
- Enter numer of terms
- 2
- Enter all terms
- -6 1 3 0
- 
- -6 1   3 0
- 2 2   -5 1   7 0
- -12 3   -21 1   12 0
- */
-

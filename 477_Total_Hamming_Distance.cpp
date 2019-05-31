@@ -44,7 +44,7 @@ int main(int argc, const char * argv[])
 //        {
 //            std::cout << "hammingCode[" << i << "]: " << hammingCode[i] << std::endl;
 //            std::cout << "hammingCode[" << j << "]: " << hammingCode[j] << std::endl;
-//            result += (hammingCode[i] ^ hammingCode[j]);//异或
+//            result += (hammingCode[i] ^ hammingCode[j]);
 //            std::cout << "The result for this loop is: " << result << std::endl;
 //            while (result != 0)
 //            {
@@ -79,11 +79,7 @@ int main(int argc, const char * argv[])
 //        ans += zeroOne[0] * zeroOne[1];
 //        if(zeroCount == hammingCode.size()) return ans;
 //    }
-//}
-    
-    
-    
-    
+//}    
     std::cout << "count: "<< count << std::endl;
     return 0;
 }

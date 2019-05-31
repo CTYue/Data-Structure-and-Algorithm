@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 using namespace std;
-//Q2
+
 class Solution {
 public:
     vector<string> ipToCIDR(string ip, int range)
@@ -25,22 +25,9 @@ public:
     		p2 = stoi(str2);
 		p3 = stoi(str3);
 		p4 = stoi(str4);
-
-//		cout << "strings" << endl;
-//		cout << str1 << endl;
-//		cout << str2 << endl;
-//		cout << str3 << endl;
-//		cout << str4 << endl;
-//
-//		cout << "integers" << endl;
-//		cout << p1 << endl;
-//		cout << p2 << endl;
-//		cout << p3 << endl;
-//		cout << p4 << endl;
-
-		//What is range?
     }
 };
+
  int main()
  {
 	 Solution s;

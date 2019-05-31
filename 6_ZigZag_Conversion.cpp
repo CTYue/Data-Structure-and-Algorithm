@@ -6,7 +6,7 @@
 #include <map>
 using namespace std;
 
-class Solution {
+class Solution_1 {
 public:
     //Approach 1: Assign chars to row
     //Time complexity:O(n)
@@ -40,6 +40,59 @@ public:
         return res;
     }
 };
+
+
+class Solution_2 {
+public:
+    
+    //Approach 2
+    //Interval: Normal Row
+    //Setp:Oblique Row
+    //Time Complexity: O(n^2)
+    //Space Complexity: ???
+    string convert(string s, int numRows) 
+    {
+        if(s.empty() || numRows<=1 || numRows>s.length())   return s;
+        
+        int len=s.length();
+        string res(len,'\0');
+        
+        //Fixed interval
+        int count=0,interval=2*numRows-2;
+        
+        std::cout << "interval = " << interval << std::endl;
+
+        for(int i=0;i<numRows;i++)
+        {
+            //Why step = interval-2*i ???
+            std::cout << "i = " << i << std::endl;
+            int step=interval-2*i;
+            // std::cout << "step = " << step << std::endl;
+
+            //Traversing by lever order (Interval)
+            //j=j+interval 
+            for(int j=i;j<s.length();j+=interval)
+            {
+                // std::cout << "j = " << j << std::endl;
+                res[count]=s[j];
+                count++;
+
+                //Traversing steps
+                if(step>0 && step<interval && j+step<s.length())
+                {
+                    // std::cout << "count = " << count << std::endl;
+                    //j+step is the index of step
+                    std::cout << "j+step = " << j+step << std::endl;
+                    //Add steps to the format string
+                    res[count]=s[j+step];
+                    count++;
+                }
+            }
+        }
+        return res;
+    }
+};
+
 
 string stringToString(string input) {
     assert(input.length() >= 2);
@@ -79,7 +132,7 @@ int main() {
         getline(cin, line);
         int numRows = stringToInteger(line);
         
-        string ret = Solution().convert(s, numRows);
+        string ret = Solution_1().convert(s, numRows);
 
         string out = (ret);
         cout << out << endl;
