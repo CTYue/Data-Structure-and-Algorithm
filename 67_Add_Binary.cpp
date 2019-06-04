@@ -29,10 +29,21 @@ public:
             sum+=(i>=0)?a[i]-'0':0;
             sum+=(j>=0)?b[j]-'0':0;
             
+            std::cout << "==============" << std::endl;
+            std::cout << "i = " << i << std::endl;
+            std::cout << "j = " << j << std::endl;
+            std::cout << "sum = " << sum << std::endl;
+            std::cout << "sum%2 = " << sum%2 << std::endl;
+            std::cout << "sum/2 = " << sum/2 << std::endl;
+            std::cout << "==============" << std::endl;
+
+            //本位
             res=char(sum%2+'0')+res;
+            //进位
+            sum/=2;
             
-            sum/=2;//Why???
-            i--;j--;
+            i--;
+            j--;
         }
         
         return res;
