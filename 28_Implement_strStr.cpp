@@ -1,3 +1,12 @@
+/*
+ * Filename: /Users/yuzidong/Code/Data-Structure-and-Algorithm/28_Implement_strStr.cpp
+ * Path: /Users/yuzidong/Code/Data-Structure-and-Algorithm
+ * Created Date: Friday, May 31st 2019, 11:22:50 am
+ * Author: yuzidong
+ * 
+ * Copyright (c) 2019 Your Company
+ */
+
 #include <iostream>
 #include <string>
 using namespace std;

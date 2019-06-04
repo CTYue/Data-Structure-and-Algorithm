@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -134,13 +135,12 @@ public:
         for(int index=0;index<sb.size();index++)
             res+=sb[index];
         
-        
         return res;
     }
 };
 
 string stringToString(string input) {
-    assert(input.length() >= 2);
+    assert(input.length() >= 2);//Problem here!
     string result;
     for (int i = 1; i < input.length() -1; i++) {
         char currentChar = input[i];
@@ -170,6 +170,7 @@ int stringToInteger(string input) {
 }
 
 //Test Stub
+//Input:
 int main() {
     string line;
     while (getline(cin, line)) {
@@ -182,5 +183,6 @@ int main() {
         string out = (ret);
         cout << out << endl;
     }
+    getchar();
     return 0;
 }
