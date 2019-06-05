@@ -1,5 +1,14 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-06-05 14:38:19
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-06-05 18:50:29
+ * @Description: Solution(s) for Leetcode #95.
+ */
+
 #include <iostream>
-#include <unordered_map>
+#include <vector>
 
 using namespace std;
 
@@ -12,9 +21,8 @@ public:
     int numTrees(int n) 
     {
         if(n<=2) return n;
-        int res=0;
         
-        int dp[n+1]={};        
+        std::vector<int> dp(n+1,0);        
         dp[0]=1;
         dp[1]=1;
         
