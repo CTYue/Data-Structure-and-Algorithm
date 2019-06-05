@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-04 12:56:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-05 01:06:40
+ * @LastEditTime: 2019-06-05 01:07:20
  * @Description: To be added.
  */
 
@@ -63,8 +63,7 @@ public:
         // std::cout << "sizeof(T)/sizeof(T[0]) = " << sizeof(T)/sizeof(T[0]) << std::endl;
         // std::cout << "sizeof(T[0])/sizeof(T[0][0]) = " << sizeof(T[0])/sizeof(T[0][0]) << std::endl;
         // std::cout << "sizeof(T[1])/sizeof(T[1][0]) = " << sizeof(T[1])/sizeof(T[1][0]) << std::endl;// sizeof(T[1])/sizeof(T[1][0]) = 6
-
-
+        
         for(int i=1;i<(sizeof(T)/sizeof(T[0]));i++)
         {
             for(int j=1;j<(sizeof(T[0])/sizeof(T[0][0]));j++)
