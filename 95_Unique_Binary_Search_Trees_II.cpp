@@ -1,7 +1,14 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-06-05 19:11:48
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-06-06 00:33:49
+ * @Description: Recursion solution for leetcode 95.
+ */
 
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 class TreeNode 
@@ -17,8 +24,8 @@ class Solution {
 public:
     
     //Recursion Approach
-    //Time Complexity:
-    //Space Complexity:
+    //Time Complexity: ???
+    //Space Complexity: ???
     vector<TreeNode*> generateTrees(int n) 
     {   
         vector<TreeNode*> temp={};
@@ -53,9 +60,9 @@ public:
                 right=generateAllTrees(i+1,end);
 
                 //Link parent and children
-                for(auto l_node:left)
+                for(TreeNode* l_node:left)
                 {
-                    for(auto r_node:right)
+                    for(TreeNode* r_node:right)
                     {
                         TreeNode* root=new TreeNode(i);
                         root->left=l_node;

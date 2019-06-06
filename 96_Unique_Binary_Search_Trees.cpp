@@ -3,8 +3,9 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-05 14:38:19
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-05 19:11:17
+ * @LastEditTime: 2019-06-06 01:45:30
  * @Description: Solution(s) for Leetcode #95.
+ * DP Approach OK, Recursion Approach failed.
  */
 
 #include <iostream>
@@ -34,9 +35,34 @@ public:
                 dp[i]+=dp[j-1]*dp[i-j];
             }
         }
-        
         return dp[n];
     }
+
+
+    //Recursion Approach ??? How???
+       //Time Complexity:
+       //Space Complexity:
+    //    int numTrees(int n)
+    //    {    
+    //        if(n<=2) return n;
+            
+    //        return numberOfTrees(1,n);
+    //    }
+    
+    //     int numberOfTrees(int start, int end)
+    //     {
+    //         int num=0;
+    //         if(start>=end)
+    //             return 0;
+            
+    //         else
+    //         {
+    //             num=numberOfTrees(start,);
+    //         }
+    //         return num;
+    //     }
+
+
 };
 
 int stringToInteger(string input) {
