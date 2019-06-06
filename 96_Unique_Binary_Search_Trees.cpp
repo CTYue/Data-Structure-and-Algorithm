@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-05 14:38:19
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-06 01:45:30
+ * @LastEditTime: 2019-06-06 17:06:48
  * @Description: Solution(s) for Leetcode #95.
  * DP Approach OK, Recursion Approach failed.
  */
@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution_1 {
 public:
     
     //Dynamic Programming Approach
@@ -37,32 +37,23 @@ public:
         }
         return dp[n];
     }
+};
 
+class Solution_2 {
+public:
 
-    //Recursion Approach ??? How???
-       //Time Complexity:
-       //Space Complexity:
-    //    int numTrees(int n)
-    //    {    
-    //        if(n<=2) return n;
-            
-    //        return numberOfTrees(1,n);
-    //    }
-    
-    //     int numberOfTrees(int start, int end)
-    //     {
-    //         int num=0;
-    //         if(start>=end)
-    //             return 0;
-            
-    //         else
-    //         {
-    //             num=numberOfTrees(start,);
-    //         }
-    //         return num;
-    //     }
-
-
+       //Mathematical Approach
+       //Time Complexity:O(n)
+       //Space Complexity:O(1)
+    int numTrees(int n)
+    {
+        long int res=1;
+        for(int i=0;i<n;++i)
+        {
+            res=res*2*(2*i+1)/(i+2);
+        }
+        return (int)res;
+    }
 };
 
 int stringToInteger(string input) {
@@ -74,7 +65,7 @@ int main() {
     while (getline(cin, line)) {
         int n = stringToInteger(line);
         
-        int ret = Solution().numTrees(n);
+        int ret = Solution_1().numTrees(n);
 
         string out = to_string(ret);
         cout << out << endl;
