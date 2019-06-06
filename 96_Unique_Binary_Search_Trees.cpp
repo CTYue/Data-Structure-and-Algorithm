@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-05 14:38:19
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-06 17:06:48
+ * @LastEditTime: 2019-06-06 17:34:21
  * @Description: Solution(s) for Leetcode #95.
  * DP Approach OK, Recursion Approach failed.
  */
@@ -15,7 +15,7 @@ using namespace std;
 
 class Solution_1 {
 public:
-    
+
     //Dynamic Programming Approach
     //Time Complexity: O(n^2)
     //Space Complexity: O(n)
@@ -45,6 +45,8 @@ public:
        //Mathematical Approach
        //Time Complexity:O(n)
        //Space Complexity:O(1)
+       //Catalan number General formula:
+       //C(n+1)=C(n)*2*(2*n+1)/(n+2)
     int numTrees(int n)
     {
         long int res=1;
@@ -56,7 +58,8 @@ public:
     }
 };
 
-int stringToInteger(string input) {
+int stringToInteger(string input) 
+{
     return stoi(input);
 }
 
@@ -65,10 +68,11 @@ int main() {
     while (getline(cin, line)) {
         int n = stringToInteger(line);
         
-        int ret = Solution_1().numTrees(n);
+        int ret = Solution_2().numTrees(n);
 
         string out = to_string(ret);
         cout << out << endl;
     }
+    
     return 0;
 }

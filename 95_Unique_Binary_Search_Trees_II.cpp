@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-05 19:11:48
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-06 00:33:49
+ * @LastEditTime: 2019-06-06 17:34:38
  * @Description: Recursion solution for leetcode 95.
  */
 
@@ -24,8 +24,8 @@ class Solution {
 public:
     
     //Recursion Approach
-    //Time Complexity: ???
-    //Space Complexity: ???
+    //Time Complexity: 
+    //Space Complexity: 
     vector<TreeNode*> generateTrees(int n) 
     {   
         vector<TreeNode*> temp={};
