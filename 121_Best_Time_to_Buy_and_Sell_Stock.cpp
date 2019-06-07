@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-06 22:19:24
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-06 23:47:54
+ * @LastEditTime: 2019-06-06 23:50:25
  * @Description: 
  */
 
@@ -11,8 +11,11 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution_1 {
 public:
+    //One Pass
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     int maxProfit(vector<int>& prices) 
     {
         int minprice = INT_MAX;
@@ -60,7 +63,7 @@ int main() {
     while (getline(cin, line)) {
         vector<int> prices = stringToIntegerVector(line);
         
-        int ret = Solution().maxProfit(prices);
+        int ret = Solution_1().maxProfit(prices);
 
         string out = to_string(ret);
         cout << out << endl;
