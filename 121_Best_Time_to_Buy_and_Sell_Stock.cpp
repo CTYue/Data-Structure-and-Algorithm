@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-06 22:19:24
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-06 23:50:25
+ * @LastEditTime: 2019-06-07 15:51:42
  * @Description: 
  */
 
@@ -30,6 +30,31 @@ public:
         return maxprofit;
     }
 };
+
+class Solution_2 {
+public:
+    //Brute Force
+    //Time Complexity: O(n^2)
+    //Space Complexity: O(1)
+    int maxProfit(vector<int>& prices) 
+    {
+        int maxprofit=0;
+        int profit=0;
+        int len=prices.size();
+        for(int i=0;i<len-1;++i)
+        {
+            for(int j=i+1;j<len;++j)
+            {
+                profit=prices[j]-prices[i];
+                if(profit>maxprofit)
+                    maxprofit=profit;
+            }
+        }
+        return maxprofit;
+    }
+};
+
+
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
