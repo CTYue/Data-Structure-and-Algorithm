@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-07 15:52:39
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-08 00:45:26
+ * @LastEditTime: 2019-06-08 01:01:42
  * @Description: This is a very good example to 
  * learn recursion, DP and more.
  */
@@ -98,10 +98,9 @@ public:
         {
             dp[i]=dp[i-1]+dp[i-2];
         }
-
+        
         return dp[n];
     }
-
 };
 
 int stringToInteger(string input) {
