@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-07 15:52:39
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-10 09:27:08
+ * @LastEditTime: 2019-06-10 10:38:42
  * @Description: This is a very good example to 
  * learn recursion, DP and more.
  */
@@ -46,7 +46,6 @@ public:
     //还是没怎么理解这里时间复杂度的算法！
     //递归时间复杂度如何分析？
     //此处应使用数学归纳法
-    //
     //Space Complexity: O(n)
     int climbStairs(int n)
     {
@@ -71,7 +70,8 @@ class Solution_3
 public:
 
     //Recursion with Memoization
-    //Time Complexity: O(n) ??? Why
+    //Time Complexity: O(n)
+    //怎样推导以上时间复杂度?
     //Space Complexity: O(n)
     int climbStairs(int n)
     {
@@ -96,7 +96,7 @@ class Solution_4
 public:
     //Dynamic Programming
     //Time Complexity: O(n)
-    //Space Complexity: O(n)
+    //Space Complexity: O(n) (Used dp array of size n)
     int climbStairs(int n)
     {
         if(n==1) return 1;
