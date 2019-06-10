@@ -3,13 +3,14 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-07 15:52:39
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-08 01:01:42
+ * @LastEditTime: 2019-06-10 09:27:08
  * @Description: This is a very good example to 
  * learn recursion, DP and more.
  */
 
 #include <iostream>
 using namespace std;
+int cnt=0;
 
 class Solution_1 {
 public:
@@ -40,7 +41,12 @@ class Solution_2
 {
 public:
     //Brute Force (Recursion Approach)
-    //Time Complexity: O(2^n) ??? How?
+    //Time Complexity: O(2^n) 
+    //Size of Recursion Tree is 2^n.
+    //还是没怎么理解这里时间复杂度的算法！
+    //递归时间复杂度如何分析？
+    //此处应使用数学归纳法
+    //
     //Space Complexity: O(n)
     int climbStairs(int n)
     {
@@ -49,6 +55,9 @@ public:
     
     int climb_helper(int i, int n)
     {
+        
+        std::cout << "cnt = " << ++cnt << std::endl;
+        
         if(i>n) return 0;
         
         if(i==n) return 1;
@@ -60,6 +69,7 @@ public:
 class Solution_3
 {
 public:
+
     //Recursion with Memoization
     //Time Complexity: O(n) ??? Why
     //Space Complexity: O(n)
@@ -112,7 +122,7 @@ int main() {
     while (getline(cin, line)) {
         int n = stringToInteger(line);
         
-        int ret = Solution_4().climbStairs(n);
+        int ret = Solution_2().climbStairs(n);
 
         string out = to_string(ret);
         cout << out << endl;
