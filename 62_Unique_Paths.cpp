@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-11 01:01:29
+ * @LastEditTime: 2019-06-11 01:28:55
  * @Description: Typical Dynanmic Programming Problem.
  */
 
@@ -38,9 +38,9 @@ public:
 class Solution_2
 {
 public:
-  /Approach 2
-        //Time Complexity:
-        //Space Complexity:
+        //Approach 2
+        //Time Complexity: O(n^2)
+        //Space Complexity: ???
         int uniquePaths(int m, int n) 
         {
             vector<int> pre(n,1),cur(n,1);
@@ -52,6 +52,8 @@ public:
             }
         return pre[n-1];
         } 
+
+
 }
 
 int stringToInteger(string input) {
