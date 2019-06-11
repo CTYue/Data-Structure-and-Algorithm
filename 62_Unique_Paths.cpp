@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-10 23:02:34
+ * @LastEditTime: 2019-06-11 01:01:29
  * @Description: Typical Dynanmic Programming Problem.
  */
 
@@ -12,7 +12,7 @@
 #include <string>
 
 using namespace std;
-class Solution {
+class Solution_1 {
 public:
     //Approach 1
     //Time Complexity: O(n^2)
@@ -32,9 +32,27 @@ public:
             }
         }
         return dp[m-1][n-1];
-    }    
-    
+    }   
 };
+
+class Solution_2
+{
+public:
+  /Approach 2
+        //Time Complexity:
+        //Space Complexity:
+        int uniquePaths(int m, int n) 
+        {
+            vector<int> pre(n,1),cur(n,1);
+            for(int i=1;i<m;i++)
+            {
+                for(int j=1;j<n;j++)
+                    cur[j]=pre[j]+cur[j-1];
+            swap(pre,cur);   
+            }
+        return pre[n-1];
+        } 
+}
 
 int stringToInteger(string input) {
     return stoi(input);
