@@ -3,8 +3,8 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-10 23:01:05
- * @Description: To be added.
+ * @LastEditTime: 2019-06-10 23:02:34
+ * @Description: Typical Dynanmic Programming Problem.
  */
 
 #include <iostream>
