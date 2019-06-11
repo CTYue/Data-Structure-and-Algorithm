@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-11 01:28:55
+ * @LastEditTime: 2019-06-11 17:13:01
  * @Description: Typical Dynanmic Programming Problem.
  */
 
@@ -53,8 +53,7 @@ public:
         return pre[n-1];
         } 
 
-
-}
+};
 
 int stringToInteger(string input) {
     return stoi(input);
