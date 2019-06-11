@@ -3,12 +3,13 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-10 22:59:07
+ * @LastEditTime: 2019-06-10 23:01:05
  * @Description: To be added.
  */
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 class Solution {
@@ -39,7 +40,7 @@ int stringToInteger(string input) {
     return stoi(input);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
     string line;
     while (getline(cin, line)) {
         int m = stringToInteger(line);
