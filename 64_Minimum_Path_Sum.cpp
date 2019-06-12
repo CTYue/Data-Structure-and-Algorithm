@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-11 23:46:22
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-11 23:47:43
+ * @LastEditTime: 2019-06-12 00:33:36
  * @Description: TODO: Testhub.
  */
 
@@ -33,7 +33,9 @@ public:
         {
             for(int j=column-1;j>=0;j--)
             {
-                if(i==row-1 && j!=column-1)//处理边界条件
+                //没怎么明白！
+                //处理边界条件
+                if(i==row-1 && j!=column-1)
                     res[i][j]=grid[i][j]+res[i][j+1];
                 else if(j==column-1 && i!=row-1)
                     res[i][j]=grid[i][j]+res[i+1][j];
