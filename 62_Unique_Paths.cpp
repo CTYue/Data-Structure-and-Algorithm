@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-11 17:13:01
+ * @LastEditTime: 2019-06-11 21:08:10
  * @Description: Typical Dynanmic Programming Problem.
  */
 
