@@ -9,7 +9,7 @@ public:
     //Dynanmic Programming
     //Time Comlexity:O(m*n)
     //Space Complexity:O(1)
-    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) 
+    int uniquePathsWithObstacles(vector<vector<int> >& obstacleGrid) 
     {
         if(obstacleGrid[0][0]==1)
             return 0;
@@ -66,7 +66,7 @@ int stringToInteger(string input) {
 
 int main(int argc, char* argv[]) {
     string line;
-    vector<vector<int>> obstacleGrid;
+    vector<vector<int> > obstacleGrid;
     while (getline(cin, line)) {
         int m = stringToInteger(line);
         getline(cin, line);
