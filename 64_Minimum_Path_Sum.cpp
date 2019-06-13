@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-11 23:46:22
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-12 18:55:27
+ * @LastEditTime: 2019-06-12 19:35:54
  * @Description: TODO: Testhub.
  */
 
@@ -12,7 +12,6 @@
 #include <string>
 
 using namespace std;
-
 
 class Solution {
 public:
