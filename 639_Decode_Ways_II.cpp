@@ -1,63 +1,54 @@
 /*
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
- * @Date: 2019-06-12 18:56:18
+ * @Date: 2019-06-13 23:22:20
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-13 17:06:06
- * @Description: To be added.
+ * @LastEditTime: 2019-06-13 23:23:19
+ * @Description: To be finished.
  */
+
 
 #include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
-
 class Solution {
 public:
-    //Dynanmic Programming Approach
-    //Time Complexity: O(n)
-    //Space Complexity: O(1)
+    
+    //Dynanmic Programming
+    //Time Complexity:
+    //Space Complexity:
+    //Level: Hard
     int numDecodings(string s) 
     {
-        if(s.empty() || s[0]=='0')
-            return 0;
-        if(s.length()==1)
-            return 1;
+        if(s.empty()) return 0;
         
         int len=s.length();
         vector<int> dp(len+1,0);
         dp[0]=1;
-        if(s[0]!='0')
-            dp[1]=1;
-        else  
+        if(s[0]=='*')
+            dp[1]=9;
+        if(s[0]=='0')
             dp[1]=0;
+        else
+            dp[1]=1;
         
-        //题意：输入的字符串中，每两个char
-        //即有可能代表一个字母，也有可能代表两个字母
-        //求总共有多少种可以输出的字母数
-        for(int i=2;i<=len;i++)
+        int M = 1000000007;//What???
+        
+        for(int i=1;i<len;i++)
         {
-            //读取第i-1个char
-            int first=stoi(s.substr(i-1,1));
-            std::cout << "i = " << i << std::endl;
-            // std::cout << "s[i] = " << s[i] << std::endl;
-            // std::cout << "first = " << first << std::endl;
-            
-            //stoi: string to integer
-            //读取从i-2开始的2个char
-            int second=stoi(s.substr(i-2,2));
-            
-            if(first>=1 && first<=9)
-                dp[i]+=dp[i-1];
+            if(s[i]=='*')
+            {
+                dp[i+1]=9*dp[i];
+                if(s[i-1]=='1')
+                
+                    
+            }
 
-            if(second>=10 && second<=26)
-                dp[i]+=dp[i-2];
         
-            std::cout << "dp[len] = " << dp[len] << std::endl;
         }
-
-        return dp[len];
+        
+        return dp[0];
     }
 };
 

@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-10 15:21:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-11 23:45:54
+ * @LastEditTime: 2019-06-13 17:08:05
  * @Description: Typical Dynanmic Programming Problem.
  */
 
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
         getline(cin, line);
         int n = stringToInteger(line);
         
-        int ret = Solution().uniquePaths(m, n);
+        int ret = Solution_1().uniquePaths(m, n);
 
         string out = to_string(ret);
         cout << out << endl;
