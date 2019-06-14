@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-13 23:42:38
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-13 23:42:51
+ * @LastEditTime: 2019-06-14 16:04:07
  * @Description: 尚未理解！
  */
 
@@ -29,11 +29,17 @@ public:
         int pre_Max=0;
         int cur_Max=0;
         
-        for(int i=0;i<len;i++)
+         for(int i=0;i<len;i++)
         {
-            int temp=cur_Max;
+            int temp=cur_Max;//到当前的最大值
+            std::cout << "temp = " << temp << std::endl;
+            //pre_Max: f(k-2)
+            //cur_Max: f(k-1)
+            //cur_Max=max(f(k-2)+nums[i],f(k-1))
             cur_Max=std::max(pre_Max+nums[i],cur_Max);
-            pre_Max=temp;
+            pre_Max=temp;//到前一个的最大值
+            std::cout << "pre_Max = " << pre_Max << std::endl;
+            std::cout << "cur_Max = " << cur_Max << std::endl;
         }
         
         return cur_Max;
