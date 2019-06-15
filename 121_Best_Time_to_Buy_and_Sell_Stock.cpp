@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-06 22:19:24
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-14 22:08:57
+ * @LastEditTime: 2019-06-14 22:09:16
  * @Description: Is this really a DP problem?
  */
 
@@ -56,7 +56,7 @@ class Solution_2 {
             //profit[len-1] is the maximum one
             profit[i]=std::max(prices[i]-min,profit[i-1]);
         }
-        
+
         return profit[len-1];
     }
 };
