@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-13 23:42:38
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-14 17:12:03
+ * @LastEditTime: 2019-06-14 22:07:38
  * @Description: This is a very typical 
  * DP problem. The formula for maximum
  * robbery treasure is Tmax=max(f(k-1),f(k-2)+t[k])

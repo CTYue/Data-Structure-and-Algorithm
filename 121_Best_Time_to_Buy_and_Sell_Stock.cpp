@@ -3,12 +3,13 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-06 22:19:24
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-07 15:51:42
- * @Description: 
+ * @LastEditTime: 2019-06-14 22:08:57
+ * @Description: Is this really a DP problem?
  */
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 using namespace std;
 
 class Solution_1 {
@@ -32,29 +33,33 @@ public:
 };
 
 class Solution_2 {
-public:
-    //Brute Force
-    //Time Complexity: O(n^2)
-    //Space Complexity: O(1)
+
+    //DP Like Solution
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     int maxProfit(vector<int>& prices) 
     {
-        int maxprofit=0;
-        int profit=0;
         int len=prices.size();
-        for(int i=0;i<len-1;++i)
+        if(len<1)
+            return 0;
+        
+        vector<int> profit(len,0);
+        
+        int min=prices[0];
+
+        for(int i=1;i<len;i++)
         {
-            for(int j=i+1;j<len;++j)
-            {
-                profit=prices[j]-prices[i];
-                if(profit>maxprofit)
-                    maxprofit=profit;
-            }
+            if(prices[i]<min)
+                min=prices[i];
+          
+            //Update profit[i], so that
+            //profit[len-1] is the maximum one
+            profit[i]=std::max(prices[i]-min,profit[i-1]);
         }
-        return maxprofit;
+        
+        return profit[len-1];
     }
 };
-
-
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
@@ -62,6 +67,7 @@ void trimLeftTrailingSpaces(string &input) {
     }));
 }
 
+//需要复习Lambda表达式
 void trimRightTrailingSpaces(string &input) {
     input.erase(find_if(input.rbegin(), input.rend(), [](int ch) {
         return !isspace(ch);
