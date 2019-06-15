@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-06 22:19:24
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-14 22:09:16
+ * @LastEditTime: 2019-06-14 22:13:06
  * @Description: Is this really a DP problem?
  */
 
@@ -33,8 +33,7 @@ public:
 };
 
 class Solution_2 {
-
-    //DP Like Solution
+    //A DP-Like Solution:
     //Time Complexity: O(n)
     //Space Complexity: O(n)
     int maxProfit(vector<int>& prices) 
@@ -46,7 +45,7 @@ class Solution_2 {
         vector<int> profit(len,0);
         
         int min=prices[0];
-
+        
         for(int i=1;i<len;i++)
         {
             if(prices[i]<min)
@@ -54,9 +53,11 @@ class Solution_2 {
           
             //Update profit[i], so that
             //profit[len-1] is the maximum one
+            //Formula:
+            //Profit(i)=max(Profit(i)-min,Profit(i-1);
             profit[i]=std::max(prices[i]-min,profit[i-1]);
         }
-
+        
         return profit[len-1];
     }
 };
