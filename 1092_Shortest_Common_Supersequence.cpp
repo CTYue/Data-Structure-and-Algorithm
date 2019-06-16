@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-15 23:55:23
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-16 01:40:24
+ * @LastEditTime: 2019-06-16 01:57:37
  * @Description: To be added.
  * @Level: Hard
  */
@@ -19,6 +19,7 @@ public:
     string shortestCommonSupersequence(string str1, string str2) 
     {
         //DP Solution
+        //Copied from GeeksForGeeks.com
         //是否可用KMP ???
         //Time Complexity: ???
         //Space Complexity: ???
