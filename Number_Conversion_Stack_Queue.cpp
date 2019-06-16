@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-15 18:48:49
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-15 21:03:26
+ * @LastEditTime: 2019-06-15 22:29:34
  * @Description: Number conversion using Stack and Queue.
  */
 
@@ -21,7 +21,10 @@ using namespace std;
 int DecToOct(int num)
 {
     std::cout << "Input = " << num << std::endl;
-    if(num==0 || num>=INT_MAX)  return 0;
+    // if(num==0 || num>=INT_MAX)  return 0;
+    if(num==0)  return 0;
+    // if(num>=INT_MAX) return EXIT_FAILURE;
+    if(num>=65535)  return EXIT_FAILURE;
 
     //First come last out
     std::stack<std::string> stack;
@@ -56,12 +59,14 @@ int DecToOct(int num)
 int main(int argc, char* argv[])
 {
     if(argc<1) return 0;
+    std::cout << "INT_MAX = " << INT_MAX << std::endl;
 
-    DecToOct(1);
-    DecToOct(10);
-    DecToOct(111);
-    DecToOct(65535);
-    DecToOct(996);
+    // DecToOct(1);
+    // DecToOct(10);
+    // DecToOct(111);
+    // DecToOct(65535);
+    // DecToOct(996);
+    DecToOct(65536);
 
     return 1;
 }
