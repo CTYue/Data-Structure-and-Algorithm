@@ -12,7 +12,8 @@ using namespace std;
       TreeNode *right;
       TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-class Solution
+
+class Solution_1
 {
 public:
     //Recursive Solution
@@ -37,6 +38,39 @@ public:
         Recursion(root,res);
         return res;
     }
+};
+
+class Solution_2 {
+public:
+    //Iteration Solution
+    //Time complexity: O(n)
+    //Traverse each child node once, so O(n)
+    //Space complexity: O(n)
+    vector<int> inorderTraversal(TreeNode* root) 
+    {
+        vector<int> res={};
+        if(root==nullptr)   return res;
+
+        stack<TreeNode*> stack;
+        TreeNode* curr = root;
+        
+        while(curr!=nullptr || !stack.empty())
+        {
+            while(curr!=nullptr)
+            {
+                stack.push(curr);
+                curr=curr->left;//小循环每次向左遍历到底
+            }
+            
+            curr=stack.top();
+            stack.pop();
+            res.push_back(curr->val);
+            curr=curr->right;//大循环向右遍历到底
+        }
+        
+        return res;
+    }
+    
 };
 
 
@@ -122,7 +156,7 @@ int main() {
     while (getline(cin, line)) {
         TreeNode* root = stringToTreeNode(line);
         
-        vector<int> ret = Solution().inorderTraversal(root);
+        vector<int> ret = Solution_1().inorderTraversal(root);
 
         string out = integerVectorToString(ret);
         cout << out << endl;
