@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 14:00:24
+ * @LastEditTime: 2019-06-21 17:44:18
  * @Description: To be added.
  */
 
@@ -16,6 +16,8 @@ using namespace std;
 class Solution_1
 {
 public:
+    //Please note: Reverse solution doesn't make sense.
+    //Because the longest substring of s and s' is not always a palindrome.
     //Non-Dynamic programming approach
     //Brute force
     //Time complexity: O(n^2)
@@ -69,64 +71,75 @@ public:
 };
 
 
-class Solution_2 {
+class Solution_2
+{
+class Solution {
+private:    int lo=0, maxLen=0;
+public:
+        //Brute force
+        //Doesn't work for input like "cbbd"(two identical char in the middle)
+        //
+        string longestPalindrome(string s) 
+        {
+            int len=s.length();
+            string res="";
+            if(len<2) return s;
+            
+            for(int i=0;i<len-1;i++)
+            {
+                palindrome(s,i,i);//Odd
+                palindrome(s,i,i+1);//Even
+            }
+            // res=s.substr(lo,lo+maxLen);
+            // std::cout << "lo = " << lo << std::endl;
+            // std::cout << "lo+maxLen = " << lo+maxLen << std::endl;
+            // std::cout << "res = " << res << std::endl;
+            
+            return res;
+        }
+    
+        void palindrome(string s, int start, int end)
+        {    
+            std::cout <<"==============" << std::endl;
+            std::cout << "Input start = " << start << std::endl;
+            std::cout << "Input end = " << end <<std::endl; 
+            int len=s.length();
+            //使用while有问题，start和end都被多extend了一次！
+            // while(start>=0 && end<len && s[start]==s[end])
+            // {
+            //     // std::cout << "s[start] = " << s[start] << std::endl;
+            //     // std::cout << "s[end] = " << s[end] << std::endl;
+            //     start--;end++;
+            // }
+            
+            //对于input为"abxxj"类型的输入，wrong answer
+            for(;start>=0 && end<len;start--,end++)
+            {
+                if(s[start]!=s[end]) break;
+            }
+                        
+            std::cout << "start = " << start << std::endl;
+            std::cout << "end = " << end << std::endl;
+            
+            //Update max Length
+                
+            string res=s.substr(start+1,end);
+            std::cout << "res = " << res << std::endl;
+            std::cout <<"==============" << std::endl;
+            
+        }
+};
+
+
+class Solution_3 {
 public:
         //DP approach
-        //Problem:
-        //Input:"babad"
-        //Outpit:""
         //Time complexity:
         //Space complexity:
         //Wrong answer
         string longestPalindrome(string s) 
         {
-            if(s.empty() || s.length()==1)
-                return s;
-            int len=s.length();
-            int dp[len][len];
-            int maxl=1;
-            
-            for(int i=0;i<len;i++)
-                dp[i][i]=1;
-            
-            int start=0;
-            //对于相邻元素, maxl=2的情况
-            for(int i=0;i<len;i++)
-            {
-                if(s[i] == s[i+1])
-                {
-                    dp[i][i+1]=1;
-                    start=i;
-                    maxl=2;
-                }
-            }
-            //对于非相邻元素，maxl>2的情况
-            for(int k=3;k<=len;k++)
-            {
-                for(int i=0;i<len-k+1;i++)
-                //为什么是i<len-k+1??这里没搞懂！
-                {
-                    if(dp[i][i+k-2]==1 && s[i] == s[i+k-1] )
-                    {
-                        dp[i][i+k-1] = 1;
-                        if(k>maxl)
-                        {
-                            start=i;
-                            maxl=k;
-                        }
-                    }
-                }
-            }
-            
-            string res;
-            for(int i=start;i<start+maxl-1;i++)
-            {
-                std::cout << "s[i] = " << s[i] << std::endl;
-                res+=s[i];
-            }
-            std::cout << "res = " << res << std::endl;
-            
-            return res;
+
         }
 };
 
