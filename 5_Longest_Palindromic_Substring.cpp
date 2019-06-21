@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 02:55:28
+ * @LastEditTime: 2019-06-21 13:21:04
  * @Description: To be added.
  */
 
@@ -18,6 +18,7 @@ class Solution_1
 {
 public:
     //Non-Dynamic programming approach
+    //Brute force
     //Time complexity: O(n^2)
     //Space complexity:O(1)
     //Wrong answer for testcase "ac"
