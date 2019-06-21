@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-20 21:38:28
+ * @LastEditTime: 2019-06-20 22:52:51
  * @Description: To be added.
  */
 
@@ -15,9 +15,10 @@ using namespace std;
 
 class Solution {
 public:
-        //Non-Dynamic programming approach
-        //Time complexity: O(n^2)
-        //Space complexity:O(1)
+//Non-Dynamic programming approach
+//Time complexity: O(n^2)
+//Space complexity:O(1)
+//Wrong answer for input "ac"
 //         string longestPalindrome(string s) 
 //         {
 //             string res;
@@ -60,7 +61,6 @@ public:
             
 //             return res;
 //         }
-    
     
         //DP approach
         //Problem:
