@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-20 14:49:23
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-20 15:36:55
+ * @LastEditTime: 2019-06-20 20:30:04
  * @Description: To be added.
  */
 
@@ -34,9 +34,9 @@ public:
 int main(int argc, char* argv[])
 {
     if(argc <1) return 1;
+    vector<vector<int >> input={{}};
+    
     
 
-
-
-
+    return 1;
 }
