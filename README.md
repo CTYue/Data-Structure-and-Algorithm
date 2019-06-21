@@ -3,7 +3,7 @@
 -------------------------  
 
 June 20:
- - Binary Tree Preorder Traversal
- - Binary Tree Inorder Traversal
- - Triangle
- - Longest Palindromic Substring(未完成)
+ - Binary Tree Preorder Traversal(Tree)
+ - Binary Tree Inorder Traversal(Tree)
+ - Triangle (DP)
+ - Longest Palindromic Substring(String)
