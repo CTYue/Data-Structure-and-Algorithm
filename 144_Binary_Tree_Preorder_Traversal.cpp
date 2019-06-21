@@ -1,104 +1,109 @@
 /*
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
- * @Date: 2019-06-20 20:30:44
+ * @Date: 2019-06-21 00:06:03
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 01:56:50
- * @Description: 
- * In-Order Traversal: 
- *      1
- *    2    3
- *  4  5    6
- *  Res:4 2 5 1 3 6
+ * @LastEditTime: 2019-06-21 02:07:30
+ * @Description:
+ * Pre-order Traversal:
+ *         1
+ *      2     3
+ *    4   5     6
+ * Output: 1 2 4 5 3 6
  */
 
-#include<iostream>
-#include<string>
-#include<stack>
-#include<queue>
-#include<sstream>
+#include <iostream>
+#include <stack>
+#include <vector>
+#include <queue>
+#include <sstream>
 
 using namespace std;
 
- struct TreeNode {
-      int val;
-      TreeNode *left;
-      TreeNode *right;
-      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+struct TreeNode 
+{
+     int val;
+     TreeNode *left;
+     TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 class Solution_1
 {
 public:
-    //Recursive Solution
-    //Time Complexity: O(n)
-    //Space Complexity: Worst: O(n) Average: O(logn)
-    //
-    void Recursion(TreeNode* root,vector<int>& res)
-    {
-        if(root==nullptr)   return;
-
-        if(root->left!=nullptr)    Recursion(root->left,res);
-
-        res.push_back(root->val);
-
-        if(root->right!=nullptr)    Recursion(root->right,res);
-    }
-        
-    vector<int> inorderTraversal(TreeNode* root) 
-    {
-        vector<int> res={};
-        if(root==nullptr)   return res;
-            
-        Recursion(root,res);
-        return res;
-    }
-};
-
-class Solution_2 {
-public:
-    //Iteration Solution
+    //Iteration solution
     //Time complexity: O(n)
-    //Traverse each child node once, so O(n)
     //Space complexity: O(n)
-    vector<int> inorderTraversal(TreeNode* root) 
+    vector<int> preorderTraversal(TreeNode* root) 
     {
         vector<int> res={};
         if(root==nullptr)   return res;
-
-        stack<TreeNode*> stack;
-        TreeNode* curr = root;
         
-        while(curr!=nullptr || !stack.empty())
+        stack<TreeNode*> stack;
+        TreeNode* cur=root;
+        
+        while(cur!=nullptr || !stack.empty())
         {
-            while(curr!=nullptr)
+            while(cur!=nullptr)
             {
-                stack.push(curr);
-                curr=curr->left;//小循环每次向左遍历到底
+                stack.push(cur);
+                std::cout << "cur->val = " << cur->val << std::endl;
+                res.push_back(cur->val);
+                cur=cur->left;
             }
             
-            curr=stack.top();
+            //Update cur
+            cur=stack.top();
+            std::cout << "Updated cur->val = " << cur->val << std::endl;
+            std::cout << "========"<< std::endl;
             stack.pop();
-            res.push_back(curr->val);
-            curr=curr->right;//大循环向右遍历到底
+            cur=cur->right;
         }
         
         return res;
     }
-    
 };
 
+class Solution_2
+{
+public:
+    //Recursion Solution
+    //DFS
+    //Time complexity: O(n)
+    //Space complexity: O(n)(Worst case) O(logn)(Average case)
+    //Average case happens when the tree is balanced or almost balanced
+    //Worst case happens when the tree is unbalanced(left or right???)
+    void recursion(TreeNode* root, vector<int> &res)
+    {
+        if(root==nullptr)   return;
+        
+        res.push_back(root->val);
+        
+        if(root->left!=nullptr)
+            recursion(root->left,res);
+        
+        if(root->right!=nullptr)
+            recursion(root->right,res);
+    }
 
-    void trimLeftTrailingSpaces(string &input) {
+    vector<int> preorderTraversal(TreeNode* root) 
+    {
+        vector<int> res={};
+        if(root==nullptr) return res;
+        
+        recursion(root,res);
+        return res;
+    }
+};
+
+void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);
     }));
 }
 
-//
 void trimRightTrailingSpaces(string &input) {
-    input.erase(find_if(input.rbegin(), input.rend(), [](int ch) 
-    {
+    input.erase(find_if(input.rbegin(), input.rend(), [](int ch) {
         return !isspace(ch);
     }).base(), input.end());
 }
@@ -165,13 +170,12 @@ string integerVectorToString(vector<int> list, int length = -1) {
     }
     return "[" + result.substr(0, result.length() - 2) + "]";
 }
-
-int main() {
+int main(int argc, char* argv[]) {
     string line;
     while (getline(cin, line)) {
         TreeNode* root = stringToTreeNode(line);
         
-        vector<int> ret = Solution_1().inorderTraversal(root);
+        vector<int> ret = Solution_1().preorderTraversal(root);
 
         string out = integerVectorToString(ret);
         cout << out << endl;
