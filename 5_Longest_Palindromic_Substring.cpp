@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 13:26:41
+ * @LastEditTime: 2019-06-21 14:00:24
  * @Description: To be added.
  */
 
@@ -12,7 +12,6 @@
 #include<vector>
 #include<sstream>
 using namespace std;
-
 
 class Solution_1
 {
