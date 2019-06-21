@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-20 23:00:26
+ * @LastEditTime: 2019-06-21 02:55:28
  * @Description: To be added.
  */
 
@@ -13,56 +13,61 @@
 #include<sstream>
 using namespace std;
 
-class Solution {
+
+class Solution_1
+{
 public:
-//Non-Dynamic programming approach
-//Time complexity: O(n^2)
-//Space complexity:O(1)
-//Wrong answer for input "ac"
-//         string longestPalindrome(string s) 
-//         {
-//             string res;
-//             if(s.empty() || s.length()==1)
-//                 return s;
-            
-//             int len=s.length();
-//             int maxl=1,low,high,start;
-//             //Find the longest even length substring,no center needed.
-//             //偶数
-//             for(int i=0;i<len;i++)
-//             {
-//                 low=i-1;high=i;
-//                 while(low>=0&&high<=len-1&&s[low]==s[high])
-//                 {
-//                     if(high-low+1>maxl)
-//                     {
-//                         start=low;
-//                         maxl=high-low+1;
-//                     }
-//                     low--;
-//                     high++;
-//                 }
-//                 //Find the longest odd length palindrome with center point as i
-//                 //奇数
-//                 low=i-1;high=i+1;
-//                 while(low>=0&&high<len&&s[low]==s[high])
-//                 {
-//                     if(high-low+1>maxl)
-//                     {
-//                         start=low;
-//                         maxl=high-low+1;
-//                     }
-//                     low--;high++;
-//                 }
-//             }
-            
-//             for(int i=start;i<start+maxl;i++)
-//                 res+=s[i];
-            
-//             return res;
-//         }
+    //Non-Dynamic programming approach
+    //Time complexity: O(n^2)
+    //Space complexity:O(1)
+    //Wrong answer for testcase "ac"
+    //         string longestPalindrome(string s) 
+    //         {
+    //             string res;
+    //             if(s.empty() || s.length()==1)
+    //                 return s;
+                
+    //             int len=s.length();
+    //             int maxl=1,low,high,start;
+    //             //Find the longest even length substring,no center needed.
+    //             //偶数
+    //             for(int i=0;i<len;i++)
+    //             {
+    //                 low=i-1;high=i;
+    //                 while(low>=0&&high<=len-1&&s[low]==s[high])
+    //                 {
+    //                     if(high-low+1>maxl)
+    //                     {
+    //                         start=low;
+    //                         maxl=high-low+1;
+    //                     }
+    //                     low--;
+    //                     high++;
+    //                 }
+    //                 //Find the longest odd length palindrome with center point as i
+    //                 //奇数
+    //                 low=i-1;high=i+1;
+    //                 while(low>=0&&high<len&&s[low]==s[high])
+    //                 {
+    //                     if(high-low+1>maxl)
+    //                     {
+    //                         start=low;
+    //                         maxl=high-low+1;
+    //                     }
+    //                     low--;high++;
+    //                 }
+    //             }
+                
+    //             for(int i=start;i<start+maxl;i++)
+    //                 res+=s[i];
+                
+    //             return res;
+    //         }
+};
 
 
+class Solution_2 {
+public:
         //DP approach
         //Problem:
         //Input:"babad"
