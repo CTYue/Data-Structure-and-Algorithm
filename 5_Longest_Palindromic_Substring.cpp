@@ -1,3 +1,12 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-03-12 00:35:32
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-06-20 21:38:28
+ * @Description: To be added.
+ */
+
 #include<iostream>
 #include<string>
 #include<vector>
@@ -9,9 +18,6 @@ public:
         //Non-Dynamic programming approach
         //Time complexity: O(n^2)
         //Space complexity:O(1)
-        //对odd length palindrom substring 单独做了处理！
-        //这种方法对吗?
-
 //         string longestPalindrome(string s) 
 //         {
 //             string res;
@@ -62,7 +68,7 @@ public:
         //Outpit:""
         //Time complexity:
         //Space complexity:
-        //这个solution还有问题！
+        //Wrong answer
         string longestPalindrome(string s) 
         {
             if(s.empty() || s.length()==1)

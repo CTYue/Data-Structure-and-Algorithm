@@ -12,31 +12,33 @@ using namespace std;
       TreeNode *right;
       TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-
-
-//Recursive Solution
-//Time Complexity: O(n)
-//Space Complexity: Worst: O(n) Average: O(logn)
-void Recursion(TreeNode* root,vector<int>& res)
+class Solution
 {
-    if(root==nullptr)   return;
+public:
+    //Recursive Solution
+    //Time Complexity: O(n)
+    //Space Complexity: Worst: O(n) Average: O(logn)?
+    void Recursion(TreeNode* root,vector<int>& res)
+    {
+        if(root==nullptr)   return;
 
-    if(root->left!=nullptr)    Recursion(root->left,res);
+        if(root->left!=nullptr)    Recursion(root->left,res);
 
-    res.push_back(root->val);
+        res.push_back(root->val);
 
-    if(root->right!=nullptr)    Recursion(root->right,res);
-}
-    
-    
-vector<int> inorderTraversal(TreeNode* root) 
-{
-    vector<int> res={};
-    if(root==nullptr)   return res;
+        if(root->right!=nullptr)    Recursion(root->right,res);
+    }
         
-    Recursion(root,res);
-    return res;
-}
+    vector<int> inorderTraversal(TreeNode* root) 
+    {
+        vector<int> res={};
+        if(root==nullptr)   return res;
+            
+        Recursion(root,res);
+        return res;
+    }
+};
+
 
     void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
