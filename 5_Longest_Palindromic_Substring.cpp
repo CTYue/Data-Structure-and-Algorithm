@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 22:57:18
+ * @LastEditTime: 2019-06-21 23:05:06
  * @Description: Typical DP problem.
  */
 
@@ -143,7 +143,6 @@ public:
             string res="";
             
             vector<vector<bool> > dp(len,vector<bool>(len,false));
-            
             //i是终点
             for(int i=0;i<len;i++)
             {

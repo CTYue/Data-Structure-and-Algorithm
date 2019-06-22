@@ -9,4 +9,7 @@ June 20:
  - Longest Palindromic Substring(String)
     - 这个题目还没解决，有一个testcase过不了！
 
+June 21:
+ - Longest Palindromic Substring(DP)
+    - 已解决，使用DP。
 ------
