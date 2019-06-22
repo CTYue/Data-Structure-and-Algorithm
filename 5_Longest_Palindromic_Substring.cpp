@@ -3,8 +3,8 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 00:35:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 17:44:18
- * @Description: To be added.
+ * @LastEditTime: 2019-06-21 22:57:18
+ * @Description: Typical DP problem.
  */
 
 #include<iostream>
@@ -73,12 +73,9 @@ public:
 
 class Solution_2
 {
-class Solution {
-private:    int lo=0, maxLen=0;
 public:
         //Brute force
         //Doesn't work for input like "cbbd"(two identical char in the middle)
-        //
         string longestPalindrome(string s) 
         {
             int len=s.length();
@@ -133,13 +130,47 @@ public:
 
 class Solution_3 {
 public:
-        //DP approach
-        //Time complexity:
-        //Space complexity:
-        //Wrong answer
+      //DP solution
+        //Time Complexity: O(n^2)
+        //Space Complexity: O(n^2)
         string longestPalindrome(string s) 
         {
-
+            int len=s.length();
+            std::cout << "len = " << len << std::endl;
+            if(len<2)   return s;
+            //单独处理“ba”,"ac"类case
+            if(len==2 && s[0]!=s[1]) return s.substr(0,1);
+            string res="";
+            
+            vector<vector<bool> > dp(len,vector<bool>(len,false));
+            
+            //i是终点
+            for(int i=0;i<len;i++)
+            {
+                //j是起点
+                for(int j=i;j>=0;j--)
+                {
+                    //只能处理“cbbd”,"bb"类case
+                    //不能处理"ac","ab"类case
+                    //后面的两个或，若前一个语句为真，则后一个语句不会执行！
+                    //距离<2，例如bab
+                    //为什么是i-j<2，而不是i-j<3？
+                    if(s[i]==s[j] && ( i-j<2 || dp[j+1][i-1]))
+                    {
+                        dp[j][i]=true;                        
+                        //Update substring
+                        if(i-j+1>res.length())
+                        {
+                            // std::cout << "res.length before: " << res.length() << std::endl;
+                            res=s.substr(j,i-j+1);
+                            // std::cout <<"res.length after: " << res.length() << std::endl;
+                        }
+                    }
+                }
+            }
+            std::cout << "res = " << res << std::endl;
+            
+            return res;
         }
 };
 
@@ -169,15 +200,17 @@ string stringToString(string input) {
     return result;
 }
 
-int main() {
+int main() 
+{
     string line;
-    while (getline(cin, line)) {
+    while (getline(cin, line)) 
+    {
         string s = stringToString(line);
         
-        string ret = Solution_1().longestPalindrome(s);
+        string ret = Solution_3().longestPalindrome(s);
 
         string out = (ret);
         cout << out << endl;
     }
-    return 0;
+    return 1;
 }
