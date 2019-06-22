@@ -11,5 +11,6 @@ June 20:
 
 June 21:
  - Longest Palindromic Substring(DP)
-    - 已解决，使用DP。
+    - 已解决，使用DP(注意细节)!
+    
 ------
