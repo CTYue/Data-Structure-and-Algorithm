@@ -12,5 +12,9 @@ June 20:
 June 21:
  - Longest Palindromic Substring(DP)
     - 已解决，使用DP(注意细节)!
-    
+ - Triangle(DP)
+    - 重新理解了上一次AC的代码
+
+June 22:
+
 ------
