@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-24 08:18:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-24 08:50:14
+ * @LastEditTime: 2019-06-24 14:31:43
  * @Description: To be added.
  */
 
@@ -85,14 +85,30 @@ public:
 class Solution_2
 {
 public:
-    //
-    //Time Complexity:
-    //Space Complexity:
-    bool carPooling(vector<vector<int> >& trips, int capacity) 
+    bool carPooling(vector<vector<int>>& trips, int capacity) 
     {
-        //TODO
+        //没有考虑overlap的情况???
+        //Time Complexity: 
+        //Space Complexity: 
+        vector<int> stops(1001,0);
+        for(auto t:trips)
+        {
+            stops[t[1]]+=t[0];//每个起点的人数相加(上车)
+            stops[t[2]]-=t[0];//减去每个终点的人数(下车)
+        }
+        
+        // std::cout << "vec size = " << stops.size() << std::endl;
+        // 没有理解
+        for(int i=0;i<stops.size();++i)
+        {
+            if(capacity>=0)
+                capacity-=stops[i];//下车
+            else
+                break;
+        }
+        
+        return capacity>=0;
     }
-
 };
 
 int main(int argc, char* argv[])
