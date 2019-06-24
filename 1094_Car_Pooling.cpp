@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-24 08:18:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-24 08:20:08
+ * @LastEditTime: 2019-06-24 08:21:28
  * @Description: To be added.
  */
 
@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution_1 {
 public:
     //My Brute force solution(Wrong answer)
     // 34 of 53 test cases passed.
@@ -80,6 +80,19 @@ public:
         
         return true;
     }
+};
+
+class Solution_2
+{
+public:
+    //
+    //Time Complexity:
+    //Space Complexity:
+    bool carPooling(vector<vector<int> >& trips, int capacity) 
+    {
+        //TODO
+    }
+
 };
 
 int main(int argc, char* argv[])
