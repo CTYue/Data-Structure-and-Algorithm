@@ -1,3 +1,12 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-06-22 00:10:32
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-06-25 16:58:25
+ * @Description: To be added.
+ */
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -18,10 +27,9 @@ struct TreeNode
 class Solution_1 {
 public:
     //Recursive solution
-    //Problem in this solution:
-    //INT_MAX and INT_MIN are buggy
-    //Time Complexity:
-    //Space Complexity:
+    //Problem in this solution: INT_MAX and INT_MIN are buggy
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     bool isValidBST(TreeNode* root) 
     {
         if(root==nullptr)   return true;
