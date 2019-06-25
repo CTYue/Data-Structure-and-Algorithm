@@ -1,12 +1,14 @@
 /*
- * Filename: /Users/yuzidong/Code/Data-Structure-and-Algorithm/71_Simplify_Path.cpp
- * Path: /Users/yuzidong/Code/Data-Structure-and-Algorithm
- * Created Date: Friday, May 31st 2019, 11:25:30 am
- * Author: yuzidong
- * 
- * Copyright (c) 2019 Your Company
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-05-31 11:25:30
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-06-25 19:56:20
+ * @Description: To be added.
  */
+
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <stack>
