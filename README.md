@@ -16,7 +16,9 @@ June 21:
     - 重新理解了上一次AC的代码
 
 June 22:
- - Leetcode contest,一道题都没做出来。
+ - Leetcode contest,一道题都没做出来
+    - 对第一题(statistics)理解有误
+    - 对第二题(car pooling)题意理解有误
 
 June 23:
  - 玩耍了一天，没有改简历，也没有投简历。
