@@ -21,6 +21,8 @@ June 22:
 June 23:
  - 玩耍了一天，没有改简历，也没有投简历。
 
-
+June 24:
+ - Car pooling(我的理解有误，貌似不需要考虑overlap的情况)
+ - Validate Binary Search Tree(Tree)
 
 ------
