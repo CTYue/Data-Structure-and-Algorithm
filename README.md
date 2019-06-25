@@ -17,8 +17,8 @@ June 21:
 
 June 22:
  - Leetcode contest,一道题都没做出来
-    - 对第一题(statistics)理解有误
-    - 对第二题(car pooling)题意理解有误
+    - 对第一题(statistics)理解有误，没做出来
+    - 对第二题(car pooling)题意理解有误，没做出来
 
 June 23:
  - 玩耍了一天，没有改简历，也没有投简历。
