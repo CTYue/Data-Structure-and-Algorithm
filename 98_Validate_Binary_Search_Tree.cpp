@@ -15,15 +15,38 @@ struct TreeNode
       TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
  };
 
-class Solution {
+class Solution_1 {
 public:
+    //Recursive solution
+    //Problem in this solution:
+    //INT_MAX and INT_MIN are buggy
+    //Time Complexity:
+    //Space Complexity:
     bool isValidBST(TreeNode* root) 
     {
-        if(root==nullptr)   return false;
-
+        if(root==nullptr)   return true;
+        long min=LONG_MIN,max=LONG_MAX;
+        std::cout << "INT_MAX = " << INT_MAX << std::endl;
+        std::cout << "INT_MIN = " << INT_MIN << std::endl;
+        bool res=isBST(root, min, max);
+        
+        return res;
     }
+    
+    bool isBST(TreeNode* root, int min, int max)
+    {
+        if(root==nullptr) 
+            return true;
+        
+        if(root->val<=min || root->val>=max)
+        {
+            // std::cout << "root->val = " << root->val << std::endl;
+            return false;
+        }
+        
+        return isBST(root->left, min, root->val) && isBST(root->right, root->val, max);
+    }    
 };
-
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);
@@ -91,7 +114,7 @@ int main() {
     while (getline(cin, line)) {
         TreeNode* root = stringToTreeNode(line);
         
-        bool ret = Solution().isValidBST(root);
+        bool ret = Solution_1().isValidBST(root);
 
         string out = boolToString(ret);
         cout << out << endl;
