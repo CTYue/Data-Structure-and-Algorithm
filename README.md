@@ -27,4 +27,8 @@ June 24:
  - Car pooling(我的理解有误，貌似不需要考虑overlap的情况)
  - Validate Binary Search Tree(Tree)
 
+June 25:
+ - Simplify Path(Review Stack and Queue)
+ - 
+
 ------
