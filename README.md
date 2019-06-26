@@ -28,7 +28,7 @@ June 24:
  - Validate Binary Search Tree(Tree)
 
 June 25:
- - Simplify Path(Review Stack and Queue)
- - 
+ - Simplify Path(Review Stack and Queue)(没有完成)
+ - Coursera 操作系统 Week2 Quiz
 
 ------
