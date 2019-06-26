@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-22 00:10:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-26 00:18:43
+ * @LastEditTime: 2019-06-26 00:56:47
  * @Description: To be added.
  */
 
@@ -14,7 +14,6 @@
 #include <stack>
 
 using namespace std;
-
 // Definition for a binary tree node.
 struct TreeNode 
 {
@@ -84,6 +83,62 @@ public:
     }
 };
 
+
+class Solution_3
+{
+public: 
+    //Recursion
+    //非常巧妙的方法，better performance than
+    //above In-order traversal approach
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
+    bool isValidBST(TreeNode* root) 
+    {
+        return isValidBST(root, nullptr, nullptr);    
+    }
+
+    bool isValidBST(TreeNode* root, TreeNode* minNode, TreeNode* maxNode)
+    {
+        if(root==nullptr) return true;
+        
+        if(minNode && root->val<=minNode->val || maxNode && root->val>=maxNode->val)    return false;
+        return isValidBST(root->left, minNode,root) && isValidBST(root->right, root ,maxNode);
+    }
+};
+
+
+class Solution_4
+{
+public:
+    //Iteration Approach
+    //Time Complexity:
+    //Space Complexity:
+    bool isValidBST(TreeNode* root)
+    {
+        stack<TreeNode*> stack;
+        TreeNode* cur=root;
+        TreeNode* pre=nullptr;
+
+        while(!stack.empty() || cur!=nullptr)
+        {
+            if(cur!=nullptr)
+            {
+                stack.push(cur);
+                cur=cur->left;
+            }
+            else
+            {
+                TreeNode* p=stack.top();
+                stack.pop();
+                if(pre!=nullptr && p->val<=pre->val)
+                    return false;
+                pre=p;
+                cur=p->right;
+            }
+        }
+        return true;
+    }
+};
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
