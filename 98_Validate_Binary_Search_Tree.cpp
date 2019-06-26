@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-22 00:10:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-26 00:58:11
+ * @LastEditTime: 2019-06-26 16:02:32
  * @Description: To be added.
  */
 
@@ -101,7 +101,7 @@ public:
     {
         if(root==nullptr) return true;
         
-        if(minNode && root->val<=minNode->val || maxNode && root->val>=maxNode->val)    return false;
+        if((minNode && root->val<=minNode->val) || (maxNode && root->val>=maxNode->val))    return false;
         return isValidBST(root->left, minNode,root) && isValidBST(root->right, root ,maxNode);
     }
 };
@@ -202,15 +202,15 @@ string boolToString(bool input) {
     return input ? "True" : "False";
 }
 
-int main() {
+int main(int argc, char* argv[]) 
+{
     string line;
     while (getline(cin, line)) {
         TreeNode* root = stringToTreeNode(line);
-        
         bool ret = Solution_1().isValidBST(root);
-
         string out = boolToString(ret);
         cout << out << endl;
     }
+
     return 0;
 }
