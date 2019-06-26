@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-22 00:10:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-26 00:17:43
+ * @LastEditTime: 2019-06-26 00:18:43
  * @Description: To be added.
  */
 
@@ -60,7 +60,7 @@ public:
 class Solution_2
 {
 public:
-    //In-Ordertraversal
+    //In-Order traversal
     //Time Complexity: O(n)
     //Space Complexity: O(1)
     bool isValidBST(TreeNode* root) 
@@ -71,9 +71,14 @@ public:
 
     bool validate(TreeNode* node, TreeNode* &prev) 
     {
-        if (node == nullptr) return true;
-        if (!validate(node->left, prev)) return false;
-        if (prev != nullptr && prev->val >= node->val) return false;
+        if (node == nullptr) 
+            return true;
+        if (!validate(node->left, prev)) 
+            return false;
+        
+        if (prev != nullptr && prev->val >= node->val) 
+            return false;
+
         prev = node;
         return validate(node->right, prev);
     }
