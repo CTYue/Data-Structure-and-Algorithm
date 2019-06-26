@@ -30,6 +30,9 @@ June 24:
 June 25:
  - Simplify Path(Review Stack and Queue)(没有完成)
  - Validate Binary Search Tree(抄了Most vote的C++答案，还没理解)
+    - In-order recursion
+    - Max-min recursion
+    - Iteration
  - Coursera 操作系统 Week2 Quiz(抄了Github的答案，还没理解)
 
 ------
