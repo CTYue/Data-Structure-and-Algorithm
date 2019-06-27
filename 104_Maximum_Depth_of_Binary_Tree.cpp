@@ -108,6 +108,38 @@ public:
     }
 };
 
+class Solution_4
+{
+public:
+    //BFS
+    int maxDepth(TreeNode *root)
+    {
+        if(root == nullptr)
+            return 0;
+
+        int res = 0;
+        queue<TreeNode*> q;
+        q.push(root);
+        while(!q.empty())
+        {
+            ++ res;
+            //尚未理解!
+            for(int i = 0, n = q.size(); i < n; ++ i)
+            {
+                TreeNode *p = q.front();
+                q.pop();
+
+                if(p -> left != NULL)
+                    q.push(p -> left);
+                if(p -> right != NULL)
+                    q.push(p -> right);
+            }
+        }
+
+        return res;
+    }
+};
+
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);
