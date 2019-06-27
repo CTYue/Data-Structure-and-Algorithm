@@ -63,6 +63,51 @@ public:
     }
 };
 
+
+class Solution_3 {
+private:
+    queue<pair<TreeNode*, int> > next_items;
+    int max_depth=0;
+public:
+    int next_maxDepth()
+    {
+        //If queue is empty, then return depth.
+        if(next_items.size()==0)    return max_depth;
+        
+        pair<TreeNode*, int> next_item=next_items.front();//
+        next_items.pop();
+        
+        TreeNode* next_node=next_item.first;//
+        int next_level=next_item.second+1;//
+        
+        max_depth=std::max(max_depth, next_level);
+        
+        if(next_node->left!=nullptr)
+            next_items.push(make_pair(next_node->left, next_level));
+        
+        if(next_node->right!=nullptr)
+            next_items.push(make_pair(next_node->right, next_level));
+        
+        return next_maxDepth();
+    }
+    
+    //BFS
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
+    int maxDepth(TreeNode* root) 
+    {
+        if(root==nullptr)   return 0;
+        //clear the previous queue
+        std::queue<pair<TreeNode*, int> > empty;
+        std::swap(next_items, empty);
+        max_depth=0;
+        
+        next_items.push(make_pair(root,0));
+        
+        return next_maxDepth();
+    }
+};
+
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);
