@@ -35,5 +35,11 @@ June 25:
     - Iteration
  - Coursera 操作系统 Week2 Quiz(抄了Github的答案，还没理解)
 
- 
+June 26:
+ - 效率非常低，睡了一整天
+
+June 27
+ - Construct Binary Tree from Preorder and Inorder Traversal(Recursion)
+ - 
+
 ------
