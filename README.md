@@ -40,6 +40,9 @@ June 26:
 
 June 27
  - Construct Binary Tree from Preorder and Inorder Traversal(Recursion)
+ - Construct Binary Tree from Inorder and Postorder Traversal(Recursion)
+    - 没做出来！
+June 28
  - 
 
 ------
