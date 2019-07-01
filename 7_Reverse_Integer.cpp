@@ -29,9 +29,7 @@ int main() {
     string line;
     while (getline(cin, line)) {
         int x = stringToInteger(line);
-        
         int ret = Solution().reverse(x);
-
         string out = to_string(ret);
         cout << out << endl;
     }
