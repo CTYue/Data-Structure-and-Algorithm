@@ -43,10 +43,13 @@ June 27
  - Construct Binary Tree from Inorder and Postorder Traversal(Recursion)
     - 没做出来！
 
-June 28
+June 28:
  - ???
 
-June 29
- - 
+June 29:
+ - 玩了一天
+
+June 30:
+ - 啥都没做，玩了一天。
 
 ------
