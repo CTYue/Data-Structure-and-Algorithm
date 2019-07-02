@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 12:54:35
+ * @LastEditTime: 2019-07-02 12:56:49
  * @Description: To be added.
  */
 
@@ -17,6 +17,7 @@ using namespace std;
 class Solution_1
 {
 public:
+    //来自Discuss区
     //Time Complexity: O(n^3)
     //Space Complexity: ???
     vector<vector<int> > fourSum(vector<int>& nums, int target) 

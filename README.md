@@ -53,6 +53,9 @@ June 30:
  - 啥都没做，玩了一天。
 
 July 1:
- - 4 Sum
+ - 4 Sum(抄了Discuss区的答案，没弄明白)
  - 
+
+July 2:
+ - 4 Sum
 ------
