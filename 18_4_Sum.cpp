@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-01 20:17:20
+ * @LastEditTime: 2019-07-01 20:47:17
  * @Description: To be added.
  */
 
@@ -14,11 +14,12 @@ using namespace std;
 
 class Solution {
 public:
+    //这个解法我没懂!
     //Time Complexity: ???
     //Space Complexity: O(n)
-    vector<vector<int>> fourSum(vector<int>& nums, int target) 
+    vector<vector<int> > fourSum(vector<int>& nums, int target) 
     {
-        vector<vector<int>> res;
+        vector<vector<int> > res;
         if(nums.empty())    return res;
         int len=nums.size();
         
@@ -45,16 +46,15 @@ public:
                 //定义左边界为j+1, 右边界为len-1
                 int left=j+1, right=len-1;
                 //当左边小于右边时
-                //
+                //为什么这里要用while?
                 while(left<right)
                 {
-                  //这里没理解！
-                  int sum=nums[left]+nums[right]+nums[i]+nums[j];
-                  if(sum<target)  left++;
-                  else if(sum>target)  right--;
+                  int sum=nums[left]+nums[right]+nums[i]+nums[j];//这里没理解！
+                  if(sum<target)  left++;//为什么？
+                  else if(sum>target)  right--;//为什么？
                   else
                     {
-                        res.push_back(vector<int>{nums[i],nums[j],nums[left],nums[right]});
+                        res.push_back(vector<int >{nums[i],nums[j],nums[left],nums[right]});
                         do{left++;}while(nums[left]==nums[left-1]&&left<right);
                         do{right--;}while(nums[right]==nums[right+1]&&left<right);
                     }
@@ -70,7 +70,6 @@ int main(int argc, char* argv[])
     if(argc<1)  return 0;
     string line;
     std::cin >> line;
-
 
     return 1;
 }
