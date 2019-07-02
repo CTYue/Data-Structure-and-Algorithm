@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 17:27:47
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 17:34:20
+ * @LastEditTime: 2019-07-02 17:39:04
  * @Description: To be added.
  * @AC: NO
  */
@@ -20,6 +20,7 @@ public:
     //进位:先与再左移位
     //负数：补码+1
     //负数加减时有问题！
+    //???
     int getSum(int a, int b) 
     {
         if(a==0 || b==0) return a==0?b:a;
@@ -33,6 +34,8 @@ public:
             sum = temp^carry;//本位
             std::cout << "sum = " << sum << std::endl;
             std::cout << "carry = " << carry << std::endl;
+            int c=carry<<1;
+            std::cout << "carry<<1 = " << c << std::endl;
             carry = (temp & carry) << 1;//进位
         }
 
