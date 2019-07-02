@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 12:56:49
+ * @LastEditTime: 2019-07-02 15:04:41
  * @Description: To be added.
  */
 
@@ -41,7 +41,8 @@ public:
             for(int j=i+1;j<len-2;j++)
             {
                 //为什么要设置j>i+1???
-                if(j>i+1 && nums[j]==nums[j-1]) continue;
+                // if(j>i+1 && nums[j]==nums[j-1]) continue;
+                if(nums[j]==nums[j-1]) continue;
                 //
                 if(nums[i]+nums[j]+nums[j+1]+nums[j+2]>target) break;
                 //
@@ -54,7 +55,7 @@ public:
                   else if(sum>target)  right--;
                   else
                     {
-                    res.push_back(vector<int >{nums[i],nums[j],nums[left],nums[right]});
+                    res.push_back(vector<int>{nums[i],nums[j],nums[left],nums[right]});
                     do{left++;}while(nums[left]==nums[left-1]&&left<right);
                     do{right--;}while(nums[right]==nums[right+1]&&left<right);
                     }
@@ -91,7 +92,7 @@ public:
                 {
                     auto num_pair=map.find(target-sum);//找到另外两个加数
                     vector<pair<int,int>> v=num_pair->second;//
-                    
+
                     //找出num_pair中的重复项
                     for(int k=0;k<num_pair->second.size();k++)
                     {
@@ -116,17 +117,39 @@ public:
                 
             }
         }
-        
-        
         return res;
     }
 };
 
+
 int main(int argc, char* argv[])
 {
-    if(argc<1)  return 0;
-    string line;
-    std::cin >> line;
+    vector<int> input;
+    int target;
+    int temp;
+    while(std::cin>>temp)
+    {
+        input.push_back(temp);
+        if(cin.get()=='\n') break;
+    }
+    
+    std::cin >> target;
+
+    std::cout << "Input: " << std::endl;
+    for(int item:input)
+        std::cout << item << " ";
+    std::cout << std::endl << "target = " << target << std::endl;
+
+    Solution_1 s;
+    vector<vector<int> > res=s.fourSum(input,target);
+    std::cout << "res: " << std::endl;
+    
+    for(auto pair:res)
+    {
+        for(int num: pair)
+            std::cout << num << " ";
+        std::cout << std::endl;
+    }
 
     return 1;
 }
