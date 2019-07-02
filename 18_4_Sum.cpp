@@ -3,13 +3,14 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 15:26:20
+ * @LastEditTime: 2019-07-02 15:50:35
  * @Description: To be added.
  */
 
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <set>
 
 using namespace std;
 
@@ -74,49 +75,56 @@ public:
     //Space Complexity:    
     //map(target-2sum)=vector of all possible pairs
     //hashmap用于存储另外两个2的sum
-    unordered_map<int, vector<pair<int,int> > > map;//注意这里的表达方式
-    vector<vector<int> > fourSum(vector<int>& nums, int target) 
+    unordered_map<int, vector<pair<int, int>>> map;
+    vector<vector<int>> fourSum(vector<int>& nums, int target) 
     {
-        vector<vector<int> > res;
+        vector<vector<int>> res;
+        set<vector<int>> res_tmp;
         if(nums.empty())    return res;
         int len=nums.size();
         
         if(len<4)   return res;
-        for(int i=0;i<len-1;i++)
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<nums.size();i++)
         {
-            for(int j=i+1;j<len;j++)
+            //注意，map保存的是2sum的加数的index
+            for(int j=i+1;j<nums.size();j++)
+                map[nums[i]+nums[j]].push_back(make_pair(i,j));//Store index
+        }
+        
+        //将4Sum问题转化为2Sum问题，先找到两个加数的和，再找target-2Sum对应的加数
+        for(int i=0;i<len-3;i++)
+        {
+            
+            if(nums[i]+nums[i+1]+nums[i+2]+nums[i+3]>target) break;
+            for(int j=i+1;j<len-2;j++)
             {
-                //target-sum exists in map
+                //If target-2Sum is already in map
                 int sum=nums[i]+nums[j];
                 if(map.find(target-sum)!=map.end())
                 {
-                    auto num_pair=map.find(target-sum);//找到另外两个加数
-                    vector<pair<int,int>> v=num_pair->second;//
-
-                    //找出num_pair中的重复项
-                    for(int k=0;k<num_pair->second.size();k++)
-                    {
-                        pair<int,int> it=v[k];
-                        if(it.first!=i && it.first!=j && it.second!=i && it.second!=j)
-                        // res.push_back(v[k].first,v[k].second);//
-                        {
-                        // res.push_back();
-                        ;
-                        }
-                    }
                     
-                }   
-                //If targer-sum doesn't exist in the map
-                //
-                else
-                {
-                    //这里有问题!
-                    //没理解！
-                    map[target-sum].push_back(std::make_pair(nums[i],nums[j]));
+                    // std::cout << "sum = " << sum << std::endl;
+                    // std::cout << "target-sum = " << target-sum << std::endl;
+                    for(auto &&x:map[target-sum])
+                    {
+                        // std::cout << "nums[i] = " << nums[i] << std::endl;
+                        // std::cout << "nums[j] = " << nums[j] << std::endl;
+                        // std::cout << "x.first = " << x.first << " x.second = " << x.second << std::endl;
+                        // std::cout << "nums[x.first] = " << nums[x.first] << std::endl;
+                        // std::cout << "nums[x.second] = " << nums[x.second] << std::endl;
+                        
+                        //如何消除重复的vector<int>????
+                        vector<int> tmp{nums[i],nums[j],nums[x.first],nums[x.second]};    
+                    
+                        res_tmp.insert(tmp);
+                    }
                 }
-                
             }
         }
+        for(auto i:res_tmp)
+            res.push_back(i);
+        
         return res;
     }
 };
