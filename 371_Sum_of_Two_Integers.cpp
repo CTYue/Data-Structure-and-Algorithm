@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 17:27:47
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 17:28:55
+ * @LastEditTime: 2019-07-02 17:34:20
  * @Description: To be added.
  * @AC: NO
  */
@@ -30,7 +30,8 @@ public:
         while(carry)
         {
             int temp = sum;
-            sum = temp ^ carry;//本位
+            sum = temp^carry;//本位
+            std::cout << "sum = " << sum << std::endl;
             std::cout << "carry = " << carry << std::endl;
             carry = (temp & carry) << 1;//进位
         }
