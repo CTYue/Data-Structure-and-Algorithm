@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 15:04:41
+ * @LastEditTime: 2019-07-02 15:26:20
  * @Description: To be added.
  */
 
@@ -11,13 +11,13 @@
 #include <vector>
 #include <unordered_map>
 
-
 using namespace std;
 
 class Solution_1
 {
 public:
     //来自Discuss区
+    //运用了2分法的思想?
     //Time Complexity: O(n^3)
     //Space Complexity: ???
     vector<vector<int> > fourSum(vector<int>& nums, int target) 
