@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 16:33:26
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 16:34:13
+ * @LastEditTime: 2019-07-02 16:57:09
  * @Description: To be added.
  * @AC: YES
  */
@@ -14,9 +14,8 @@
 #include <sstream>
 
 using namespace std;
-class Solution {
+class Solution_1 {
 public:
-    
     //注意，要求Linear runtime
     int singleNumber(vector<int>& nums) 
     {
@@ -35,6 +34,19 @@ public:
         sort(nums.begin(),nums.end());
         if(nums[len-1]>0)   return nums[len-1];
         else    return nums[0];
+    }
+};
+
+class Solution_2 {
+public: 
+    //XOR Solution    
+    //注意理解XOR原理
+    int singleNumber(vector<int>& nums) 
+    {
+        int res=0;
+        for(int i=0;i<nums.size();i++)
+            res^=nums[i];
+        return res;   
     }
 };
 
