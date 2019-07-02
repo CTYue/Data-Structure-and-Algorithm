@@ -1,3 +1,12 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-07-01 19:33:27
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-07-01 20:01:36
+ * @Description: To be added.
+ */
+
 #include <iostream>
 #include <vector>
 
@@ -52,10 +61,9 @@ public:
 
 int main(int argc, char* argv[])
 {
-    if(argc<2) return 0;
-    vector<int> input={};
-
-    //
+    if(argc<1)  return 0;
+    string line;
+    std::cin >> line;
 
 
     return 1;
