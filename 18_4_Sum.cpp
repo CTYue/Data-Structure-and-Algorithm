@@ -115,6 +115,7 @@ public:
                         // std::cout << "nums[x.second] = " << nums[x.second] << std::endl;
                         
                         //如何消除重复的vector<int>????
+                        //???
                         vector<int> tmp{nums[i],nums[j],nums[x.first],nums[x.second]};    
                     
                         res_tmp.insert(tmp);
