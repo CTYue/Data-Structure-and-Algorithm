@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 15:53:57
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 15:56:00
+ * @LastEditTime: 2019-07-02 15:57:42
  * @Description: To be added.
  * @AC: YES
  */
@@ -25,8 +25,8 @@ public:
             return 0;
         unordered_set<char> seen;
         int len=s.length();
-        int max=0;
-        int left=0,right=0;
+        int max=0,left=0,right=0;
+
         
         while(right<len)
         {
@@ -39,7 +39,7 @@ public:
                 
                 while(s[left]!=s[right])
                 {
-                    seen.erase(s[left]);//
+                    seen.erase(s[left]);
                     left++;
                 }
                 left++;
