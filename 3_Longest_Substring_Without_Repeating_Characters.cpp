@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 15:53:57
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 15:57:42
+ * @LastEditTime: 2019-07-02 15:58:34
  * @Description: To be added.
  * @AC: YES
  */
@@ -53,7 +53,6 @@ public:
             }
             right++;
         }
-        
         //处理最后一步
         max=std::max(max,right-left);
         return max;

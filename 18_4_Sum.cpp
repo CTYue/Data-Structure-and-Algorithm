@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 15:53:09
+ * @LastEditTime: 2019-07-02 16:17:46
  * @Description:
  * @AC: NO
  */
@@ -115,15 +115,20 @@ public:
                         // std::cout << "nums[x.first] = " << nums[x.first] << std::endl;
                         // std::cout << "nums[x.second] = " << nums[x.second] << std::endl;
                         
-                        //如何消除重复的vector<int>????
-                        //???
-                        vector<int> tmp{nums[i],nums[j],nums[x.first],nums[x.second]};    
-                    
-                        res_tmp.insert(tmp);
+                        // if(nums[i]==nums[j]) std::cout << "nums[i] == nums[j]" << std::endl;
+                        // if(nums[x.first]==nums[x.second]) std::cout << "nums[x.first]==nums[x.second]" << std::endl;
+                        if(nums[i]!=nums[x.first] && nums[i]!=nums[x.second] && nums[j]!=nums[x.first] && nums[j]!=nums[x.second]) 
+                        {
+                            //如何消除重复的vector<int>????
+                            vector<int> tmp{nums[i],nums[j],nums[x.first],nums[x.second]};
+                            sort(tmp.begin(),tmp.end());
+                            res_tmp.insert(tmp);
+                        }
                     }
                 }
             }
         }
+        
         for(auto i:res_tmp)
             res.push_back(i);
         
