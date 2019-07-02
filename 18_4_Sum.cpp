@@ -3,12 +3,14 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-01 19:33:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 12:38:05
+ * @LastEditTime: 2019-07-02 12:54:35
  * @Description: To be added.
  */
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
+
 
 using namespace std;
 
@@ -37,7 +39,7 @@ public:
             //左右两边同时收紧一个位置
             for(int j=i+1;j<len-2;j++)
             {
-                //没懂!!!
+                //为什么要设置j>i+1???
                 if(j>i+1 && nums[j]==nums[j-1]) continue;
                 //
                 if(nums[i]+nums[j]+nums[j+1]+nums[j+2]>target) break;
@@ -65,9 +67,12 @@ public:
 
 class Solution_2 {
 public:
-    //Hashmap Solution
-    //Time Complexity:  
-    //Space Complexity:  
+    //将4SUM分解为2SUM的解法, from GeeksforGeeks
+    //Time Complexity:
+    //Space Complexity:    
+    //map(target-2sum)=vector of all possible pairs
+    //hashmap用于存储另外两个2的sum
+    unordered_map<int, vector<pair<int,int> > > map;//注意这里的表达方式
     vector<vector<int> > fourSum(vector<int>& nums, int target) 
     {
         vector<vector<int> > res;
@@ -75,9 +80,42 @@ public:
         int len=nums.size();
         
         if(len<4)   return res;
-        
-
+        for(int i=0;i<len-1;i++)
+        {
+            for(int j=i+1;j<len;j++)
+            {
+                //target-sum exists in map
+                int sum=nums[i]+nums[j];
+                if(map.find(target-sum)!=map.end())
+                {
+                    auto num_pair=map.find(target-sum);//找到另外两个加数
+                    vector<pair<int,int>> v=num_pair->second;//
+                    
+                    //找出num_pair中的重复项
+                    for(int k=0;k<num_pair->second.size();k++)
+                    {
+                        pair<int,int> it=v[k];
+                        if(it.first!=i && it.first!=j && it.second!=i && it.second!=j)
+                        // res.push_back(v[k].first,v[k].second);//
+                        {
+                        // res.push_back();
+                        ;
+                        }
+                    }
+                    
+                }   
+                //If targer-sum doesn't exist in the map
+                //
+                else
+                {
+                    //这里有问题!
+                    //没理解！
+                    map[target-sum].push_back(std::make_pair(nums[i],nums[j]));
+                }
                 
+            }
+        }
+        
         
         return res;
     }
