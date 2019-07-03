@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 17:27:47
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 17:39:04
+ * @LastEditTime: 2019-07-02 23:42:25
  * @Description: To be added.
  * @AC: NO
  */
@@ -12,7 +12,6 @@
 #include <string>
 
 using namespace std;
-
 class Solution {
 public:
     //多位二进制加法：
@@ -25,18 +24,19 @@ public:
     {
         if(a==0 || b==0) return a==0?b:a;
         
-        int sum = a;
-        int carry = b;
+        int sum = 0;
+        int carry = 1;
         
         while(carry)
         {
             int temp = sum;
-            sum = temp^carry;//本位
-            std::cout << "sum = " << sum << std::endl;
-            std::cout << "carry = " << carry << std::endl;
-            int c=carry<<1;
-            std::cout << "carry<<1 = " << c << std::endl;
-            carry = (temp & carry) << 1;//进位
+            sum = a^b;//本位
+            // std::cout << "sum = " << sum << std::endl;
+            // std::cout << "carry = " << carry << std::endl;
+            // int c=carry<<1;
+            // std::cout << "carry<<1 = " << c << std::endl;
+            carry = (a & b) << 1;//进位
+            sum+=carry;
         }
 
         // int neg=-2147483648;
