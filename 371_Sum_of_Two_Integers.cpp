@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 17:27:47
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 23:42:25
+ * @LastEditTime: 2019-07-03 00:03:51
  * @Description: To be added.
  * @AC: NO
  */
@@ -19,7 +19,7 @@ public:
     //进位:先与再左移位
     //负数：补码+1
     //负数加减时有问题！
-    //???
+    //runtime error: left shift of negative value-4
     int getSum(int a, int b) 
     {
         if(a==0 || b==0) return a==0?b:a;
@@ -37,15 +37,8 @@ public:
             // std::cout << "carry<<1 = " << c << std::endl;
             carry = (a & b) << 1;//进位
             sum+=carry;
-        }
-
-        // int neg=-2147483648;
-        // std::cout << "neg = " << neg << std::endl;
-        // std::cout << "INT_MAX = " << INT_MAX << std::endl;
-        // std::cout << "INT_MIN = " << INT_MIN << std::endl; 
-          
-        // return sum;
-        return a;
+        }          
+        return sum;
     }
 };
 
