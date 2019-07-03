@@ -3,9 +3,9 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 17:27:47
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-03 00:03:51
+ * @LastEditTime: 2019-07-03 00:05:41
  * @Description: To be added.
- * @AC: NO
+ * @AC: NO(C++) YES(Java)
  */
 
 #include <iostream>
@@ -20,6 +20,7 @@ public:
     //负数：补码+1
     //负数加减时有问题！
     //runtime error: left shift of negative value-4
+    //C++对于
     int getSum(int a, int b) 
     {
         if(a==0 || b==0) return a==0?b:a;

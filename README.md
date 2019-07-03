@@ -58,4 +58,6 @@ July 1:
 
 July 2:
  - 4 Sum
+ - Add Two Integer without using "+" and "-"
+ - Single Number
 ------
