@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 16:33:26
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-02 16:57:09
+ * @LastEditTime: 2019-07-05 23:07:43
  * @Description: To be added.
  * @AC: YES
  */
@@ -17,6 +17,8 @@ using namespace std;
 class Solution_1 {
 public:
     //注意，要求Linear runtime
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     int singleNumber(vector<int>& nums) 
     {
         if(nums.size()<2) return nums[0];
@@ -30,7 +32,6 @@ public:
                 nums[i+1]=0;
             }
         }
-        
         sort(nums.begin(),nums.end());
         if(nums[len-1]>0)   return nums[len-1];
         else    return nums[0];
@@ -41,6 +42,9 @@ class Solution_2 {
 public: 
     //XOR Solution    
     //注意理解XOR原理
+    //XOR: 
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     int singleNumber(vector<int>& nums) 
     {
         int res=0;
