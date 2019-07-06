@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 16:33:26
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-05 23:07:43
+ * @LastEditTime: 2019-07-05 23:20:10
  * @Description: To be added.
  * @AC: YES
  */
@@ -42,7 +42,11 @@ class Solution_2 {
 public: 
     //XOR Solution    
     //注意理解XOR原理
-    //XOR: 
+    //XOR Example:
+    //2^2=0
+    //0^1=1
+    //使用XOR, 能屏蔽所有相同的数字，从而找出出现次数仅为1的数字
+    //该方法可以推广到所有类似问题。
     //Time Complexity: O(n)
     //Space Complexity: O(1)
     int singleNumber(vector<int>& nums) 
