@@ -60,4 +60,13 @@ July 2:
  - 4 Sum (返回结果有问题！)
  - Add Two Integer without using "+" and "-"
  - Single Number
+
+July 7:
+ - Delete Nodes in a BST
+  - 这道题要注意，是真的要删除node。
+  - 注意二叉平衡树(Binary Search Tree)和普通二叉树的区别，BST要求任意left node小于root node，任意right node大于root node
+  - 
+
+
+
 ------
