@@ -65,8 +65,14 @@ July 7:
  - Delete Nodes in a BST
   - 这道题要注意，是真的要删除node。
   - 注意二叉平衡树(Binary Search Tree)和普通二叉树的区别，BST要求任意left node小于root node，任意right node大于root node
-  - 
+  - 普通二叉树，则仅需满足左node小于右node
+  - 一点小感想：
+   - 我和别人不一样，我要补数据结构知识！
+   - 刷题的时候，一个类型的题，一定要搞懂，否则很麻烦！
+   - 尽快换用Java刷题！
 
+   - 线段树问题：
+    - 定义： 
 
 
 ------
