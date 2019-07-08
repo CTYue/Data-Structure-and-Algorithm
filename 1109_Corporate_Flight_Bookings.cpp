@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 11:06:50
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-08 11:08:59
+ * @LastEditTime: 2019-07-08 11:44:16
  * @Description: To be added.
  * @AC: NO
  */
@@ -16,7 +16,7 @@ using namespace std;
 class Solution {
 public:
     //这道题有时间复杂度要求！
-    //只能是O(n)，不能是O(n^2)
+    //时间复杂度必须小于O(n^2)
     //使用线段树解决
     vector<int> corpFlightBookings(vector<vector<int>>& bookings, int n) 
     {
