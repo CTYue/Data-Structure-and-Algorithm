@@ -3,10 +3,11 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-24 08:18:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-08 11:44:49
+ * @LastEditTime: 2019-07-08 16:24:47
  * @Description: To be added.
  * @AC: Solution_1: NO
  *      Solution_2: Yes
+ * @Realated: 253@Leetcode
  */
 
 #include <iostream>
@@ -50,7 +51,7 @@ public:
             //输入的trips是有序排列的，即
             //可以将trips分类，how？
             //如何找出overlap的trip？
-            //若存在子(全overlap)trip，如何操作？按sample，不存在全overlap的情况！
+            //若存在子(全overlap)trip，如何操作？按sample，不存在全overlap的情况！对，因为不开回头车!
             //if(start[i]<end[i-1])
             // std::cout << "Hello = " << std::endl;
             std::cout << "i = " << i << std::endl;
@@ -84,34 +85,55 @@ public:
     }
 };
 
-class Solution_2
-{
+class Solution_2 {
 public:
     bool carPooling(vector<vector<int>>& trips, int capacity) 
     {
-        //没有考虑overlap的情况???
-        //Time Complexity: 
-        //Space Complexity: 
-        vector<int> stops(1001,0);
-        for(auto t:trips)
+        //注意：题目说明了，车辆仅往东开！！！
+        //只要单独trip的人数>capacity 或 overlap的人数>capacity
+        //则返回false，其余情况，均返回true
+        //注意：trip结束点<=1000，所以res长度为1001
+        //Onepass Solution
+        //Time Complexity: O(n)
+        //Space Complexity: O(1)
+        vector<int> res(1001,0);//保存每段trip的乘客数
+        
+        for(auto v:trips)
         {
-            stops[t[1]]+=t[0];//每个起点的人数相加(上车)
-            stops[t[2]]-=t[0];//减去每个终点的人数(下车)
+            if(v[0]>capacity)  return false;
+            
+            //要不要考虑从起点到终点的中间部分???
+            //不用考虑！
+            //因为车辆仅向东行驶，所以trips[i][1]>trips[j][1](i>j)
+            //上车：res[v[1]]+=v[0]
+            res[v[1]]+=v[0];
+            //下车: res[v[2]]-=v[0]
+            res[v[2]]-=v[0];
         }
         
-        // std::cout << "vec size = " << stops.size() << std::endl;
-        // 没有理解
-        for(int i=0;i<stops.size();++i)
+        
+        for(int i=0;i<res.size();i++)
         {
-            if(capacity>=0)
-                capacity-=stops[i];//下车
-            else
-                break;
+            if(res[i]!=0)
+                std::cout << "res[" << i << "] = " << res[i] << std::endl;
         }
         
-        return capacity>=0;
+        //对于overlap的trip,
+        //由于车辆向东行驶，一旦trip[i][0]+trip[j][0]>capacity(j>i)
+        //则返回false
+        int sum=0;
+        for(auto v:res)
+        {
+            // capacity-=v;
+            // if(capacity<0)  return false;
+            sum+=v;
+            if(sum>capacity)    return false;
+        }
+        
+        return true;
     }
 };
+
 
 int main(int argc, char* argv[])
 {
