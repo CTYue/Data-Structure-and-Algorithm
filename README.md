@@ -74,5 +74,8 @@ July 7:
    - 线段树问题：
     - 定义： 
 
+July 8:
+ - 253: Meeting Room II
+ - 
 
 ------
