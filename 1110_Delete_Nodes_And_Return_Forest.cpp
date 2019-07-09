@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 22:13:07
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 08:50:41
+ * @LastEditTime: 2019-07-09 08:51:08
  * @Description: To be added.
  * @AC: 
  * @Related: 450@Leetcode
@@ -64,6 +64,7 @@ public:
         return res;
     }    
 };
+
 
 int main(int argc, char* argv[])
 {
