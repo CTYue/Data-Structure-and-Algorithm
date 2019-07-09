@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 22:13:07
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 13:20:53
+ * @LastEditTime: 2019-07-09 13:21:29
  * @Description: To be added.
  * @AC: 
  * @Related: 450@Leetcode
@@ -29,6 +29,7 @@ public:
     unordered_set<int> set;
     //Recursion Approach
     //这道题不需要用sub-node的值替换被删除的node
+    //该题不同于450
     //Pre-order Traversal
     //Time Complexity: ???
     //Space Complexity: O(n)
