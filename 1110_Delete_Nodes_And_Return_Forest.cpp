@@ -3,10 +3,11 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 22:13:07
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 08:48:56
+ * @LastEditTime: 2019-07-09 08:50:41
  * @Description: To be added.
  * @AC: 
  * @Related: 450@Leetcode
+ * @AC: YES(faster than 92.36%, less than 100%)
  */
 
 #include<iostream>
