@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 16:39:58
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-08 22:09:22
+ * @LastEditTime: 2019-07-08 22:13:18
  * @Description: To be added.
  * @AC: Solution_1:YES(Low Performance)
  *      Solution_2: Yes(faster than 20.15%, less than 44.57%)
