@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 22:13:07
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 13:21:29
+ * @LastEditTime: 2019-07-09 15:29:40
  * @Description: To be added.
  * @AC: 
  * @Related: 450@Leetcode
@@ -15,8 +15,8 @@
 #include <unordered_set>
 
 using namespace std;
-
-struct TreeNode {
+struct TreeNode 
+{
     int val;
     TreeNode *left;
     TreeNode *right;

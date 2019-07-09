@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-09 14:24:03
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 15:10:12
+ * @LastEditTime: 2019-07-09 15:31:08
  * @Description: To be added.
  * @AC: 
  */
@@ -61,7 +61,6 @@ public:
 int main(int argc, char* argv[])
 {
     //TODO
-
-
     
+        
 }

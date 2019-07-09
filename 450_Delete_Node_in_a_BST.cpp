@@ -3,13 +3,12 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 22:15:43
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 00:28:35
+ * @LastEditTime: 2019-07-09 15:32:05
  * @Description: To be added.
  * @AC: Recursion: YES
  */
 
 #include<iostream>
-#include<vector>
 
 using namespace std;
 
@@ -24,8 +23,8 @@ struct TreeNode
 class Solution{
 public:
     //Recursive Solution
-    //Time Complexity: ???
-    //Space Complexity: ???
+    //Time Complexity: O(n) (Visit every node for one time)
+    //Space Complexity: O(1)???
     //Smallest node after root(right)
     int successor(TreeNode* root)
     {
