@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-09 14:24:03
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 14:57:16
+ * @LastEditTime: 2019-07-09 15:10:12
  * @Description: To be added.
  * @AC: 
  */
@@ -20,10 +20,12 @@ struct TreeNode {
      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-class Solution {
+class Solution_1 {
 public:
     //BFS
     //Iteration
+    //Time Complexity:
+    //Space Complexity:
     vector<vector<int>> levelOrderBottom(TreeNode* root) 
     {
         vector<vector<int>> res;
@@ -32,15 +34,27 @@ public:
         
         queue<TreeNode*> queue;
         while(queue.empty())
-        {
-            
-            
-            
+        {  
+            //
         }
-        
-        
-        
+                
         return res;
+    }
+};
+
+class Solution_2
+{
+public:
+    //DFS
+    //Recursion
+    //Time Complexity:
+    //Space Complexity:
+    vector<vector<int>> levelOrderBottom(TreeNode* root) 
+    {
+        vector<vector<int>> res;
+        if(root==nullptr)
+            return res;
+            
     }
 };
 

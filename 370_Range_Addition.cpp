@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 14:27:40
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-08 22:02:12
+ * @LastEditTime: 2019-07-09 15:27:34
  * @Description: To be added.
  * @AC: YES
  * @Related: 1109@Leetcode
@@ -16,6 +16,8 @@
 using namespace std;
 class Solution {
 public:
+    //输入：[起点，终点，数值]
+    //输出：[第1个位置的值，第2个位置的值...]
     vector<int> getModifiedArray(int length, vector<vector<int>>& updates) 
     {
         vector<int> res(length+1,0);
