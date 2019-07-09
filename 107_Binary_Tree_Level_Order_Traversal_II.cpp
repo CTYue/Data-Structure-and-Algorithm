@@ -3,11 +3,12 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-09 14:24:03
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 17:04:53
+ * @LastEditTime: 2019-07-09 17:06:12
  * @Description: To be added.
  * @AC: 
  *      Solution_1(DFS,Recursion): faster than 96.31%, less than 22.25%
- *      Solution_2(BFS,Iteration): 
+ *      Solution_2(BFS,Iteration): Better performance than sol_1, 
+ *                                 faster than 96.31%, less than 95.57%.
  */
 
 #include <iostream>
