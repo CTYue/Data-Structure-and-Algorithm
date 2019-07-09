@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-08 22:13:07
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-09 08:51:08
+ * @LastEditTime: 2019-07-09 13:20:53
  * @Description: To be added.
  * @AC: 
  * @Related: 450@Leetcode
@@ -36,18 +36,25 @@ public:
     {
         if(root==nullptr) return nullptr;
         bool tobeDeleted;
+        
         if(set.find(root->val)!=set.end())
             tobeDeleted=true;
         else 
             tobeDeleted=false;
         
+        //若root不会被删除，则push_back到结果中.
         if(isRoot && !tobeDeleted)
-            res.push_back(root);
+            res.push_back(root);//
+        //Pre-order, 先root，再left，最后right
         root->left=helper(root->left,tobeDeleted);
         root->right=helper(root->right,tobeDeleted);
         
-        if(tobeDeleted==true) return nullptr;
-        else return root;
+        //若该node应被删除，则返回nullptr
+        if(tobeDeleted==true) 
+            return nullptr;
+        //反之返回root
+        else 
+            return root;
     }    
 
 
@@ -64,7 +71,6 @@ public:
         return res;
     }    
 };
-
 
 int main(int argc, char* argv[])
 {
