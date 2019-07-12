@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-20 20:30:44
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-12 16:45:58
+ * @LastEditTime: 2019-07-12 17:31:35
  * @Description: 
  * In-Order Traversal: 
  *      1
@@ -41,7 +41,7 @@ public:
         res.push_back(root->val);
         Recursion(root->right,res);
     }
-        
+
     vector<int> inorderTraversal(TreeNode* root) 
     {
         vector<int> res={};
