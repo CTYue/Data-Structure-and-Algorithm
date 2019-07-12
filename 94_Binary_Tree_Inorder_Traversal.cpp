@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-20 20:30:44
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-21 01:56:50
+ * @LastEditTime: 2019-07-12 16:45:58
  * @Description: 
  * In-Order Traversal: 
  *      1
@@ -37,19 +37,15 @@ public:
     void Recursion(TreeNode* root,vector<int>& res)
     {
         if(root==nullptr)   return;
-
-        if(root->left!=nullptr)    Recursion(root->left,res);
-
+        Recursion(root->left,res);
         res.push_back(root->val);
-
-        if(root->right!=nullptr)    Recursion(root->right,res);
+        Recursion(root->right,res);
     }
         
     vector<int> inorderTraversal(TreeNode* root) 
     {
         vector<int> res={};
         if(root==nullptr)   return res;
-            
         Recursion(root,res);
         return res;
     }
