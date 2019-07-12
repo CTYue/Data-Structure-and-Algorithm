@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 23:51:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-12 08:39:10
+ * @LastEditTime: 2019-07-12 08:39:28
  * @Description: To be added.
  */
 
@@ -13,12 +13,12 @@
 using namespace std;
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) 
+    vector<vector<int> > threeSum(vector<int>& nums) 
     {
         //Time complexity:O(n^2)
         //Space complexity:O(1)
         //先排序
-         vector<vector<int>> res;
+         vector<vector<int> > res;
             if(nums.size()==0)
                 return res;
         
