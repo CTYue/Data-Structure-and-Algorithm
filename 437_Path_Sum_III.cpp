@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-10 13:22:42
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-11 14:14:16
+ * @LastEditTime: 2019-07-11 20:50:08
  * @Description: To be added.
  * @AC: Solution_1: Yes: faster than 98.32%, less than 53.36%
  */
@@ -21,6 +21,8 @@ struct TreeNode {
 
 class Solution_1 {
 public:
+    //DFS Recursion Approach
+    //
     int pathSum(TreeNode* root, int sum)
     {
         int res=0;
