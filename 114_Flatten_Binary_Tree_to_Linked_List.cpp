@@ -1,46 +1,41 @@
-/*
- * @Author: Zidong Yu
- * @Email: chitung.yue@gmail.com
- * @Date: 2019-07-11 23:18:36
- * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-13 18:53:05
- * @Description: To be added.
- * @AC: Yes: faster than 71.85%, less than 40.93%
- */
-
 #include <iostream>
-#include <string>
 #include <queue>
+#include <vector>
+#include <stack>
 #include <sstream>
 
 using namespace std;
-struct TreeNode {
-     int val;
-     TreeNode *left;
-     TreeNode *right;
-     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+struct TreeNode 
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 
 class Solution {
 public:
-    
-    TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2) 
+    //Time Complexity:
+    //Space Complexity:
+    TreeNode* prev=nullptr;
+    void flatten(TreeNode* root) 
     {
-        if(t1==nullptr) return t2;
-        if(t2==nullptr) return t1;
+        if(root==nullptr)   return;
         
-        //若new TreeNode root，则memeory usage为18.9 MB
-        //若直接使用t1作为root，则memory usage为13.3 MB
-        //排除了t1和t2均为nullptr的情况
-        TreeNode* root=new TreeNode(t1->val+t2->val);
-        root->left=mergeTrees(t1->left,t2->left);
-        root->right=mergeTrees(t1->right,t2->right);
-        
-        return root;
+
+        //使用了Right-left-root的post-order traversal
+        flatten(root->right);
+        flatten(root->left);
+        std::cout << "root->val = " << root->val << std::endl;
+        if(prev!=nullptr)   std::cout << "prev = " << prev->val << std::endl;
+
+
+        root->right=prev;
+        root->left=nullptr;
+        prev=root;
     }
 };
-
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
@@ -127,13 +122,11 @@ string treeNodeToString(TreeNode* root) {
 int main() {
     string line;
     while (getline(cin, line)) {
-        TreeNode* t1 = stringToTreeNode(line);
-        getline(cin, line);
-        TreeNode* t2 = stringToTreeNode(line);
+        TreeNode* root = stringToTreeNode(line);
         
-        TreeNode* ret = Solution().mergeTrees(t1, t2);
+        Solution().flatten(root);
 
-        string out = treeNodeToString(ret);
+        string out = treeNodeToString(root);
         cout << out << endl;
     }
     return 0;

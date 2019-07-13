@@ -3,10 +3,10 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-20 20:30:44
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-12 20:04:23
+ * @LastEditTime: 2019-07-12 20:43:29
  * @Description: 
  * In-Order Traversal: 
- *      1
+ *       1
  *    2    3
  *  4  5    6
  *  Res:4 2 5 1 3 6
@@ -33,7 +33,6 @@ public:
     //Recursive Solution
     //Time Complexity: O(n)
     //Space Complexity: Worst: O(n) Average: O(logn)
-    //
     void Recursion(TreeNode* root,vector<int>& res)
     {
         if(root==nullptr)   return;
@@ -65,6 +64,7 @@ public:
         stack<TreeNode*> stack;
         TreeNode* curr = root;
         
+        //注意这里的循环条件！
         while(curr!=nullptr || !stack.empty())
         {
             while(curr!=nullptr)
@@ -78,7 +78,6 @@ public:
             res.push_back(curr->val);
             curr=curr->right;//大循环向右遍历到底
         }
-        
         return res;
     }
     
