@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-20 20:30:44
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-12 17:31:35
+ * @LastEditTime: 2019-07-12 20:04:23
  * @Description: 
  * In-Order Traversal: 
  *      1
@@ -72,7 +72,7 @@ public:
                 stack.push(curr);
                 curr=curr->left;//小循环每次向左遍历到底
             }
-            
+
             curr=stack.top();
             stack.pop();
             res.push_back(curr->val);
