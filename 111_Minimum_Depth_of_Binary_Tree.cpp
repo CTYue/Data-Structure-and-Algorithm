@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-15 14:51:20
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-15 16:14:08
+ * @LastEditTime: 2019-07-15 16:18:08
  * @Description: To be added.
  * @AC: Solution_1: Yes
  *      Solution_2: 
@@ -54,6 +54,8 @@ public:
         if(root==nullptr) return 0;
         std::cout << "root->val = " << root->val << std::endl;
 
+        //没怎么理解这里的递归！
+        //
         if(root->left==nullptr) return 1 + minDepth(root->right);
         if(root->right==nullptr) return 1 + minDepth(root->left);
         
