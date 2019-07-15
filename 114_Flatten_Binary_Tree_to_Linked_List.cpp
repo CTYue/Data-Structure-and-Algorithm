@@ -1,3 +1,13 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-07-13 11:15:38
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-07-13 22:11:14
+ * @Description: To be added.
+ * @AC: Yes: 
+ */
+
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -14,28 +24,34 @@ struct TreeNode
 };
 
 
-class Solution {
+class Solution_1 {
 public:
-    //Time Complexity:
-    //Space Complexity:
+    //算不算真正意义上的in-place?
+    //我觉得算
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     TreeNode* prev=nullptr;
     void flatten(TreeNode* root) 
     {
         if(root==nullptr)   return;
         
-
-        //使用了Right-left-root的post-order traversal
+        //Post-order Traversal
+        //in Right-Left-Root
         flatten(root->right);
         flatten(root->left);
+        std::cout << "===============" << std::endl;
         std::cout << "root->val = " << root->val << std::endl;
         if(prev!=nullptr)   std::cout << "prev = " << prev->val << std::endl;
-
-
+        std::cout << "===============" << std::endl;
+        
+        //注意理解这里！
         root->right=prev;
         root->left=nullptr;
         prev=root;
     }
 };
+
+
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
@@ -119,12 +135,13 @@ string treeNodeToString(TreeNode* root) {
     return "[" + output.substr(0, output.length() - 2) + "]";
 }
 
-int main() {
+int main() 
+{
     string line;
     while (getline(cin, line)) {
         TreeNode* root = stringToTreeNode(line);
         
-        Solution().flatten(root);
+        Solution_1().flatten(root);
 
         string out = treeNodeToString(root);
         cout << out << endl;

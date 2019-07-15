@@ -88,9 +88,20 @@ July 11:
  - 637: Merge Two Binary Tree
  - 
 
+July 13:
+ - 空间复杂度只计算用于临时保存数据的***额外***开销，不考虑递归本身占用的空间。
+ - 114: Flatten Binary Tree to Linked List (Medium-)
+   - 这道题，要注意观察，题目要求的输出实际上是按照Right-Left-Root顺序的post order traversal
+   - 
+
 Review On July 13:
+ - 
  -
  -
  -
- -
+
+July 14:
+ - 玩了一天
+ - 
+ - 
 ------
