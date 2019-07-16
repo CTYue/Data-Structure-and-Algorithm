@@ -3,10 +3,11 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-15 14:51:20
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-15 20:58:44
+ * @LastEditTime: 2019-07-16 00:23:43
  * @Description: To be added.
  * @AC: Solution_1: Yes
- *      Solution_2: 
+ *      Solution_2: Yes
+ *      Solution_3: Yes
  */
 
 #include <iostream>
@@ -36,7 +37,6 @@ public:
         
         //为什么只访问了3和20？？？
         std::cout << "root->val = " << root->val << std::endl;
-        
         if(root->left!=nullptr)     min_depth=std::min(minDepth(root->left),min_depth);
         if(root->right!=nullptr)    min_depth=std::min(minDepth(root->right),min_depth);
         
@@ -65,10 +65,16 @@ public:
 class Solution_3
 {
 public:
+    //分治法
+    //DFS
+    int minDepth(TreeNode* root) 
+    {
+        if(root==nullptr)   return 0;
+        int left_depth=minDepth(root->left);
+        int right_depth=minDepth(root->right);
 
-
-
-
+        return (left_depth==0 || right_depth==0)? (left_depth+right_depth+1): std::min(left_depth,right_depth)+1;
+    }
 };
 
 void trimLeftTrailingSpaces(string &input) {
