@@ -1,74 +1,46 @@
 /*
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
- * @Date: 2019-07-15 14:51:20
+ * @Date: 2019-07-15 21:06:30
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-15 20:58:44
+ * @LastEditTime: 2019-07-15 21:26:29
  * @Description: To be added.
- * @AC: Solution_1: Yes
+ * @AC: Solution_1: Yes: faster than 67.80%, less than 80.88%
  *      Solution_2: 
  */
 
 #include <iostream>
-#include <sstream>
 #include <queue>
+#include <string>
+#include <sstream>
 
 using namespace std;
-struct TreeNode {
-      int val;
-      TreeNode *left;
-      TreeNode *right;
-      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- };
+struct TreeNode 
+{
+     int val;
+     TreeNode *left;
+     TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
 class Solution_1 {
 public:
-    //DFS
-    //Time Complexity: 
-    //Space Complexity: 
-    //没怎么理解！
-    int minDepth(TreeNode* root) 
+    //Top-down Approach
+    //分治法
+    bool isBalanced(TreeNode* root) 
     {
-        if(root==nullptr)   return 0;
-        if(root->left==nullptr && root->right==nullptr) return 1;
+        if(root==nullptr)   return true;
+        int depth_left=depth(root->left);
+        int depth_right=depth(root->right);
         
-        int min_depth=INT_MAX;//
-        
-        //为什么只访问了3和20？？？
-        std::cout << "root->val = " << root->val << std::endl;
-        
-        if(root->left!=nullptr)     min_depth=std::min(minDepth(root->left),min_depth);
-        if(root->right!=nullptr)    min_depth=std::min(minDepth(root->right),min_depth);
-        
-        return min_depth+1;
-    }    
-};
-
-class Solution_2
-{
-public:
-    //Time Complexity: 
-    //Space Complexity: 
-    int minDepth(TreeNode *root) 
-    {
-        if(root==nullptr) return 0;
-        std::cout << "root->val = " << root->val << std::endl;
-
-        //没怎么理解这里的递归！
-        if(root->left==nullptr) return 1 + minDepth(root->right);
-        if(root->right==nullptr) return 1 + minDepth(root->left);
-        
-        return 1+min(minDepth(root->left),minDepth(root->right));
+        return abs(depth_left-depth_right)<=1 && isBalanced(root->left) && isBalanced(root->right) ;
     }
-};
-
-class Solution_3
-{
-public:
-
-
-
-
+    
+    int depth(TreeNode* root)
+    {
+        if(!root) return 0;
+        return std::max(depth(root->left),depth(root->right))+1;        
+    }
 };
 
 void trimLeftTrailingSpaces(string &input) {
@@ -129,14 +101,18 @@ TreeNode* stringToTreeNode(string input) {
     return root;
 }
 
+string boolToString(bool input) {
+    return input ? "True" : "False";
+}
+
 int main() {
     string line;
     while (getline(cin, line)) {
         TreeNode* root = stringToTreeNode(line);
         
-        int ret = Solution_2().minDepth(root);
+        bool ret = Solution().isBalanced(root);
 
-        string out = to_string(ret);
+        string out = boolToString(ret);
         cout << out << endl;
     }
     return 0;
