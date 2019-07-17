@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-16 16:39:35
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-16 22:40:52
+ * @LastEditTime: 2019-07-16 23:59:52
  * @Description: To be added.
  * @AC: Recursion: Yes
  */
@@ -40,8 +40,44 @@ public:
     }
 };
 
-
-
+class Solution_2
+{    
+public:
+    //Iteration
+    //Time Complexity: O(logN)
+    //Space Complexity: O(1)
+    TreeNode* insertIntoBST(TreeNode* root, int val) 
+    {
+        if(root==nullptr)   return new TreeNode(val);
+        TreeNode* cur=root;
+        
+        while(cur!=nullptr)
+        {
+            //左遍历
+            if(cur->val>val)
+            {
+                if(cur->left!=nullptr)  cur=cur->left;
+                else
+                {
+                    cur->left = new TreeNode(val);
+                    break;
+                }
+            }
+            //右遍历
+            else
+            {
+                if(cur->right!=nullptr) cur=cur->right;
+                else
+                {
+                    cur->right=new TreeNode(val);
+                    break;
+                }
+            }
+        }   
+        //注意，是return root而不是别的。
+        return root;
+    }
+};
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
