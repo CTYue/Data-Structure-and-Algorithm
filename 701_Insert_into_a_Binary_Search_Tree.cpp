@@ -5,8 +5,8 @@
 #include <sstream>
 
 using namespace std;
-
-struct TreeNode {
+struct TreeNode
+{
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -17,13 +17,11 @@ class Solution_1 {
 public:
     //Recursive Solution
     //Time Complexity: Average case: O(logN)
-    //Space Complexity: 
+    //Space Complexity: 1*O(logN)=O(logN)
     TreeNode* insertIntoBST(TreeNode* root, int val) 
     {
         if(root==nullptr)   return new TreeNode(val); 
-        
-        std::cout << "root->val = " << root->val << std::endl;
-        
+            
         if(val==root->val)  return root;        
         if(val<root->val)   root->left = insertIntoBST(root->left, val);
         if(val>root->val)   root->right = insertIntoBST(root->right,val);
