@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-04 19:09:10
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-15 18:32:32
+ * @LastEditTime: 2019-07-18 16:01:30
  * @Description: This file uses Fibonacci problem
  * as an example for Dynamic Programming explanation.
  * Top-down and Bottom-up approaches are introduced.
@@ -11,9 +11,10 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
+#include <vector>
 
-class Fibonacci
+using namespace std;
+class Solution_1
 {
 public:
 
@@ -67,11 +68,30 @@ public:
     }  
 };
 
+
+class Solution_2
+{
+public:
+    //DP with Memorization
+    int Fib(int n)
+    {
+        if(n<=1) return n;
+        vector<int> vals(n+1, 0);
+        vals[0]=0;
+        vals[1]=1;
+
+        for(int i=2;i<=n;i++)
+            vals[i]=vals[i-1]+vals[i-2];
+
+        return vals[n];
+    }    
+};
+
 //Test Stub
 int main(int argc, char* argv[])
 {
     if(argc<1 || argc>1) return 1;
-    Fibonacci fib;
+    Solution_1 fib;
     int input=0;
     
     std::cin >> input;
