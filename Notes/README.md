@@ -111,7 +111,13 @@ July 15:
 
 
 July 16:
+ - 701: Insert node into a BST(Recursion and Iteration)
  - 
+
+July 17:
+ - 总结与二分法有关的知识
+   - 二分法：Iteration & Recursion
+   
 
 
 ------
