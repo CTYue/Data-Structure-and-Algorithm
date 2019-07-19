@@ -1,3 +1,13 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-07-18 23:13:53
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-07-18 23:34:10
+ * @Description: To be added.
+ * @AC: Solution_1: Yes
+ *      Solution_2: Yes
+ */
 
 #include <iostream>
 #include <sstream>
@@ -16,7 +26,6 @@ public:
     
     int recursion(vector<int>& nums, int start, int end, int target)
     {
-        
         int mid=(start+end)/2;
         
         //if not found
