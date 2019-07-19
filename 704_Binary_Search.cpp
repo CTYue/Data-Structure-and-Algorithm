@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-18 23:13:53
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-18 23:34:10
+ * @LastEditTime: 2019-07-19 01:07:10
  * @Description: To be added.
  * @AC: Solution_1: Yes
  *      Solution_2: Yes
@@ -26,8 +26,8 @@ public:
     
     int recursion(vector<int>& nums, int start, int end, int target)
     {
-        int mid=(start+end)/2;
-        
+        int mid=start+(end-start)/2;//To avoid int overflow
+
         //if not found
         if(start>end)   return -1;
         
@@ -54,7 +54,7 @@ public:
         
         while(start<=end)
         {
-            mid=(start+end)/2;
+            mid=start+(end-start)/2;//To avoid int overflow
             
             if(target>nums[mid])    start=mid+1;
             else if(target<nums[mid])   end=mid-1;

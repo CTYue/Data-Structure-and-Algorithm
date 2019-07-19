@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-18 16:55:55
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-18 23:13:40
+ * @LastEditTime: 2019-07-19 01:07:40
  * @Description: To be added.
  * @AC: Solution_1: Yes
  *      Solution_2: Yes
@@ -33,7 +33,7 @@ private:
     {
         if(start>end)   return start;
         
-        int mid=(start+end)/2;
+        int mid=start+(end-start)/2;//To avoid int overflow
         
         if(target>nums[mid])
             return  recursion(nums, mid+1, end, target);
@@ -59,7 +59,7 @@ public:
         
         while(start<=end)
         {   
-            mid=(start+end)/2;
+            mid=start+(end-start)/2;//To avoid int overflow
             if(target>nums[mid])    start=mid+1;
             else if(target<nums[mid])    end=mid-1;
             else break;
