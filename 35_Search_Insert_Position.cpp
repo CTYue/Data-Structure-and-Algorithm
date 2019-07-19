@@ -1,40 +1,77 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-07-18 16:55:55
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-07-18 22:32:18
+ * @Description: To be added.
+ * @AC: Solution_1: Yes
+ *      Solution_2: 
+ */
+
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 
 using namespace std;
-class Solution {
+
+class Solution_1 {
 public:
-    //二分法
-    //递归
-    //
+    //二分法(Dichotomy)
+    //Recursion
+    //Time Complexity: O(logN)
+    //如果nums中已有这个数字，则返回该数字的第一个index
+    //否则，则插入到其应所在的位置。
     int searchInsert(vector<int>& nums, int target) 
-    {        
-        std::cout << "nums.size()-1 = " << nums.size()-1 << std::endl;
-        
+    {                
         return recursion(nums,0,nums.size()-1,target);
     }
     
 private:
     int recursion(vector<int>& nums,int start, int end, int target)
     {
-        std::cout << "start = " << start << std::endl;
-        std::cout << "end = " << end << std::endl;
-        
-        if(start>end)   return -1;
+        if(start>end)   return start;
         
         int mid=(start+end)/2;
-        std::cout << "mid = " << mid << std::endl;
-
-        if(target==nums[mid])   return mid;
         
         if(target>nums[mid])
-            return recursion(nums, mid+1, end, target);
+            return  recursion(nums, mid+1, end, target);
         
-        return   recursion(nums, start, mid-1, target);
+        if(target<nums[(start+end)/2])
+            return  recursion(nums, start, mid-1, target);
+        
+        return mid;
     }
 };
+
+class Solution_2 {
+public:
+    //Dichotomy(Iteration)
+    //Time Complexity: O(logN)
+    //Space Complexity: O(1)
+    int searchInsert(vector<int>& nums, int target) 
+    {
+        if(nums.size()==0)  return 0;
+        int len=nums.size();
+        int start=0, end=len-1;
+        int mid=0;
+        
+        while(start<=end)
+        {   
+            mid=(start+end)/2;
+            if(target>nums[mid])    start=mid+1;
+            else if(target<nums[mid])    end=mid-1;
+            else break;
+        }
+        
+        //考虑头插和尾插的情况
+        if(start>end)   return start;
+        
+        return mid;
+    }
+};
+
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
@@ -74,7 +111,7 @@ int main() {
         getline(cin, line);
         int target = stringToInteger(line);
         
-        int ret = Solution().searchInsert(nums, target);
+        int ret = Solution_1().searchInsert(nums, target);
 
         string out = to_string(ret);
         cout << out << endl;
