@@ -1,3 +1,13 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-07-23 14:51:18
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-07-23 19:18:45
+ * @Description: To be added.
+ * @AC: Yes: 
+ */
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -7,21 +17,32 @@
 using namespace std;
 class Solution {
 public:
-    //注意立即题意
-    //Time Complexity:
-    //Space Complexity:
-    //4是什么意思？
+    //Two pointers
+    //Time Complexity: 
+    //Space Complexity: O(1) (No auxiliary space needed)
     bool validWordAbbreviation(string word, string abbr) 
     {
+        std::cout << "word.size() = " << word.size() << std::endl;
+        std::cout << "abbr.size() = " << abbr.size() << std::endl;
+        
         int i=0,j=0;
-        while(i<word.size() && j< abbr.size())
+        while(i<word.size() && j<abbr.size())
         {
-            
-            
+            if(std::isdigit(abbr[j]))
+            {
+                if(abbr[j]=='0')    return false;
+                int count=0;
+                //Make sure j is in bounds in the very begining.
+                while(j<abbr.size() && std::isdigit(abbr[j]))
+                    count=count*10+(abbr[j++]-'0');
+                i+=count;
+            }
+            else if(word[i++]!=abbr[j++])   return false;
         }
+        
+        return i==word.size() && j==abbr.size();
     }
 };
-
 string stringToString(string input) {
     assert(input.length() >= 2);
     string result;
