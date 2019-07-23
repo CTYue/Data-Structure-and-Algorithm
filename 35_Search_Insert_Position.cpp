@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-18 16:55:55
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-20 23:16:59
+ * @LastEditTime: 2019-07-21 18:03:42
  * @Description: To be added.
  * @AC: Solution_1: Yes
  *      Solution_2: Yes
@@ -116,7 +116,7 @@ int main() {
     //     string out = to_string(ret);
     //     cout << out << endl;
     // }
-
+    
     char *nums=new char[100];
     std::cout << "sizeof(nums) = " << sizeof(nums) << std::endl;
     std::cout << "strlen(nums) = " << strlen(nums) << std::endl;
