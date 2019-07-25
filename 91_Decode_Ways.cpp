@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-12 18:56:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-13 17:06:06
+ * @LastEditTime: 2019-07-25 14:56:12
  * @Description: To be added.
  */
 
@@ -61,6 +61,46 @@ public:
     }
 };
 
+class Solution_2
+{
+public:
+    //DFS Solution
+    //Cannot pass "4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"
+    int numDecodings(string s) 
+    {
+        if(s.length()==0)   return 0;
+        return dfs(s, s.length()-1);
+    }
+    
+    int dfs(string s, int end)
+    {
+        //Handle length 1
+        if(end==0)
+        {
+            if(s[end]!='0') return 1;
+            else return 0;
+        }
+        
+        //Handle length 2
+        if(end==1)
+        {
+            int ways=0;
+            if(s[end-1]=='0')   return 0;
+            if(s[end]!='0') ways++;
+            int num=(s[end-1]-'0')*10+s[end]-'0';
+            if(num<=26) ways++;
+            return ways;
+        }
+        
+         int ways=0;
+         if(s[end]!='0')  ways+=dfs(s, end-1);
+         int num=(s[end-1]-'0')*10+(s[end]-'0');
+         if(s[end-1]!='0' && num<=26)   ways+=dfs(s,end-2);
+         return ways;
+    }
+};
+
+
 string stringToString(string input) {
     assert(input.length() >= 2);
     string result;
@@ -88,14 +128,18 @@ string stringToString(string input) {
 }
 
 int main() {
-    string line;
-    while (getline(cin, line)) {
-        string s = stringToString(line);
+    // string line;
+    // while (getline(cin, line)) {
+    //     string s = stringToString(line);
         
-        int ret = Solution().numDecodings(s);
+    //     int ret = Solution().numDecodings(s);
 
-        string out = to_string(ret);
-        cout << out << endl;
-    }
+    //     string out = to_string(ret);
+    //     cout << out << endl;
+    // }
+
+    string test="4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948";
+    std::cout << "test.length() = " << test.length() << std::endl;
+
     return 0;
 }
