@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-12 18:56:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-25 14:56:12
+ * @LastEditTime: 2019-07-25 17:16:52
  * @Description: To be added.
  */
 
@@ -65,8 +65,10 @@ class Solution_2
 {
 public:
     //DFS Solution
+    //方法正确，但input的字符串长度不能超过30!
+    //原因是
     //Cannot pass "4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"
-    int numDecodings(string s) 
+    int numDecodings(string s)
     {
         if(s.length()==0)   return 0;
         return dfs(s, s.length()-1);
@@ -138,7 +140,8 @@ int main() {
     //     cout << out << endl;
     // }
 
-    string test="4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948";
+    // string test="4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948";
+    string test="111111111111111111111111111111";
     std::cout << "test.length() = " << test.length() << std::endl;
 
     return 0;
