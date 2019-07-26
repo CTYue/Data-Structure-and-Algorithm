@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-12 18:56:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-25 17:16:52
+ * @LastEditTime: 2019-07-26 00:17:05
  * @Description: To be added.
  */
 
@@ -68,7 +68,7 @@ public:
     //方法正确，但input的字符串长度不能超过30!
     //原因是
     //Cannot pass "4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"
-    int numDecodings(string s)
+    int numDecodings(string s) 
     {
         if(s.length()==0)   return 0;
         return dfs(s, s.length()-1);
@@ -89,13 +89,18 @@ public:
             int ways=0;
             if(s[end-1]=='0')   return 0;
             if(s[end]!='0') ways++;
-            int num=(s[end-1]-'0')*10+s[end]-'0';
+            
+            int num=(s[end-1]-'0')*10+s[end]-'0';//处理两位数的情况
+            std::cout << "num = " << num << std::endl;
             if(num<=26) ways++;
             return ways;
         }
         
          int ways=0;
+         //
          if(s[end]!='0')  ways+=dfs(s, end-1);
+        
+         //从后往前
          int num=(s[end-1]-'0')*10+(s[end]-'0');
          if(s[end-1]!='0' && num<=26)   ways+=dfs(s,end-2);
          return ways;
