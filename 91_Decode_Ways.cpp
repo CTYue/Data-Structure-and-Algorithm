@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-12 18:56:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-26 00:17:44
+ * @LastEditTime: 2019-07-26 00:33:19
  * @Description: To be added.
  */
 
@@ -20,12 +20,9 @@ public:
     //Space Complexity: O(1)
     int numDecodings(string s) 
     {
-        if(s.empty() || s[0]=='0')
-            return 0;
-        if(s.length()==1)
-            return 1;
-        
+        if(s.empty())   return 0;
         int len=s.length();
+
         vector<int> dp(len+1,0);
         dp[0]=1;
         if(s[0]!='0')
