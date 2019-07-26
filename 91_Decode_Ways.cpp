@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-12 18:56:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-26 00:17:05
+ * @LastEditTime: 2019-07-26 00:17:44
  * @Description: To be added.
  */
 
@@ -65,6 +65,7 @@ class Solution_2
 {
 public:
     //DFS Solution
+    //Recursion
     //方法正确，但input的字符串长度不能超过30!
     //原因是
     //Cannot pass "4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"
