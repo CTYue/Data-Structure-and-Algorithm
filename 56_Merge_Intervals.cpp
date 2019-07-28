@@ -1,58 +1,51 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-07-26 02:13:34
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-07-28 13:39:28
+ * @Description: To be added.
+ * @AC: Solution_1 Yes
+ */
+
 #include <iostream>
 #include <vector>
 #include <queue>
 #include <sstream>
 
 using namespace std;
-class Solution {
+//Leetcode
+class Solution_1 {
 public:
-    //DP Solution
-    //Time Complexity: O(???)
-    //Space Complexity: O(???)
-    vector<vector<int>> merge(vector<vector<int>>& intervals) 
+    using Interval=vector<int>;
+    vector<Interval> merge(vector<Interval>& intervals) 
     {
-        vector<vector<int>> res;
-        if(intervals.size()==0 || intervals.size()==1 ) return intervals;
-        int len=intervals.size();
+        vector<Interval> res;
+        if(intervals.empty())   return res;
+        //sort(vec.begin(), vec.end(), myfunction);//还没理解！这里的function如何被调用？
+        sort(intervals.begin(), intervals.end());
+        res.push_back(intervals[0]);
         
-        //
-        std::sort(intervals.begin(),intervals.end());
-        
-        vector<vector<int>>::iterator last=intervals.begin();
-        
-        for(auto item:intervals)
-        {
-            if(last==intervals.end() || last[1]<item[0])//这里有问题
-            {
-                res.push_back(item);
-                //Update last:
-                last=item;
+        for(int i=1;i<intervals.size();i++)
+        {            
+            if(*(intervals[i].begin()) <= *(res.back().end()-1))
+            {   
+                Interval temp(2,0);
+                temp[0]=*res.back().begin();
+                temp[1]=max(*(res.back().end()-1), *(intervals[i].end()-1));
+                //注意，vector中的末元素，其地址为vec.end()-1
+                // std::cout << "intervals[i].end()-1 = " << *(intervals[i].end()-1) << std::endl;
+                // std::cout << "temp = " << "[" << temp[0] << ", " << temp[1] << "]" << std::endl;
+                res.pop_back();
+                res.push_back(temp);
             }
-                
-            //否则就合并  
-            else
-            {
-                last[1]=std::max(last[1],item[1]);
-            }
-            
-            // std::cout << "item.size() == " << item.size() << std::endl; 
-            // last=item;
-            // std::cout << "item[0] =" << item[0] << std::endl;
-            // std::cout << "item[1] =" << item[1] << std::endl;        
-        
-            std::cout << item.start() <<std::endl;
-        }
-        
-        
-        // std::cout << "last[0] = " << last[0][0] << std::endl;
-        // std::cout << "last[1] = " << last[1][0] << std::endl;
-        // std::cout << "last[2] = " << last[2][0] << std::endl;
-        // std::cout << "last[3] = " << last[3][0] << std::endl;
+            else 
+                res.push_back(intervals[i]);
+        }        
         
         return res;
     }
 };
-
 
 int main(int argc, char* argv[])
 {
