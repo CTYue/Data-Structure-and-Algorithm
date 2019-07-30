@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-28 23:27:52
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-28 23:52:24
+ * @LastEditTime: 2019-07-30 19:04:00
  * @Description: To be added.
  * @AC: Solution: Yes
  */
@@ -15,6 +15,7 @@ class Solution {
 public:
     //O(longN)
     //如何pass，在不修改myPow的情况下？
+    //注意理解代码，并背诵.
     //double myPow(double x, int n)
     double myPow(double x, long n) 
     {
@@ -23,11 +24,12 @@ public:
             x=1/x;
             n=-n;
         }
-        double res=1, tmp=x;
         
-        while(n)
+        double tmp=x,res=1;
+        while(n!=0)
         {
-            if(n%2==1)  res*=tmp;
+            //如果n为2,最后一步
+            if(n%2==1)    res*=tmp;
             tmp*=tmp;
             n/=2;
         }
@@ -35,6 +37,7 @@ public:
         return res;
     }
 };
+
 
 int main(int argc, char* argv[])
 {
