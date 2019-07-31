@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-30 22:47:42
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-30 22:51:08
+ * @LastEditTime: 2019-07-30 23:49:02
  * @Description: To be added.
  * @AC: Solution_1: T: O(n) and S: O(n): Faster than 32%, less than 6%
  */
@@ -33,7 +33,7 @@ public:
                 set.erase(s[i]);
                 count+=2;//前一次+当前次
             }
-            
+
             //NOT seen
             else
                 set.insert(s[i]);
