@@ -1,8 +1,16 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-05-31 01:12:19
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-05-31 01:12:19
+ * @Description: To be added.
+ */
+
 //Submit a text vesion of your program to blackboard
 
 //For sort, you are not allowed to swap values of nodes; you should only change the addresses of pointers.
 //See explanations in class on this.
-
 
 #include <iostream>
 using namespace std;
