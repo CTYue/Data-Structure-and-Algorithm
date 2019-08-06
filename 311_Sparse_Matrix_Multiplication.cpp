@@ -3,15 +3,14 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-06 14:48:40
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-06 14:49:35
+ * @LastEditTime: 2019-08-06 16:27:47
  * @Description: To be added.
- * @AC: 
+ * @AC:  Yes, faster than 74%, less than 100%.
  */
 
 #include <iostream>
 #include <vector>
 #include <string>
-
 
 using namespace std;
 class Solution {
@@ -37,7 +36,7 @@ public:
                 {
                     for(int k=0;k<B[0].size();k++)
                     {
-                        if(B[j][k]!=0)  res[i][k]+=A[i][j]*B[j][k];//这里有问题！
+                        if(B[j][k]!=0)  res[i][k]+=A[i][j]*B[j][k];//注意理解这里！
                     }
                 }
             }
