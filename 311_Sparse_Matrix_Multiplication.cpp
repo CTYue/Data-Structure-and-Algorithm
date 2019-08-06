@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-06 14:48:40
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-06 16:27:47
+ * @LastEditTime: 2019-08-06 16:36:14
  * @Description: To be added.
  * @AC:  Yes, faster than 74%, less than 100%.
  */
@@ -18,9 +18,9 @@ public:
     //最优可以达到O(n^3)
     //Time Complexity:
     //Space Complexity:
-    vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B) 
+    vector<vector<int> > multiply(vector<vector<int> >& A, vector<vector<int> >& B) 
     {
-        vector<vector<int>> res;
+        vector<vector<int> > res;
         if(A.size()==0 || B.size()==0)  return res;
         
         //Check if the multiplication is possible or not
