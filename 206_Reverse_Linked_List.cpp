@@ -1,8 +1,12 @@
-//  main.cpp
-//  Reverse_Linked_List
-//
-//  Created by Zidong Yu on 6/7/18.
-//  Copyright © 2018 Zidong Yu. All rights reserved.
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-02-21 00:43:31
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-08-10 18:31:01
+ * @Description: To be added.
+ * @AC:
+ */
 
 #include <iostream>
 
@@ -11,12 +15,13 @@ class node
 public:
     int value;
     node *next;
-//  node *previous;
-    node(int v):value(v)//initializer list
+    node *prev;
+    //initializer list
+    node(int v):value(v)
     {
         value = v;
         next = nullptr;
-//      previous = nullptr;
+        prev = nullptr;
     }
 };
 
@@ -41,21 +46,25 @@ public:
 };
 
 
+//Iterasive Approach
 node *reverse(node* head)
 {
-    //Please impelement both iterative and recursive implementation
-    
-    
-    node * temp = nullptr;
-    return temp;
+    if(head==nullptr)   return nullptr;
+    node* cur=head, *prev=nullptr;
+
+    while(cur!=nullptr)
+    {
+        
+    }
+
+    return prev;
 }
 
 node *reverse(node *head,int m, int n)
 {
     //Please implement both iterative and recursive implementation
-    
-    
-    
+
+
     node *temp = nullptr;
     return temp;
 }
