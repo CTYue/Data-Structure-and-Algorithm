@@ -3,9 +3,9 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-10 18:45:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-12 23:48:04
+ * @LastEditTime: 2019-08-13 00:11:51
  * @Description: To be added.
- * @AC: Yes. Faster than 11%, less than 80%
+ * @AC: Yes: Faster than 11%, less than 80%
  */
 
 #include <iostream>
