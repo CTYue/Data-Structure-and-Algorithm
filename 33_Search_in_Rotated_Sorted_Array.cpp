@@ -3,9 +3,11 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-10 18:45:32
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-12 01:50:03
+ * @LastEditTime: 2019-08-12 23:48:04
  * @Description: To be added.
+ * @AC: Yes. Faster than 11%, less than 80%
  */
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -15,36 +17,40 @@ using namespace std;
 
 class Solution {
 public:
-    //
+    //No duplicate
+    //Ascending Order
+    //Time Complexity: O(logN)
+    //Space Complexity: O(1)
     int search(vector<int>& nums, int target) 
     {
-        if(nums.size()==0)  return 0;
-        //
-        int low=0,high=nums.size()-1;
+        if(nums.size()==0)  return -1;
+        int left=0,right=nums.size()-1;
+        int mid=0;
+        //Handle corner case
+        //when only one item in the array
+        if(left==right && nums[left]!=target) return -1;
         
-        //先找到最小值
-        while(low<high)
+        while(left<=right)
         {
-            int mid=(low+high)/2;
-            //只要遇到rotated的point，low则跳到mid+1的位置
-            if(nums[low]>nums[high])    low=mid+1;
-            
-            else high=mid;
-        }
-        
-        //
-        int rotated=low;
-        low=0;high=nums.size()-1;
-        while(low<=high)
-        {
-            int mid=(low+high)/2;
-            //这是什么意思？
-            //这里需要理解！
-            //什么意思
-            int real_mid=(mid+rotated)%(nums.size());
-            if(nums[real_mid]==target) return real_mid;
-            if(nums[real_mid]<target)    low=mid+1;
-            else    high=mid-1;
+            cout << "left = " << left << endl;
+            cout << "right = " << right << endl;
+            cout << "mid = " << mid << endl;
+            mid=(left+right)/2;
+            if(nums[mid]==target)   return mid;
+            //mid到right有序
+            //考虑右侧sub-array
+            if(nums[mid]<nums[right])
+            {
+                if(target>nums[mid] && target<=nums[right])  left=mid+1;
+                else right=mid-1;
+            }
+            //mid到right是无序的(非ascending)
+            //考虑左侧sub-array
+            else
+            {
+                if(target>=nums[left] && target<=nums[mid])   right=mid-1;
+                else left=mid+1;
+            }
         }
         
         return -1;
