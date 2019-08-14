@@ -3,10 +3,9 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-13 22:00:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-13 22:00:41
+ * @LastEditTime: 2019-08-14 16:49:17
  * @Description: No playground code provided.
  */
-
 
 // Forward declaration of the knows API.
 bool knows(int a, int b);
