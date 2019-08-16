@@ -1,50 +1,51 @@
 /*
- * main.cpp
- *
- *  Created on: Jan 13, 2018
- *      Author: yuzidong
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-02-21 00:43:31
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-08-15 23:09:30
+ * @Description: To be added.
+ * @AC: Yes: faster than 98%, less than 92%
  */
-//Please be advised that negative numbers are not palindrome numbers.
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <string>
+
 using namespace std;
 class Solution {
 public:
-    bool isPalindrome(int x)
+    bool isPalindrome(int x) 
     {
-    		long int k = 10;
-    		long int l = 1;
-    		int res = 0;
-    		int i = 0;
-    		while(x/l != 0)//division by zero
-    		{
-    			l *= 10;
-    			i++;
-//    	cout << "Value of l:"<< l << endl;
-   		}
-
-    		l /= 10;
-//    	cout << endl;
-    		while(x/(k/10) != 0)//division by zero
-    		{
-    			int temp = (x % k / (k/10));
-    			res += temp * l;
-    			k *= 10;
-    			l /= 10;
-//    	cout << "Value of k:"<< k << endl;
-    		}
-    		if( x >= 0 && res >= 0 && x == res)
-    			return true;
-    		else
-    			return false;
+        if(x<0) return false;
+        long sum=0;int temp=x;
+        
+        //取位操作：先余后除
+        while(x!=0)
+        {
+            sum=sum*10+x%10;
+            x/=10;
+        }
+        
+        return sum==temp;
     }
 };
 
-int main(void)
-{
-	Solution s;
-	int x = -2147447412;
-	cout << x << endl << endl;
-	bool result = s.isPalindrome(x);
-	cout << result << endl;
+int stringToInteger(string input) {
+    return stoi(input);
+}
+
+string boolToString(bool input) {
+    return input ? "True" : "False";
+}
+
+int main() {
+    string line;
+    while (getline(cin, line)) {
+        int x = stringToInteger(line);
+        
+        bool ret = Solution().isPalindrome(x);
+
+        string out = boolToString(ret);
+        cout << out << endl;
+    }
+    return 0;
 }

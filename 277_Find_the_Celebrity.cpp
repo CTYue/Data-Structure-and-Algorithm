@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-13 22:00:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-14 16:49:17
+ * @LastEditTime: 2019-08-15 23:08:03
  * @Description: No playground code provided.
  */
 
@@ -29,3 +29,9 @@ public:
         return celeb;
     }
 };
+
+int main(int argc, char* argv[])
+{
+
+    return 1;
+}
