@@ -3,15 +3,17 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-16 21:02:33
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-16 21:03:01
+ * @LastEditTime: 2019-08-16 21:05:14
  * @Description: To be added.
+ * @AC: Solution_1: Yes, faster than 100%, less than 100%
+ *      Solution_2: 
  */
 #include <iostream>
 #include <vector>
 #include <string>
 
 using namespace std;
-class Solution {
+class Solution_1 {
 public:
     //Time Complexity:  
     //Space Complexity: 
