@@ -3,11 +3,10 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-20 01:00:30
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-20 15:32:01
+ * @LastEditTime: 2019-08-21 21:11:05
  * @Description: To be added.
  * @AC: Yes
  */
-
 #include <iostream>
 #include <string>
 #include <vector>
