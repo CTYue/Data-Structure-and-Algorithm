@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-23 08:50:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-23 08:51:41
+ * @LastEditTime: 2019-08-23 08:52:01
  * @Description: To be added.
  * @AC: Yes
  */
@@ -28,8 +28,6 @@ public:
         for(int i=0;i<prerequisites.size();i++)
         {
             //Second points to first
-            // std::cout << "prerequisites[i].second = " << prerequisites[i].second << std::endl;
-            // std::cout << "prerequisites[i].first = " << prerequisites[i].first << std::endl;
             graph[prerequisites[i][1]].push_back(prerequisites[i][0]);
         }
 
