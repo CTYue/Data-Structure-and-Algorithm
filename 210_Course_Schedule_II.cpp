@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-23 08:50:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-23 08:52:01
+ * @LastEditTime: 2019-08-23 09:40:07
  * @Description: To be added.
  * @AC: Yes
  */
@@ -15,7 +15,7 @@ using namespace std;
 class Solution_1 {
 public:
     //BFS Solution
-    //Time Complexity: O(n)
+    //Time Complexity: O(n^2)
     //Space Complexity: O(n^2)? 
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) 
     {
