@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-21 21:11:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-22 22:01:56
+ * @LastEditTime: 2019-08-22 22:02:30
  * @Description: To be added.
  * @AC:
  */
@@ -21,9 +21,9 @@ public:
     //BFS
     //Time Complexity: 
     //Space Complexity: 
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) 
+    bool canFinish(int numCourses, vector<vector<int> >& prerequisites) 
     {        
-        vector<vector<int>> graph(numCourses);//Adjacent list
+        vector<vector<int> > graph(numCourses);//Adjacent list
         vector<int> degrees(numCourses,0);//指向某点的in-degree个数
         
         for(int i=0;i<prerequisites.size();i++)
