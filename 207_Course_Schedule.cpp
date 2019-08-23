@@ -3,13 +3,14 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-21 21:11:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-22 21:45:52
+ * @LastEditTime: 2019-08-22 22:01:56
  * @Description: To be added.
  * @AC:
  */
 #include <iostream>
-#include <sstream>
+#include <string>
 #include <vector>
+#include <sstream>
 #include <queue>
 #include <stack>
 
@@ -17,6 +18,9 @@ using namespace std;
 
 class Solution {
 public:
+    //BFS
+    //Time Complexity: 
+    //Space Complexity: 
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) 
     {        
         vector<vector<int>> graph(numCourses);//Adjacent list
