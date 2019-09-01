@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-28 16:03:22
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-28 16:04:56
+ * @LastEditTime: 2019-08-31 23:58:26
  * @Description: To be added.
  * @AC: Yes
  */
@@ -18,6 +18,7 @@ public:
     //Time Complexity:  
     //Space Complexity: 
     //滑动窗口
+    //这种方法比较难理解!
     vector<int> findAnagrams(string s, string p) 
     {
         vector<int> res;
@@ -27,7 +28,6 @@ public:
         for(int i=0;i<p_len;i++)    sum[p[i]-'a']++;
         
         int start=0, end=0, matched=0;
-        
         //还没有理解！！！
         //???
         while(end<s_len)
