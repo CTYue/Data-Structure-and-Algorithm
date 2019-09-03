@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-03 00:08:36
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-03 00:08:45
+ * @LastEditTime: 2019-09-03 17:19:51
  * @Description: To be added.
  * @AC: Yes
  */
@@ -17,19 +17,19 @@ using namespace std;
 class ValidWordAbbr {
 public:
     ValidWordAbbr(vector<string> &dictionary) {
-        for (auto a : dictionary) {
-            string k = a[0] + to_string(a.size() - 2) + a.back();
-            m[k].insert(a);
+        for (string word : dictionary) {
+            string key = word.front() + to_string(word.length() - 2) + word.back();
+            hash[key].insert(word);//注意：hash[k].insert不会产生out of bound error
         }
     }
     
     bool isUnique(string word) {
-        string k = word[0] + to_string(word.size() - 2) + word.back();
-        return m[k].count(word) == m[k].size();
+        string key = word.front() + to_string(word.length() - 2) + word.back();        
+        return hash[key].count(word) == hash[key].size();
     }
     
 private:
-    unordered_map<string, set<string>> m;
+    unordered_map<string, unordered_set<string>> hash;
 };
 
 /**
