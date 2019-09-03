@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-28 16:03:22
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-31 23:58:26
+ * @LastEditTime: 2019-09-02 23:55:54
  * @Description: To be added.
  * @AC: Yes
  */
@@ -13,46 +13,11 @@
 #include <string>
 
 using namespace std;
-class Solution {
-public:
-    //Time Complexity:  
-    //Space Complexity: 
-    //滑动窗口
-    //这种方法比较难理解!
-    vector<int> findAnagrams(string s, string p) 
-    {
-        vector<int> res;
-        int sum[30]={0};//为什么是30？
-        
-        int p_len=p.length(), s_len=s.length();
-        for(int i=0;i<p_len;i++)    sum[p[i]-'a']++;
-        
-        int start=0, end=0, matched=0;
-        //还没有理解！！！
-        //???
-        while(end<s_len)
-        {
-            //如果s[end]在sum中出现过
-            if(sum[s[end]-'a']>=1)  matched++;
-            
-            //清空sum???
-            sum[s[end]-'a']--;
-            end++;//什么意思？
-            
-            if(matched==p_len)  res.push_back(start);
-            
-            //这是什么意思？
-            if(end-start==p_len)
-            {
-                if(sum[s[start]-'a']>=0)    matched--;
-                sum[s[start]-'a']++;
-                start++;
-            }
-        }
-        
-        return res;
-    }
+class Solution
+{
+
 };
+
 
 string stringToString(string input) {
     assert(input.length() >= 2);
