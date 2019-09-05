@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-03 00:08:36
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-03 17:19:51
+ * @LastEditTime: 2019-09-03 18:07:06
  * @Description: To be added.
  * @AC: Yes
  */
@@ -11,9 +11,13 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <unordered_set>
 #include <string>
 
 using namespace std;
+
+//Time Complexity: ???
+//Space Complexity: ???
 class ValidWordAbbr {
 public:
     ValidWordAbbr(vector<string> &dictionary) {
@@ -29,7 +33,7 @@ public:
     }
     
 private:
-    unordered_map<string, unordered_set<string>> hash;
+    unordered_map<string, unordered_set<string> > hash;
 };
 
 /**

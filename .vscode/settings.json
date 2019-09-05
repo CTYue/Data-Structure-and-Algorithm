@@ -54,6 +54,7 @@
         "vector": "cpp",
         "cmath": "cpp",
         "deque": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "unordered_map": "cpp"
     }
 }
