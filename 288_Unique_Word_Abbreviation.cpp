@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-03 00:08:36
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-03 18:07:06
+ * @LastEditTime: 2019-09-06 16:51:21
  * @Description: To be added.
  * @AC: Yes
  */
@@ -16,7 +16,7 @@
 
 using namespace std;
 
-//Time Complexity: ???
+//Time Complexity: ???å
 //Space Complexity: ???
 class ValidWordAbbr {
 public:
