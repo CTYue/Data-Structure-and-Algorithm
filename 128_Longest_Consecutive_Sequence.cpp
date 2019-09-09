@@ -3,8 +3,9 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-08 23:37:50
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-08 23:40:41
+ * @LastEditTime: 2019-09-08 23:41:27
  * @Description: To be added.
+ * @AC: Yes
  */
 #include <iostream>
 #include <queue>
@@ -64,7 +65,7 @@ public:
             cur=temp;
             // std::cout << "count = " << count << std::endl;
             // std::cout << std::endl << "length = " << length << std::endl;
-            length=std::max(count,length);//length的计算有问题！
+            length=std::max(count,length);
         }
         
         return length;
