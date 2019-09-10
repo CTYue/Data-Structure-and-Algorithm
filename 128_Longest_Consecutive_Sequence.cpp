@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-08 23:37:50
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-08 23:41:27
+ * @LastEditTime: 2019-09-10 02:58:14
  * @Description: To be added.
  * @AC: Yes
  */
@@ -12,7 +12,6 @@
 #include <vector>
 #include <string>
 #include <sstream>
-
 
 using namespace std;
 class Solution {
@@ -54,7 +53,7 @@ public:
                 // std::cout << "temp==cur"<< std::endl;
                 continue;
             }
-            
+
             else 
             {
                 // std::cout << "else " << std::endl;
