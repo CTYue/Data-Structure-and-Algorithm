@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-19 08:28:13
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-19 08:29:29
+ * @LastEditTime: 2019-09-19 22:18:01
  * @Description: To be added.
  */
 #include <iostream>
@@ -16,16 +16,45 @@ using namespace std;
 class Solution_1 {
 public:
     //Brute force Solution
+    //Time Complexity: O((m+n)log(m+n))
+    //Space Complexity: O(1)
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
     {   
         //std::copy(src_begin, src_end, dest_begin);
         std::copy(nums2.begin(), nums2.begin()+n, nums1.begin()+m);        
         for(auto item:nums1)
             std::cout<< item << " ";
-        
+
         std::sort(nums1.begin(), nums1.end());
     }
 };
+
+class Solution_2 {
+public:
+    //Two pointers
+    //Time Complexity: O(m+n)
+    //Space Complexity: O(1)
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
+    {
+        int idx_1=m-1, idx_2=n-1;
+        int len=m+n-1;
+        while(idx_1>=0 && idx_2>=0)
+        {
+            if(nums1[idx_1]>=nums2[idx_2])  nums1[len--]=nums1[idx_1--];
+            else nums1[len--]=nums2[idx_2--];            
+        }
+        std::cout << "idx_1 = " << idx_1 << std::endl;
+        std::cout << "idx_2 = " << idx_2 << std::endl;
+        
+        while(idx_2>=0) 
+        {
+            nums1[len--]=nums2[idx_2--];
+        }
+        
+        for(int n:nums1)    std::cout << n << " ";
+    }
+};
+
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
