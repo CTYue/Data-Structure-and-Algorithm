@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-13 20:46:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-30 18:24:30
+ * @LastEditTime: 2019-09-30 20:56:20
  * @Description: To be added.
  * @AC: DFS: Yes
  *      BFS: 
@@ -17,7 +17,7 @@ class Solution_DFS {
 public:
     //DFS
     //用gate去找room
-    //Time Complexity: O(M*N) 
+    //Time Complexity: O(M^2*N^2) Worst case: M: number of rows; N: number of columns. 
     //Space Complexity: O(1)
     void wallsAndGates(vector<vector<int>>& rooms) 
     {
