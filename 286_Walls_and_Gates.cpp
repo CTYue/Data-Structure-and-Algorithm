@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-13 20:46:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-30 20:56:20
+ * @LastEditTime: 2019-10-01 22:20:34
  * @Description: To be added.
  * @AC: DFS: Yes
  *      BFS: 
@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 class Solution_DFS {
@@ -47,6 +48,45 @@ public:
 
 class Solution_BFS
 {
+    public:
+    //BFS
+    //Time Complexity: O(MN)
+    //Space Complexity: O(n)
+    vector<vector<int>> directions={{1,0}, {-1,0}, {0,1}, {0,-1}};
+    void wallsAndGates(vector<vector<int>>& rooms) 
+    {
+        if(rooms.size()==0) return;
+        int m=rooms.size(), n=rooms[0].size();
+        
+        queue<vector<int>> queue;
+        for(int row=0;row<m;row++)
+        {
+            for(int col=0;col<n;col++)
+            {
+                if(rooms[row][col]==0)   queue.push(vector<int> {row, col});
+            }
+        }
+        
+        while(!queue.empty())
+        {
+            vector<int> temp=queue.front();
+            queue.pop();
+            int row=temp[0];
+            int col=temp[1];
+            
+            for(auto d: directions)
+            {
+                int r=row+d[0];
+                int c=col+d[1];
+                
+                if(r<0 || c<0 || r>=m || c>=n || rooms[r][c]!=INT_MAX ) continue;
+                
+                rooms[r][c]=rooms[row][col]+1;
+                queue.push(vector<int> {r,c});
+            }
+        }
+            
+    }
 
-    
 }
+
