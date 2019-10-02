@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-13 20:46:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-01 22:20:34
+ * @LastEditTime: 2019-10-01 22:21:04
  * @Description: To be added.
  * @AC: DFS: Yes
  *      BFS: 
@@ -53,6 +53,7 @@ class Solution_BFS
     //Time Complexity: O(MN)
     //Space Complexity: O(n)
     vector<vector<int>> directions={{1,0}, {-1,0}, {0,1}, {0,-1}};
+    
     void wallsAndGates(vector<vector<int>>& rooms) 
     {
         if(rooms.size()==0) return;
@@ -87,6 +88,5 @@ class Solution_BFS
         }
             
     }
-
 }
 
