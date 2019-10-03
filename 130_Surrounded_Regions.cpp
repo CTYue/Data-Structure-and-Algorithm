@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-03 02:14:54
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-03 02:15:28
+ * @LastEditTime: 2019-10-03 02:48:15
  * @Description: To be added.
  */
 #include <iostream>
@@ -72,6 +72,8 @@ public:
         queue<std::pair<int, int>> queue;
         
         //注意，这里只能用std::pair, 不能使用vector<int>, 思考下为什么
+        // queue<vector<int>> queue;
+
         queue.push(std::pair<int, int>(x,y));
         board[x][y]='E';
         
@@ -79,27 +81,32 @@ public:
         {
             auto temp=queue.front();queue.pop();
             // std::cout << "temp[0] = " << temp[0] << " temp[1] = " << temp[1] << std::endl;
+            // int i=temp[0], j=temp[1];
             int i=temp.first;int j=temp.second;
             
             if (i != 0 && board[i - 1][j] == 'O')
             {
                 std::cout << "i-1 = " << i-1 << " j = " << j << std::endl;
                 queue.push(std::pair<int, int>(i - 1, j));
-                board[i - 1][j] = 'E'; //extended;
+                // queue.push(vector<int>(i - 1, j));
+                board[i - 1][j] = 'E'; 
             }
             
             if (i != m - 1 && board[i + 1][j] == 'O')
             {
                 std::cout << "i+1 = " << i+1 << " j = " << j << std::endl;
                 queue.push(std::pair<int, int>(i + 1, j));
-                board[i + 1][j] = 'E'; //extended;
+                // queue.push(vector<int>(i + 1, j));
+                board[i + 1][j] = 'E'; 
             }
             
             if (j != 0 && board[i][j - 1] == 'O')
             {
                 std::cout << "i = " << i << " j-1 = " << j-1 << std::endl;
                 queue.push(std::pair<int, int>(i, j - 1));
-                board[i][j - 1] = 'E'; //extended;
+                // queue.push(vector<int>(i, j - 1));
+
+                board[i][j - 1] = 'E';
             }
             
             //当使用queue<vector<int>>时，这里有问题！
@@ -108,9 +115,19 @@ public:
             {
                 std::cout << "i = " << i << " j + 1 = " << j+1 << std::endl;
                 queue.push(std::pair<int, int>(i, j + 1));
-                board[i][j + 1] = 'E'; //extended;
+                // queue.push(vector<int>(i, j + 1));
+
+                board[i][j + 1] = 'E'; 
             }
         }
     }
     
 };
+
+
+// queue<vector<int>>:
+// x, y: 1, 1
+// x, y: 2, 0
+
+// queue<std::pair<int, int>>:
+// x, y: 3, 1
