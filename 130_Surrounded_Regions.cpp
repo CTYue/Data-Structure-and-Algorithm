@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-03 02:14:54
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-03 02:48:15
+ * @LastEditTime: 2019-10-03 15:01:42
  * @Description: To be added.
  */
 #include <iostream>
@@ -71,10 +71,12 @@ public:
         int m=board.size(),n=board[0].size();
         queue<std::pair<int, int>> queue;
         
-        //注意，这里只能用std::pair, 不能使用vector<int>, 思考下为什么
+        //注意vector的初始化方式，这里应该使用{}而不是()
         // queue<vector<int>> queue;
 
         queue.push(std::pair<int, int>(x,y));
+        
+        // queue.push({x, y});
         board[x][y]='E';
         
         while(!queue.empty())
@@ -88,7 +90,7 @@ public:
             {
                 std::cout << "i-1 = " << i-1 << " j = " << j << std::endl;
                 queue.push(std::pair<int, int>(i - 1, j));
-                // queue.push(vector<int>(i - 1, j));
+                // queue.push({i - 1, j});
                 board[i - 1][j] = 'E'; 
             }
             
@@ -96,7 +98,7 @@ public:
             {
                 std::cout << "i+1 = " << i+1 << " j = " << j << std::endl;
                 queue.push(std::pair<int, int>(i + 1, j));
-                // queue.push(vector<int>(i + 1, j));
+                // queue.push({i + 1, j});
                 board[i + 1][j] = 'E'; 
             }
             
@@ -104,7 +106,7 @@ public:
             {
                 std::cout << "i = " << i << " j-1 = " << j-1 << std::endl;
                 queue.push(std::pair<int, int>(i, j - 1));
-                // queue.push(vector<int>(i, j - 1));
+                // queue.push({i, j - 1});
 
                 board[i][j - 1] = 'E';
             }
@@ -115,7 +117,7 @@ public:
             {
                 std::cout << "i = " << i << " j + 1 = " << j+1 << std::endl;
                 queue.push(std::pair<int, int>(i, j + 1));
-                // queue.push(vector<int>(i, j + 1));
+                // queue.push({i, j + 1});
 
                 board[i][j + 1] = 'E'; 
             }
@@ -131,3 +133,20 @@ public:
 
 // queue<std::pair<int, int>>:
 // x, y: 3, 1
+
+int main()
+{
+    vector<int> test={1,2,3};
+    queue<vector<int>> Q;
+    Q.push(vector<int>{666,888,999});
+    Q.push(test);
+
+    while(!Q.empty())
+    {
+        auto res=Q.front();Q.pop();
+        for(auto item: res)
+            std::cout << item << " ";
+    }    
+    
+    std::cout << std::endl;
+}
