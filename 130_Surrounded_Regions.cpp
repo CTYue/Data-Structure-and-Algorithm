@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-03 02:14:54
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-03 15:01:42
+ * @LastEditTime: 2019-10-03 20:14:34
  * @Description: To be added.
  */
 #include <iostream>
@@ -107,7 +107,6 @@ public:
                 std::cout << "i = " << i << " j-1 = " << j-1 << std::endl;
                 queue.push(std::pair<int, int>(i, j - 1));
                 // queue.push({i, j - 1});
-
                 board[i][j - 1] = 'E';
             }
             
