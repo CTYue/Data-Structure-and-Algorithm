@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-09-13 20:46:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-01 23:53:42
+ * @LastEditTime: 2019-10-05 15:56:21
  * @Description: To be added.
  * @AC: DFS: Yes
  *      BFS: Yes
@@ -46,47 +46,49 @@ public:
     }
 };
 
-class Solution_BFS
+class Solution_BFS 
 {
-    public:
+public:
     //BFS
     //Time Complexity: O(MN)
     //Space Complexity: O(n)
-    vector<vector<int>> directions={{1,0}, {-1,0}, {0,1}, {0,-1}};
-    
+    vector<vector<int>> directions={{0,1},{0,-1},{1,0},{-1,0}};
+    int GATE=0;
+    int WALL=-1;
+    int INF=INT_MAX;
     void wallsAndGates(vector<vector<int>>& rooms) 
     {
-        if(rooms.size()==0) return;
+        if(rooms.size()<=0) return;
         int m=rooms.size(), n=rooms[0].size();
         
         queue<vector<int>> queue;
-        for(int row=0;row<m;row++)
+        
+        //gates find rooms
+        for(int i=0;i<m;i++)
         {
-            for(int col=0;col<n;col++)
+            for(int j=0;j<n;j++)
             {
-                if(rooms[row][col]==0)   queue.push(vector<int> {row, col});
+                if(rooms[i][j]==GATE) queue.push({i,j});
             }
         }
-        
+
         while(!queue.empty())
         {
-            vector<int> temp=queue.front();
+            auto temp=queue.front();
             queue.pop();
-            int row=temp[0];
-            int col=temp[1];
             
             for(auto d: directions)
             {
-                int r=row+d[0];
-                int c=col+d[1];
+                int x=d[0]+temp[0];
+                int y=d[1]+temp[1];
                 
-                if(r<0 || c<0 || r>=m || c>=n || rooms[r][c]!=INT_MAX ) continue;
-                
-                rooms[r][c]=rooms[row][col]+1;
-                queue.push(vector<int> {r,c});
+                //Update empty room
+                if(x>=0 && x<m && y>=0 && y<n && rooms[x][y]==INF)
+                {
+                    rooms[x][y]=rooms[temp[0]][temp[1]]+1;
+                    queue.push({x,y});
+                }
             }
         }
-            
     }
-}
-
+};

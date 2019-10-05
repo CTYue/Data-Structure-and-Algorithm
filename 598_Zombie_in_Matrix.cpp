@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-05 00:25:26
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-05 13:08:43
+ * @LastEditTime: 2019-10-05 15:17:41
  * @Description: To be added.
  */
 
@@ -34,7 +34,6 @@ public:
        if(grid.size()<=1) return 0;
        int m=grid.size(), n=grid[0].size();
        
-       //僵尸找人
        queue<vector<int>> queue;
         
        int people=0;
@@ -42,6 +41,7 @@ public:
         {
             for(int j=0;j<n;j++)
             {
+                //僵尸找人
                 if(grid[i][j]==ZOMBIE)  queue.push({i, j});//存储zombie的坐标
                 if(grid[i][j]==0)   people++;
             }
