@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-05 00:25:26
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-05 00:25:26
+ * @LastEditTime: 2019-10-05 13:08:43
  * @Description: To be added.
  */
 
@@ -54,7 +54,7 @@ public:
         while(!queue.empty())
         {
             days++;
-            int size=queue.size();//僵尸数量
+            int size=queue.size();
             
             //遍历每个zombie的临近点
             for(int i=0;i<size;i++)
