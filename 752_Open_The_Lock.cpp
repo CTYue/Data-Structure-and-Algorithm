@@ -1,83 +1,74 @@
 /*
- * main.cpp
- *
- *  Created on: Dec 23, 2017
- *      Author: yuzidong
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-02-21 00:43:31
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-10-08 17:55:49
+ * @Description: To be added.
+ * @AC: BFS Yes
  */
 
-//Wrong Code
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <unordered_set>
 #include <string>
+
 using namespace std;
 
-//Q3
 class Solution {
 public:
-    int openLock(vector<string>& deadends, string target)
-    {	//times of turing wheels to target
-    		//deadends cannot appear
-    		vector<string> allPath;
-    		for(int i=0; i < deadends.size(); i++)
-    		{
-    			if(deadends[i] == "0000")
-    				return -1;
-    		}
-    		int count = 0;
-    		int binaryTarget = stoi(target);
-    		cout << binaryTarget << endl;
-    		int t4 = binaryTarget%10;//
-    		binaryTarget /= 10;
-    		int t3 = binaryTarget%10;
-    		binaryTarget /= 10;
-    		int t2 = binaryTarget%10;
-    		binaryTarget /= 10;
-    		int t1 = binaryTarget%10;
+    //BFS
+    //Time Complexity: O(???)
+    //Space Complexity: O(N)
+    //可以视为matrix遍历问题
+    int openLock(vector<string>& deadends, string target) 
+    {
+        queue<string> queue;
+        queue.push("0000");
+        int step=0;
+        
+        unordered_set<string> visited;
 
-    		cout << t1 << endl;
-    		cout << t2 << endl;
-    		cout << t3 << endl;
-    		cout << t4 << endl;
-
-    		//calculate times from 0 to target number
-    		if( t1!= 9)
-    		{
-    			count += t1;
-
-    			if( t2 != 9)
-    			{
-    				count += t2;
-    				if( t3 != 9)
-    				{
-    					count += t3;
-    					if( t4 != 9)
-    					{
-    						count += t4;
-    					}
-    					else
-    						count += 1;
-    				}
-    				else
-    					count += 2;
-    			}
-    			else
-    				count += 3;
-    		}
-    		else
-    			count += 4;
-
-
-
-    		//return -1;//cannot reach the target without deadends
+        //将deadend里的每一项均当做已visited的项
+        //为什么？
+        for(auto d: deadends)   visited.insert(d);
+        
+        while(!queue.empty())
+        {
+            //BFS在需要计算步骤的时候，
+            //需要获取queue的size
+            //并遍历每个queue
+            int size=queue.size();
+            for(int i=0;i<size;i++)
+            {
+                string node=queue.front();queue.pop();
+                
+                //如果该node已访问过
+                if(visited.count(node)!=0) continue;//这里为什么是continue？
+                
+                if(node==target)    return step;
+                
+                //对lock的每一位进行操作
+                for(int j=0;j<4;j++)
+                {
+                    //每次减1或加1
+                    for(int k=-1;k<=1;k+=2)
+                    {
+                        string next=node;
+                        //注意这里的处理技巧！
+                        //+1时取1，-1时取9
+                        next[j]=(next[j]-'0'+k+10)%10+'0';
+                        //将生成的lock压入queue
+                        queue.push(next);
+                    }
+                }
+                
+                visited.insert(node);
+            }
+            step++;
+        }
+        //if impossible
+        return -1;
     }
 };
-
-int main()
-{
-	Solution s;
-	vector<string> test(10);
-	string target = "9999";
-	int result;
-	result = s.openLock(test,target);
-	cout << result << endl;
-}
