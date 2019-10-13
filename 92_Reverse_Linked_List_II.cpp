@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-13 17:28:31
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-13 17:29:40
+ * @LastEditTime: 2019-10-13 17:36:27
  * @Description: To be added.
  */
 
@@ -29,7 +29,6 @@ public:
         ListNode* dummy=new ListNode(0);
         ListNode* pre=dummy, *cur;
         dummy->next=head;
-        
         
         for(int i=0;i<m-1;i++)  pre=pre->next;
         
