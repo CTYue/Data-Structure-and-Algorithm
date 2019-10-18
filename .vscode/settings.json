@@ -55,7 +55,9 @@
         "cmath": "cpp",
         "deque": "cpp",
         "stack": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "list": "cpp",
+        "queue": "cpp"
     },
     "python.pythonPath": "/usr/local/bin/python3"
 }
