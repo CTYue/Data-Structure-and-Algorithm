@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-18 03:24:08
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-18 03:46:49
+ * @LastEditTime: 2019-10-20 17:28:55
  * @Description: To be added.
  */
 #include <iostream>
@@ -14,8 +14,8 @@ using namespace std;
 class Solution {
 public:
     //DFS
-    //Time Complexity: 
-    //Space Complexity: 
+    //Time Complexity: O(?)
+    //Space Complexity: O(?)
     vector<vector<int>> res;
     vector<vector<int>> getFactors(int n) 
     {
