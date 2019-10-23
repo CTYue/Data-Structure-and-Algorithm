@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-31 01:56:42
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-22 21:58:36
+ * @LastEditTime: 2019-10-22 23:56:06
  * @Description: To be added.
  */
 
@@ -12,9 +12,9 @@
 #include <unordered_map>
 
 using namespace std;
-class Solution {
+class Solution_1 {
 public:
-	//Hash Map
+	//Two Pass Hash Map
     //Time Complexity: O(n)
     //Space Complexity: O(n)
     vector<int> twoSum(vector<int>& nums, int target) 
@@ -44,9 +44,10 @@ public:
     }
 };
 
+
 int main()
 {
-	Solution s;
+	Solution_1 s;
 	int a[] = {3,2,4};
 	vector<int> nums(a,a+3);
 	vector<int> result;
