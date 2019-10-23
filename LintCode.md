@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-21 23:07:22
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-22 01:20:45
+ * @LastEditTime: 2019-10-22 01:27:06
  * @Description: To be added.
  -->
 
@@ -141,7 +141,6 @@ Optional:
     91. Minimum Adjustment Cost
     29. Interleaving String
     168. Burst Balloons
-
 
 7. Follow Up
 Required:
