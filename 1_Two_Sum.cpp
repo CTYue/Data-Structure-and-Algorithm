@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-31 01:56:42
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-22 23:56:06
+ * @LastEditTime: 2019-10-23 00:33:59
  * @Description: To be added.
  */
 
@@ -44,6 +44,28 @@ public:
     }
 };
 
+class Solution_2 {
+public:
+    //Hash map one pass
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
+    vector<int> twoSum(vector<int>& nums, int target) 
+    {
+        if(nums.size()==0)  return vector<int>{};
+        
+        unordered_map<int, int> hash_map;
+        
+        for(int i=0;i<nums.size();i++)
+        {
+            int complement=target-nums[i];
+            
+            if(hash_map.find(complement)!=hash_map.end())   return vector<int>{hash_map[complement], i};
+            
+            hash_map.insert(pair<int, int>(nums[i], i));
+        }
+        return vector<int>{};
+    }
+};
 
 int main()
 {
