@@ -3,8 +3,8 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-18 03:24:08
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-23 21:06:51
- * @Description: To be added.
+ * @LastEditTime: 2019-10-23 21:07:36
+ * @Description: Not necessary for this problem.
  */
 
 #include <iostream>
