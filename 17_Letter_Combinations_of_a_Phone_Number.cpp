@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-21 20:11:02
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-24 14:28:25
+ * @LastEditTime: 2019-10-24 14:41:01
  * @Description: 
  * Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
  * A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
@@ -54,7 +54,7 @@ public:
                 backtracking(digits, local, index+1);
                 
                 cout<<"local.back() = "<<local.back()<<endl;
-                local.pop_back();//清空本级的local
+                local.pop_back();//clear the last letter we just combined
             }
         }
             

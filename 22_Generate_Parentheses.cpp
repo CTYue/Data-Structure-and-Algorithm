@@ -1,75 +1,55 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-05-24 15:53:28
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-10-24 16:15:52
+ * @Description: 
+ * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+ * For example, given n = 3, a solution set is:
+ * [
+ *  "((()))",
+ *  "(()())",
+ *  "(())()",
+ *  "()(())",
+ *  "()()()"
+ */
+
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 using namespace std;
 
-class Solution_1 {
+class Solution {
 public:
-    
-    //Approach 1: Recursion
-    //Time complexity:
-    //Space complexity:
+    //BackTracking
+    //Time Complexity: 
+    //Space Complexity: 
+    vector<string> res;
+    //open: dict[0], close: dict[1]
+    vector<string> dict={"(",")"};
     vector<string> generateParenthesis(int n) 
     {
-        vector<string> res;
-        if(n<1) return res;
-        if(n==1)
-        {
-            res.push_back("()");
-            return res;
-        }
-        
-        //Why the Length is 2*n?
-        string str(2*n,'\0');
-        generate(0,n,0,0,res,str);
-        
+       if(n<1) return res;
+        string local;
+        backtracking(n, 0, 0, local);
         return res;
     }
     
- 
-    void generate(int pos, int n, int open, int close, vector<string>& res,string& str)
-    {      
-        if(close!=n)
-        {
-            if(open>close)
-            {
-                str[pos]=')';
-                generate(pos+1,n,open,close+1,res,str);//
-            }
-            
-            if(open<n)
-            {
-                str[pos]='(';
-                generate(pos+1,n,open+1,close,res,str);//
-            }
-        }
-        
-        else if(close==n)
-        {
-            res.push_back(str);
-        }
-        
-    }    
-};
-
-class Solution_2
-{
-public:
-    vector<string> generateParenthesis(int n) 
+    void backtracking(int n, int open, int close, string local)
     {
-        vector<string> res;
-        if(n<1) return res;
-        if(n==1)
+        if(local.length()==(2*n))    
         {
-            res.push_back("()");
-            return res;
+            res.push_back(local);
+            return;
         }
-
-
-
-
-        return res;
+        
+        // cout<<"open = "<<open<<endl;
+        // cout<<"close = "<<close<<endl;
+        //open==close==n/2
+        if(open<n)  backtracking(n, open+1, close, local+dict[0]);
+        if(close<open) backtracking(n, open, close+1, local+dict[1]);
     }
 };
 
@@ -83,7 +63,7 @@ int main(int argc, char* argv[])
     std::cin >> num;
 
     vector<string> res;
-    Solution_1 s;
+    Solution s;
     res=s.generateParenthesis(num);
 
     for(string item:res)
