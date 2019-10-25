@@ -57,7 +57,8 @@
         "stack": "cpp",
         "unordered_map": "cpp",
         "list": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "unordered_set": "cpp"
     },
     "python.pythonPath": "/usr/local/bin/python3"
 }
