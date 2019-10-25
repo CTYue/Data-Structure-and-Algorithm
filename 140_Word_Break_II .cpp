@@ -3,8 +3,26 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-24 22:39:51
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-24 22:41:39
- * @Description: To be added.
+ * @LastEditTime: 2019-10-24 22:48:50
+ * @Description:
+ * Example:
+ * =====================
+ * Input:
+ * s = "catsanddog"
+ * wordDict = ["cat", "cats", "and", "sand", "dog"]
+ * 
+ * Output:
+ * [
+ *  "cats and dog",
+ *  "cat sand dog"
+ * ]
+ * =====================
+ * Input:
+ * s = "catsandog"
+ * wordDict = ["cats", "dog", "sand", "and", "cat"]
+ * 
+ * Output:
+ * []
  */
 
 #include <iostream>
@@ -13,10 +31,12 @@
 #include <unordered_set>
 #include <string>
 
-
 using namespace std;
 class Solution {
 public:
+    //DFS
+    //Time Complexity: 
+    //Space Complexity: 
     vector<string> wordBreak(string s, vector<string>& wordDict) 
     {
         // std::cout << "wordDict.size() = " << wordDict.size() << std::endl;
