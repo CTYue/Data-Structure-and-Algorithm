@@ -3,9 +3,17 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-21 21:11:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-08-22 22:08:03
- * @Description: To be added.
- * @AC:
+ * @LastEditTime: 2019-10-28 11:15:01
+ * @Description:
+ * There are a total of n courses you have to take, labeled from 0 to n-1.
+ * Some courses may have prerequisites, for example to take course 0 you have to first take course 1, 
+ * which is expressed as a pair: [0,1](in the graph, 0 points to 1), return true if it's possible
+ * to finish all courses, otherwise, return false.
+ * Example 1:
+ * Input: 2, [[1,0]] 
+ * Output: true
+ * Explanation: There are a total of 2 courses to take. 
+ * To take course 1 you should have finished course 0. So it is possible.
  */
 #include <iostream>
 #include <string>
@@ -19,8 +27,8 @@ using namespace std;
 class Solution {
 public:
     //BFS
-    //Time Complexity: 
-    //Space Complexity: 
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     bool canFinish(int numCourses, vector<vector<int> >& prerequisites) 
     {        
         vector<vector<int> > graph(numCourses);//Adjacent list
