@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-21 21:11:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-28 20:23:55
+ * @LastEditTime: 2019-10-28 21:07:13
  * @Description:
  * There are a total of n courses you have to take, labeled from 0 to n-1.
  * Some courses may have prerequisites, for example to take course 0 you have to first take course 1, 
@@ -46,7 +46,8 @@ public:
             int j=0;
             for(;j<numCourses;j++)
             {
-                if(degrees[j]==0)   break;//找到至少一个in-degree为0的node，则退出
+                //if found a node with no in-degree
+                if(degrees[j]==0)   break;
             }
             
             if(j==numCourses)   return false;
