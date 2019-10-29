@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-21 21:11:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-28 20:22:41
+ * @LastEditTime: 2019-10-28 20:23:55
  * @Description:
  * There are a total of n courses you have to take, labeled from 0 to n-1.
  * Some courses may have prerequisites, for example to take course 0 you have to first take course 1, 
@@ -40,7 +40,6 @@ public:
         for(auto v:graph)
             for(int node:v) degrees[node]++;//degrees[node]==1, 指向node的in-degree的数量++
 
-
         //Topological Sorting
         for(int i=0;i<numCourses;i++)
         {
@@ -55,8 +54,8 @@ public:
             else
             {
                 std::cout << "degrees[j] = " << degrees[j] << std::endl;
-                degrees[j]--;//这一行什么意思? 
-                for(int node: graph[j])     degrees[node]--;//更新
+                degrees[j]=-1;//mark as visited
+                for(int node: graph[j])     degrees[node]--;
             }
         }
         
