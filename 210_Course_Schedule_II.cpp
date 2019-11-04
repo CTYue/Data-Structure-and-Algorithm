@@ -3,10 +3,10 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-23 08:50:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-09-06 16:57:08
+ * @LastEditTime: 2019-11-04 14:44:00
  * @Description: To be added.
- * @AC: Yes
  */
+
 
 #include<iostream>
 #include<vector>
@@ -14,51 +14,44 @@
 using namespace std;
 class Solution_1 {
 public:
-    //BFS Solution
-    //Time Complexity: O(n^2)
-    //Space Complexity: O(n^2)? 
+    //BFS Solution (Using node in-degree )
+    //Time Complexity: O(N) (Scan all nodes)
+    //Space Complexity: O(N) ???
+    //Graph: prerequisite course points to course-to-take
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) 
     {
-         //Topological Sorting
-        vector<vector<int>> graph(numCourses,vector<int>());
+        vector<int> res;
+        vector<vector<int>> graph(numCourses);
         vector<int> degrees(numCourses,0);
-        vector<int> res={};              
-        //先修课指向course
-        //[0,1],first is the course, second is the prerequisite course
-        for(int i=0;i<prerequisites.size();i++)
-        {
-            //Second points to first
-            graph[prerequisites[i][1]].push_back(prerequisites[i][0]);
-        }
-
-        for(auto v:graph)
-        {
-            for(auto node:v)    degrees[node]++;
-        }
         
-        //Topological Sorting Starts here
+        for(auto v: prerequisites)  graph[v[1]].push_back(v[0]);
+        
+        for(int i=0;i<numCourses;i++)   
+            for(int j=0;j<graph[i].size();j++)  
+                degrees[graph[i][j]]++;
+        
+        //Topological sort
+        //Find course with 0 in-degree
         for(int i=0;i<numCourses;i++)
         {
             int j=0;
             for(;j<numCourses;j++)
             {
-                if(degrees[j]==0)   
+                if(degrees[j]==0)
                 {
-                    // std::cout << "degrees[j] == 0" << std::endl;
                     res.push_back(j);
                     break;
                 }
             }
-            
-            if(j==numCourses)   return vector<int>();
-            
-            else
-            {
-                degrees[j]--;//j本身的in-degree减1
-                for(auto node:graph[j]) degrees[node]--;//j所指向的node的in-degree--
-            }
+                
+                if(j==numCourses)   return vector<int>{};
+                else
+                {
+                    degrees[j]--;//j本身的入度--
+                    for(auto v: graph[j])    degrees[v]--;
+                }
         }
-      
-        return res;
+        
+        return res;        
     }
 };
