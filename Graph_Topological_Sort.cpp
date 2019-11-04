@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-28 21:10:45
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-04 14:55:15
+ * @LastEditTime: 2019-11-04 14:58:22
  * @Description: 
  * Here we have a graph as below (Must be a DAG):
  * 
@@ -45,10 +45,10 @@ public:
         adj[v].push_back(w);
     }
     
-    void sortHelper(int v, vector<bool>& visited, stack<int>& Stack);
+    void sort_dfs(int v, vector<bool>& visited, stack<int>& Stack);
 };
 
-void Graph::sortHelper(int v, vector<bool>& visited, stack<int>& Stack)
+void Graph::sort_dfs(int v, vector<bool>& visited, stack<int>& Stack)
 {
     cout<<"v = "<<v<<endl;
     //Mark current node as visited
@@ -56,14 +56,14 @@ void Graph::sortHelper(int v, vector<bool>& visited, stack<int>& Stack)
 
     for(int i=0;i<adj[v].size();i++)
     {
-        if(visited[adj[v][i]]==false)   sortHelper(adj[v][i],visited, Stack);
+        if(visited[adj[v][i]]==false)   sort_dfs(adj[v][i],visited, Stack);
     }
     
     //Put visited nodes to stack
     Stack.push(v);
 }
 
-void topologicalSort(Graph G)
+void topologicalSort_dfs(Graph G)
 {
     stack<int> s;
 
@@ -71,7 +71,7 @@ void topologicalSort(Graph G)
     vector<bool> visited(G.num, false);
 
     for(int i=0;i<visited.size();i++)
-        if(visited[i]==false)   G.sortHelper(i, visited, s);
+        if(visited[i]==false)   G.sort_dfs(i, visited, s);
     
     while(!s.empty())
     {
@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
     //1. Each node appears && only appears once.
     //2. Nodes appears earlier point to nodes appears later.
     cout << "Sort result: \n"; 
-    topologicalSort(g); 
+    topologicalSort_dfs(g); 
   
     return 0; 
 }
