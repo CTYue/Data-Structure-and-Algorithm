@@ -3,19 +3,17 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-28 21:10:45
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-03 21:47:51
+ * @LastEditTime: 2019-11-04 14:28:44
  * @Description: 
  * Here we have a graph as below (Must be a DAG):
- * 0->1->2->3->4->5
+ * 
+ * 
  * 
  *  Adjacent List:
- *  1->2
- *  2->3
- *  3->4
- *  4->5
  *  
+ * 
  * One possible topological sort Result:
- * 0 1 2 3 4 5
+ *
  * (always starts from vertex with 0 in-degree)
 */
 
@@ -57,14 +55,9 @@ void Graph::sortHelper(int v, vector<bool>& visited, stack<int>& Stack)
     //Mark current node as visited
     visited[v]=true;
 
-    auto idx=adj[v].begin();
-
-    while(idx!=adj[v].end())
+    for(int i=0;i<adj[v].size();i++)
     {
-        //Visit i's child
-        // cout<<"*idx = " <<*idx<<endl;
-        if(visited[*idx]==false)  sortHelper(*idx, visited, Stack);    
-        idx++;
+        if(visited[adj[v][i]]==false)   sortHelper(adj[v][i],visited, Stack);
     }
     
     //Put visited nodes to stack
@@ -80,8 +73,6 @@ void topologicalSort(Graph G)
 
     for(int i=0;i<visited.size();i++)
         if(visited[i]==false)   G.sortHelper(i, visited, s);
-
-    // cout<<"s.size() = "<<s.size()<<endl;
     
     while(s.empty()==false)
     {
@@ -94,12 +85,18 @@ void topologicalSort(Graph G)
 
 int main(int argc, char* argv[])
 {
-    Graph g(4);
+    Graph g(6);
 
     g.addEdge(0,1);
-    g.addEdge(0,2);
+    g.addEdge(1,2);
+    g.addEdge(0,3);
     g.addEdge(1,3);
     g.addEdge(2,3);
+    g.addEdge(2,4);
+    g.addEdge(2,5);
+    g.addEdge(3,4);
+    g.addEdge(4,5);
+    g.addEdge(3,5);
 
     //Requirements for sorting result:
     //1. Each node appears && only appears once.
