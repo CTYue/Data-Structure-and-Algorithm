@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-28 21:10:45
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-02 09:56:30
+ * @LastEditTime: 2019-11-03 21:47:51
  * @Description: 
  * Here we have a graph as below (Must be a DAG):
  * 0->1->2->3->4->5
@@ -33,12 +33,12 @@ public:
     int num;
     
     //Adjacent list
-    list<int> *adj;
+    vector<vector<int> > adj;
 
     Graph(int num)
     {
         this->num=num;
-        adj=new list<int>[num];
+        adj.resize(num);
     }
     
     //V->W
@@ -81,7 +81,7 @@ void topologicalSort(Graph G)
     for(int i=0;i<visited.size();i++)
         if(visited[i]==false)   G.sortHelper(i, visited, s);
 
-    cout<<"s.size() = "<<s.size()<<endl;
+    // cout<<"s.size() = "<<s.size()<<endl;
     
     while(s.empty()==false)
     {
@@ -94,15 +94,13 @@ void topologicalSort(Graph G)
 
 int main(int argc, char* argv[])
 {
-    Graph g(6);
+    Graph g(4);
 
-    //g.addEdge();
     g.addEdge(0,1);
-    g.addEdge(1, 2); 
-    g.addEdge(2, 3); 
-    g.addEdge(3, 4); 
-    g.addEdge(4, 5); 
-  
+    g.addEdge(0,2);
+    g.addEdge(1,3);
+    g.addEdge(2,3);
+
     //Requirements for sorting result:
     //1. Each node appears && only appears once.
     //2. Nodes appears earlier point to nodes appears later.
