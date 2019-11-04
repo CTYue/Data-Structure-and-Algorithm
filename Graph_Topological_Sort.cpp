@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-28 21:10:45
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-04 14:28:44
+ * @LastEditTime: 2019-11-04 14:55:15
  * @Description: 
  * Here we have a graph as below (Must be a DAG):
  * 
@@ -20,7 +20,6 @@
 #include <iostream>
 #include <vector>
 #include <stack>
-#include <list>
 
 using namespace std;
 
@@ -74,7 +73,7 @@ void topologicalSort(Graph G)
     for(int i=0;i<visited.size();i++)
         if(visited[i]==false)   G.sortHelper(i, visited, s);
     
-    while(s.empty()==false)
+    while(!s.empty())
     {
         cout<<s.top()<<" ";
         s.pop();
