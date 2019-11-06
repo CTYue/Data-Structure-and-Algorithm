@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-28 21:10:45
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-04 14:58:22
+ * @LastEditTime: 2019-11-06 16:33:01
  * @Description: 
  * Here we have a graph as below (Must be a DAG):
  * 
@@ -28,7 +28,6 @@ class Graph
 public:
     //number of vertexs in the graph
     int num;
-    
     //Adjacent list
     vector<vector<int> > adj;
 
@@ -63,6 +62,8 @@ void Graph::sort_dfs(int v, vector<bool>& visited, stack<int>& Stack)
     Stack.push(v);
 }
 
+//Sort functions
+//DFS: stack
 void topologicalSort_dfs(Graph G)
 {
     stack<int> s;
@@ -78,9 +79,18 @@ void topologicalSort_dfs(Graph G)
         cout<<s.top()<<" ";
         s.pop();
     }
+
     
     cout<<endl;
 }
+
+//kahn: queue
+void topologicalSort_kahn(Graph G)
+{
+    //TODO
+    ;
+}
+
 
 int main(int argc, char* argv[])
 {
@@ -100,8 +110,12 @@ int main(int argc, char* argv[])
     //Requirements for sorting result:
     //1. Each node appears && only appears once.
     //2. Nodes appears earlier point to nodes appears later.
-    cout << "Sort result: \n"; 
+    cout << "Sort result (DFS): "<<endl; 
     topologicalSort_dfs(g); 
+
+    cout<< "Sort result (Kahn): "<<endl;
+    topologicalSort_kahn(g);
+    
   
     return 0; 
 }

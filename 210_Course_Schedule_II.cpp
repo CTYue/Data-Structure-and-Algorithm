@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-23 08:50:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-04 14:44:00
+ * @LastEditTime: 2019-11-04 16:44:49
  * @Description: To be added.
  */
 
@@ -43,7 +43,7 @@ public:
                     break;
                 }
             }
-                
+
                 if(j==numCourses)   return vector<int>{};
                 else
                 {
