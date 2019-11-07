@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-05 23:12:08
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-06 22:06:35
+ * @LastEditTime: 2019-11-06 22:07:34
  * @Description:
  * There is a new language which we don't know how the 
  * letters were ordered, you are provided with a dictionary
@@ -150,6 +150,12 @@ public:
     }    
 };
 
+class Solution_bfs
+{
+    //TODO
+
+
+};
 
 int main(int argc, char* argv[])
 {
