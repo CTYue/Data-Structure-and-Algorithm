@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-05 23:12:08
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-06 22:07:34
+ * @LastEditTime: 2019-11-06 22:41:09
  * @Description:
  * There is a new language which we don't know how the 
  * letters were ordered, you are provided with a dictionary
@@ -114,7 +114,7 @@ public:
             cout<<"it->first = "<<it->first<<endl;
             if(dfs(graph, visited, cycle, order, it->first)==false)   return "";
         }
-                    
+        
         //通常情况下，dfs做topological sort用stack
         std::reverse(order.begin(), order.end());
         return order;
@@ -153,7 +153,6 @@ public:
 class Solution_bfs
 {
     //TODO
-
 
 };
 
