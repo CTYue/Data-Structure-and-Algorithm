@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-07 15:42:51
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-07 15:45:59
+ * @LastEditTime: 2019-11-07 15:46:38
  * @Description: To be added.
  */
 #include <iostream>
@@ -11,7 +11,7 @@
 #include <queue>
 
 using namespace std;
-class Solution {
+class Solution_bfs {
 public:
     //BFS+Topologial Sort
     vector<vector<int>> directions={{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
@@ -74,6 +74,7 @@ public:
 
 int main(int argc, char* argv[])
 {
+    
     
     return 1;
 }
