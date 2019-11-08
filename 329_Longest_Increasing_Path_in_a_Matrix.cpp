@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-07 15:42:51
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-07 19:36:28
+ * @LastEditTime: 2019-11-08 13:08:24
  * @Description:
  * 
  * Given an integer matrix, find the length of the longest increasing path.
@@ -68,7 +68,7 @@ public:
         int len=0;
         while(!queue.empty())
         {
-            //为什么要使用queue的size？
+            //Level-by-level traversal
             int size=queue.size();
             while(size-->0)
             {
