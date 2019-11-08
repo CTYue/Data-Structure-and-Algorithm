@@ -3,8 +3,33 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-07 15:42:51
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-07 15:46:38
- * @Description: To be added.
+ * @LastEditTime: 2019-11-07 19:36:28
+ * @Description:
+ * 
+ * Given an integer matrix, find the length of the longest increasing path.
+ * 
+ * From each cell, you can either move to four directions: left, right, up or down. 
+ * You CANNOT move diagonally or move outside of the boundary 
+ * 
+ * Example 1:
+ * Input:
+ * [
+ * [9,9,4],
+ * [6,6,8],
+ * [2,1,1]
+ * ] 
+ * Output: 4 
+ * The longest increasing path is [1, 2, 6, 9].
+ * 
+ * Input:
+ * [
+ * [3,4,5],
+ * [3,2,6],
+ * [2,2,1]
+ * ] 
+ * Output: 4 
+ * The longest increasing path is [3, 4, 5, 6]. 
+ * 
  */
 #include <iostream>
 #include <vector>
@@ -14,11 +39,9 @@ using namespace std;
 class Solution_bfs {
 public:
     //BFS+Topologial Sort
-    vector<vector<int>> directions={{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-    int longestIncreasingPath(vector<vector<int>>& matrix) 
+    vector<vector<int> > directions={{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    int longestIncreasingPath(vector<vector<int> >& matrix) 
     {
-        //这次是matrix了
-        //多个一样的值，怎么算node？
         if(matrix.size()==0)    return 0;
         int m=matrix.size();
         int n=matrix[0].size();
@@ -72,9 +95,18 @@ public:
 };
 
 
+class Solution_dfs
+{
+public:
+
+
+
+
+};
+
 int main(int argc, char* argv[])
 {
-    
-    
+    //TODO
+
     return 1;
 }
