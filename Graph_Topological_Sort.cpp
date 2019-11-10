@@ -3,11 +3,9 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-10-28 21:10:45
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-06 16:33:01
+ * @LastEditTime: 2019-11-08 23:58:06
  * @Description: 
  * Here we have a graph as below (Must be a DAG):
- * 
- * 
  * 
  *  Adjacent List:
  *  
@@ -116,6 +114,5 @@ int main(int argc, char* argv[])
     cout<< "Sort result (Kahn): "<<endl;
     topologicalSort_kahn(g);
     
-  
     return 0; 
 }
