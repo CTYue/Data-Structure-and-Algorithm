@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-13 23:06:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-13 23:11:17
+ * @LastEditTime: 2019-11-13 23:26:50
  * @Description: To be added.
  */
 #include <iostream>
@@ -11,7 +11,6 @@
 #include <unordered_map>
 
 using namespace std;
-// Definition for a Node.
 class Node {
 public:
     int val;
@@ -24,7 +23,6 @@ public:
         neighbors = _neighbors;
     }
 };
-
 
 //You should return the reference of the graph
 class Solution {
@@ -41,7 +39,7 @@ public:
         if(map.find(node)==map.end())
         {
             map[node]=new Node(node->val, {});
-            for(auto n: node->neighbors)
+            for(Node* n: node->neighbors)
             {
                 map[node]->neighbors.push_back(cloneGraph(n));
             }
