@@ -3,9 +3,10 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-13 23:06:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-13 23:26:50
+ * @LastEditTime: 2019-11-15 00:41:25
  * @Description: To be added.
  */
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>
@@ -18,7 +19,8 @@ public:
 
     Node() {}
 
-    Node(int _val, vector<Node*> _neighbors) {
+    Node(int _val, vector<Node*> _neighbors) 
+    {
         val = _val;
         neighbors = _neighbors;
     }
