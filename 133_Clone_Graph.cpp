@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-13 23:06:25
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-15 00:41:25
+ * @LastEditTime: 2019-11-15 09:06:46
  * @Description: To be added.
  */
 
@@ -56,7 +56,6 @@ public:
 int main(int argc, char* atgv[])
 {
     //TODO
-
     
     return 1;
 }
