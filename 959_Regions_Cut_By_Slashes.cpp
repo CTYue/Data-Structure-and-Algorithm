@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-18 17:15:30
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-18 17:18:22
+ * @LastEditTime: 2019-11-18 17:22:55
  * @Description: To be added.
  */
 #include <iostream>
@@ -106,6 +106,6 @@ public:
 
 int main(int argc, char* argv[])
 {
-
+    
     return 1;
 }
