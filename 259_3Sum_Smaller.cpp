@@ -1,55 +1,59 @@
 /*
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
- * @Date: 2019-11-21 00:41:14
+ * @Date: 2019-11-21 16:27:19
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-21 01:00:52
- * @Description: 
- * Given an array nums of n integers and an integer target, 
- * find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
+ * @LastEditTime: 2019-11-21 16:28:58
+ * @Description:
+ * Given an array of n integers nums and a target, find the number of index triplets i, j, k 
+ * with 0 <= i < j < k < n that satisfy the condition nums[i] + nums[j] + nums[k] < target.
  * 
  * Example:
- * Given array nums = [-1, 2, 1, -4], and target = 1.
- * The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+ * Input: nums = [-2,0,1,3], and target = 2
+ * Output: 2 
+ * Explanation: Because there are two triplets which sums are less than 2:
+    [-2,0,1]
+    [-2,0,3]
  */
 
 #include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <queue>
+#include <vector>
+#include <sstream>
 
 using namespace std;
-
 class Solution {
 public:
-    int threeSumClosest(vector<int>& nums, int target) 
+    int threeSumSmaller(vector<int>& nums, int target) 
     {
         if(nums.size()<3)   return 0;
-        //Ascending order
+        //Ascending Order
         std::sort(nums.begin(), nums.end(), less<int>());
-        int res=nums[0]+nums[1]+nums[2];
-
+        for(int n: nums)    cout<<n<<" ";
+        cout<<endl;
+        
+        int count=0;
+        
         for(int i=0;i<nums.size()-2;i++)
-        {        
+        {
             int front=i+1, back=nums.size()-1;
             
             while(front<back)
-            {
-                int sum=nums[i]+nums[front]+nums[back];
+            {    
+                //sum已经小于target，所以只动front
+                if(nums[i]+nums[front]+nums[back]<target)  
+                {
+                    //位于(front, back]的所有值都满足sum<target这一条件，所以count+=back-front;
+                    count+=back-front;
+                    front++;
+                }
                 
-                if(sum>target) back--;
-                
-                if(sum<target) front++;
-                
-                if(sum==target) {res=sum;break;}
-                
-                //Update sum to the most closet one
-                if(abs(sum-target)<abs(res-target)) res=sum;
+                else back--;
             }
         }
         
-        return res;
+        // cout<<"count = " <<count<<endl;
+        return count;
     }
 };
 
@@ -91,7 +95,7 @@ int main() {
         getline(cin, line);
         int target = stringToInteger(line);
         
-        int ret = Solution().threeSumClosest(nums, target);
+        int ret = Solution().threeSumSmaller(nums, target);
 
         string out = to_string(ret);
         cout << out << endl;
