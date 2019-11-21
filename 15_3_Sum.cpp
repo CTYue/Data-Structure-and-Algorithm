@@ -3,9 +3,8 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 23:51:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-13 18:52:33
+ * @LastEditTime: 2019-11-20 22:14:47
  * @Description: To be added.
- * @AC: Yes: 
  */
 
 #include <iostream>
@@ -18,20 +17,18 @@ public:
     {
         //Time complexity:O(n^2)
         //Space complexity:O(1)
-        //先排序
          vector<vector<int> > res;
-            if(nums.size()==0)
-                return res;
+            if(nums.size()==0)  return res;
         
-        //Sort, according to <
-        std::sort(nums.begin(),nums.end());
-        // for(auto i:nums)
-        //     std::cout << i << " ";
+        //Time Complexity for std::sort funciton:
+        //O(N*logN)
+        std::sort(nums.begin(),nums.end(), less<int>());
+        // for(auto i:nums) std::cout << i << " ";
         
         vector<int> res_item;
         for(int i=0;i<nums.size();i++)
         {
-            int target=-nums[i];
+            int target=0-nums[i];
             int front=i+1;
             int back=nums.size()-1;
             
@@ -69,5 +66,22 @@ public:
 
 int main(int argc, char* argv[])
 {
-    //
+    vector<int> input;
+    int temp=0;
+    do
+    {
+        cin>>temp;
+        input.push_back(temp);
+    }while(getchar()!='\n');
+
+    Solution s1;
+    auto res=s1.threeSum(input);
+    for(auto v: res)
+    {
+        cout<<"[";
+        for(int n: v)   cout<<n<<" ";
+        cout<<"]"<<endl;
+    }
+
+    return 1;
 }

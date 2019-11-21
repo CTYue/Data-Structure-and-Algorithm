@@ -3,8 +3,20 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-18 17:15:30
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-18 17:22:55
- * @Description: To be added.
+ * @LastEditTime: 2019-11-18 22:10:59
+ * @Description:
+ * In a N*N grid compsed of 1x1 squares, each square can be
+ * divided into tp to 4 sub-areas, separators are '\\'(back slash) and '/'(slash)
+ * Blank space doesn't separate the square.
+ * Return the number of sub-areas.
+ * 
+ * Example:
+ * Input:
+ * [
+ *  " /",
+ *  "/ "
+ * ]
+ * Output: 2
  */
 #include <iostream>
 #include <vector>
@@ -17,12 +29,11 @@ public:
     //Return the number of separate areas divided by slashes
     //给的是NxN的网格
     //反斜杠用\\表示
-    //N*N*4是什么意思???
+    //N*N*4: 没理解
     int n=0, count=0;
     vector<int> pre;//
     int regionsBySlashes(vector<string>& grid) 
     {
-        if(grid.size()<2)  return 1;
         n=grid.size();
         
         count=n*n*4;//每个unit最多可有4个空间
@@ -37,11 +48,9 @@ public:
         {
             for(int j=0;j<n;j++)
             {
-                //join：合并分区
-                //为什么要合并0与2，1与3？
-                //以下两部相当于预先打通整个单元方格
+                //预先打通整个单元方格
                 if(i>0) join(g(i-1, j, 2), g(i,j,0));//
-                if(j>0) join(g(i, j-1, 1), g(i,j,3));//没理解
+                if(j>0) join(g(i, j-1, 1), g(i,j,3));//
                 
                 
                 //怎么理解?
