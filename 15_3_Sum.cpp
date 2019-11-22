@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 23:51:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-21 20:15:02
+ * @LastEditTime: 2019-11-21 21:49:57
  * @Description: To be added.
  */
 
@@ -13,52 +13,43 @@
 using namespace std;
 class Solution {
 public:
+    //Time complexity:O(n^2)+O(n*logn)
+    //Space complexity:O(1)???
     vector<vector<int> > threeSum(vector<int>& nums) 
-    {
-        //Time complexity:O(n^2)
-        //Space complexity:O(1)
-         vector<vector<int> > res;
-            if(nums.size()==0)  return res;
+    {   
+        //sort函数的时间复杂度是O(N*logN)
+        if(nums.size()<3) return {};
+        std::sort(nums.begin(), nums.end(), less<int>());
+        //less: less在前
+        //greater: greater在前
+        vector<vector<int>> res;
         
-        //Time Complexity for std::sort funciton:
-        //O(N*logN)
-        std::sort(nums.begin(),nums.end(), less<int>());
-        // for(auto i:nums) std::cout << i << " ";
-        
-        vector<int> res_item;
-        for(int i=0;i<nums.size();i++)
+        for(auto n: nums)   cout<<n<<" ";
+                
+        for(int i=0;i<nums.size()-2;i++)
         {
-            int target=0-nums[i];
-            int front=i+1;
-            int back=nums.size()-1;
+            int lo=i+1;
+            int hi=nums.size()-1;
             
-            while(front<back)
+            // Processing duplicates of Number 1
+            if (i==0 || (i>0 && nums[i]!=nums[i-1]))
             {
-                int sum=nums[front]+nums[back];
-                
-                if(sum<target)
-                    front++;
-                
-                else if(sum>target)
-                    back--;
-                
-                else
+                 while(lo<hi)
                 {
-                    vector<int> triplet(3,0);
-                    triplet[0]=nums[i];
-                    triplet[1]=nums[front];
-                    triplet[2]=nums[back];
+                    if(nums[i]+nums[lo]+nums[hi]==0)
+                    {
+                        res.push_back(vector<int>{nums[i],nums[lo],nums[hi]});
 
-                    res.push_back(triplet);
+                        while(lo<hi&&nums[lo]==nums[lo+1]) lo++;//Processing duplicates of Number 2
+                        while(lo<hi && nums[hi]==nums[hi-1]) hi--;//Processing duplicates of Number 3
 
-                    while(front<back && nums[front]==triplet[1]) front++;
-                    while(front<back && nums[back]==triplet[2]) back--;   
-                }
+                        lo++;hi--;
+                    }
+                     else if(nums[i]+nums[lo]+nums[hi]<0)   lo++;
+                     else hi--;
+                }            
             }
-            while(i+1<nums.size() && nums[i+1]==nums[i])
-                i++;
         }
-
         return res;
     }
 };
