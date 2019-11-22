@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 23:51:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-20 22:14:47
+ * @LastEditTime: 2019-11-21 20:15:02
  * @Description: To be added.
  */
 
@@ -52,8 +52,7 @@ public:
                     res.push_back(triplet);
 
                     while(front<back && nums[front]==triplet[1]) front++;
-                    while(front<back && nums[back]==triplet[2])
-                        back--;   
+                    while(front<back && nums[back]==triplet[2]) back--;   
                 }
             }
             while(i+1<nums.size() && nums[i+1]==nums[i])
