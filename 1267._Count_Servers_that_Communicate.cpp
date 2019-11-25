@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-24 01:09:59
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-24 01:11:12
+ * @LastEditTime: 2019-11-24 01:14:42
  * @Description: To be added.
  */
 #include <iostream>
@@ -40,7 +40,7 @@ public:
         {
             for(int j=0;j<n;j++)
             {
-                
+                //Count servers which belongs to a connected row/column
                 if(grid[i][j]==1 && (row[i]>1 || col[j]>1) ) 
                     count++;
             }
