@@ -3,9 +3,15 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-24 22:04:04
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-24 23:52:25
- * @Description: To be added.
+ * @LastEditTime: 2019-11-24 23:53:59
+ * @Description: 
+ * 
+ * Given a 2D matrix which contains '1's and '0's
+ * 
+ * 
  */
+
+
 #include <iostream>
 #include <vector>
 #include <queue>
