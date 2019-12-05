@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 23:51:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-21 21:49:57
+ * @LastEditTime: 2019-12-04 22:22:09
  * @Description: To be added.
  */
 
@@ -13,43 +13,51 @@
 using namespace std;
 class Solution {
 public:
-    //Time complexity:O(n^2)+O(n*logn)
-    //Space complexity:O(1)???
-    vector<vector<int> > threeSum(vector<int>& nums) 
-    {   
-        //sort函数的时间复杂度是O(N*logN)
-        if(nums.size()<3) return {};
-        std::sort(nums.begin(), nums.end(), less<int>());
-        //less: less在前
-        //greater: greater在前
+    //Time Complexity: O(n^2)+O(N*logN)(sorting overhead)
+    //Space Complexity: O(n) (Worst case)
+    vector<vector<int>> threeSum(vector<int>& nums) 
+    {
         vector<vector<int>> res;
         
+        if(nums.size()<3)   return res;
+        int n=nums.size();
+        //Ascending Order
+        std::sort(nums.begin(), nums.end(), less<int>());
         for(auto n: nums)   cout<<n<<" ";
-                
-        for(int i=0;i<nums.size()-2;i++)
+        cout<<endl;
+
+        //注意这里的边界，是到n-2为止！
+        //因为左边界left=i+1, i<=n-1, 当left==n时，数组越界
+        for(int i=0;i<n-2;i++)
         {
-            int lo=i+1;
-            int hi=nums.size()-1;
+            // if(nums[i]==nums[i+1])  continue;//有问题，为什么???
+            if(i > 0 && (nums[i] == nums[i-1])) continue; // avoid duplicates
+            int left=i+1;
+            int right=n-1;
             
-            // Processing duplicates of Number 1
-            if (i==0 || (i>0 && nums[i]!=nums[i-1]))
+            //Two pointers
+            //无论targets找没找到，左右pointers都要移动            
+            //仅当找到targets的时候，才需要去重
+            while(left<right)
             {
-                 while(lo<hi)
+                if(nums[left]+nums[right]+nums[i]==0)
                 {
-                    if(nums[i]+nums[lo]+nums[hi]==0)
-                    {
-                        res.push_back(vector<int>{nums[i],nums[lo],nums[hi]});
-
-                        while(lo<hi&&nums[lo]==nums[lo+1]) lo++;//Processing duplicates of Number 2
-                        while(lo<hi && nums[hi]==nums[hi-1]) hi--;//Processing duplicates of Number 3
-
-                        lo++;hi--;
-                    }
-                     else if(nums[i]+nums[lo]+nums[hi]<0)   lo++;
-                     else hi--;
-                }            
+                    res.push_back({nums[i],nums[left],nums[right]});
+                    
+                    //对第二个值去重
+                    while(left<right && nums[left]==nums[left+1])   left++;
+                    //对第三个值去重
+                    while(left<right && nums[right]==nums[right-1]) right--;
+                    
+                    //夹逼边界只能放在这里，放在两个while之上时有问题！
+                    //narrow down scope here
+                    left++,right--;
+                }
+                else if(nums[i]+nums[left]+nums[right]<0)   left++;
+                else right--;
             }
         }
+             
         return res;
     }
 };
@@ -66,6 +74,8 @@ int main(int argc, char* argv[])
 
     Solution s1;
     auto res=s1.threeSum(input);
+    cout<<endl;
+    
     for(auto v: res)
     {
         cout<<"[";

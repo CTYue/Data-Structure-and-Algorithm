@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-18 17:15:30
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-18 22:10:59
+ * @LastEditTime: 2019-12-01 19:20:07
  * @Description:
  * In a N*N grid compsed of 1x1 squares, each square can be
  * divided into tp to 4 sub-areas, separators are '\\'(back slash) and '/'(slash)
@@ -18,6 +18,7 @@
  * ]
  * Output: 2
  */
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -51,8 +52,7 @@ public:
                 //预先打通整个单元方格
                 if(i>0) join(g(i-1, j, 2), g(i,j,0));//
                 if(j>0) join(g(i, j-1, 1), g(i,j,3));//
-                
-                
+                                
                 //怎么理解?
                 //如果没有/，则打通1与0，2与3
                 if(grid[i][j]!='/')

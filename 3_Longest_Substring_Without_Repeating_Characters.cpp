@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 15:53:57
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-23 19:57:29
+ * @LastEditTime: 2019-12-04 18:27:13
  * @Description: 
  * Given a string, find the length of the longest substring without repeating characters.
 
@@ -31,11 +31,48 @@
 #include <vector>
 
 using namespace std;
+
+//Time Complexity: O(n^3)
+//Space Complexity: O(min(m,n)): n is the length of string while 
+//m is the size of the hash set.
+class Solution_Brute_Force
+{
+public:
+    int lengthOfLongestSubstring(string s) 
+    {
+        int n=s.length();
+        int ans=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<=n;j++)
+                if(allUnique(s, i, j)==true) ans=std::max(ans, j-i);
+        }
+        return ans;
+    }
+
+    bool allUnique(string s, int start, int end)
+    {
+        unordered_set<char> set;
+        for(int i=start;i<end;i++)
+        {
+            char ch=s[i];
+            //一旦遇到重复元素，则返回false。
+            if(set.find(ch)!=set.end()) return false;
+            set.insert(s[i]);
+        }
+        //如果没有任何重复ch，则返回true
+        
+        return true;
+    } 
+};
+
+
 class Solution_1 {
 public:
     //Sliding window with set
     //Time complexity: O(n)
-    //Space Complexity: O(n)
+    //Space Complexity: O(min(n,m))
+    //n is the length of the string while m is the size of the hash set.
     int lengthOfLongestSubstring(string s) 
     {
         if(s.empty())
@@ -113,7 +150,8 @@ class Solution_3 {
 public:
     //Array
     //Time Complexity:  O(n)
-    //Space Complexity: O(1)
+    //Space Complexity: O(1) Constant space complexity 
+    //because space needed is not decided by input string.
     int lengthOfLongestSubstring(string s) 
     {
         //将char作为index，出现的次数作为value
@@ -134,6 +172,7 @@ public:
             }
             
             //当且仅当i已经出现过，j才右移
+            //注意，这里要+1
             max=std::max(max, i-j+1);
         }
         
@@ -172,10 +211,11 @@ int main() {
     while (getline(cin, line)) {
         string s = stringToString(line);
         
-        int ret = Solution_1().lengthOfLongestSubstring(s);
-
+        // int ret = Solution_1().lengthOfLongestSubstring(s);
+        int ret=Solution_Brute_Force().lengthOfLongestSubstring(s);
         string out = to_string(ret);
         cout << out << endl;
     }
+    
     return 0;
 }
