@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-02 15:53:57
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-04 18:27:13
+ * @LastEditTime: 2019-12-04 22:55:30
  * @Description: 
  * Given a string, find the length of the longest substring without repeating characters.
 
@@ -112,40 +112,40 @@ public:
     }
 };
 
-//Wrong answer still!
 class Solution_2 {
 public:
-    //Optimized Sliding Window (One Pass)
-    //Time Complexity: O(n)
-    //Space Complexity: O(n)
+    //Sliding Window with hash set
+    //Time Complexity: O(2*N)=O(N) in worst case, each element will be visited twice
+    //by i and j respectively.
+    //Space Complexity: O(min(m,n)) //n is the length of string while m is the size of hash set.
     int lengthOfLongestSubstring(string s) 
     {
-        if(s.empty()) return 0;
-        int res=0;
-        //<char, index>
-        unordered_map<char, int> map={};
-        int i=0;//left
-        for(int j=0;j<s.length();j++)
+        int n=s.length();
+        unordered_set<char> set;
+        
+        int ans=0, i=0,j=0;
+        //Sliding window, 左右边界同时向一个方向移动
+        //不同于夹逼原理
+        //这里可不可以改成left<right???
+        while(i<n && j<n)
         {
-            //i:left, j:right.
-            //如果当前访问的char之前已经出现过，那么将i更新
-            if(map.find(s[j])!=map.end()) 
-            {   
-                // std::cout<<"map contains " << s[j] << endl;
-                i=std::max(i, map[s[j]]+1);//为什么要+1?
-                // cout<<"i = " << i << endl;
+            cout<<"i: "<<i<<endl;
+            cout<<"j: "<<j<<endl;
+            
+            //如果该char不存在于set中
+            if(set.find(s[j])==set.end())
+            {
+                set.insert(s[j]);j++;
+                ans=std::max(ans, j-i);
             }
-
-            map.insert(pair<char, int>(s[j], j));
-
-            //update res
-            res=std::max(res, j-i+1);
+            //如果该char已存在set中，则在set中删除该char
+            else    
+            {set.erase(s[i]);i++;}
         }
-               
-        return res;
+        
+        return ans;
     }
 };
-
 class Solution_3 {
 public:
     //Array
