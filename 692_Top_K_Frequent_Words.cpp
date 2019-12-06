@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-06 15:27:35
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-06 16:37:54
+ * @LastEditTime: 2019-12-06 16:38:57
  * @Description: To be added.
  */
 
@@ -43,10 +43,10 @@ bool comp(const umap_it a, const umap_it b)
     //Desending order by frequency
     if (a->second > b->second) return true;
     
-    //在frequency一致的情况下，
+    //在frequency一致的情况下，按从短到长排序。
     else if (a->second == b->second) return a->first.compare(b->first) < 0;
 
-    else    return false;
+    else return false;
 }
 
 class Solution {
