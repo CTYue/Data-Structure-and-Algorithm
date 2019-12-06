@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-06 15:27:35
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-06 16:42:12
+ * @LastEditTime: 2019-12-06 16:51:32
  * @Description: To be added.
  */
 
@@ -50,6 +50,10 @@ bool comp(const umap_it a, const umap_it b)
     else return false;
 }
 
+//Time Complexity: O(N)(dictionary traversal)+2*O(N)(Map traversal+forming res)+O(N*logN)(Sorting)
+//so the average time complexity would be O(N*logN)
+//Space Complexity: O(N)(size of map, worst case)+2*O(N)(size of v and res, worst case), so the average 
+//space complexity would be O(N)
 class Solution {
 public:    
     vector<string> topKFrequent(vector<string>& words, int k) 
@@ -65,8 +69,7 @@ public:
        }
       vector<string> res;
       vector<umap_it> v;
-      for(auto it=map.begin();it!=map.end();it++)
-          v.push_back(it);
+      for(auto it=map.begin();it!=map.end();it++)   v.push_back(it);
     
       //comp函数不能放在class里面，为什么？
       //less和greater是如何实现的？
