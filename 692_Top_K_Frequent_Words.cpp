@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-06 15:27:35
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-06 16:51:32
+ * @LastEditTime: 2019-12-06 21:58:11
  * @Description: To be added.
  */
 
@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <map>
+#include <queue> //注意，priority_queque没有单独的header，而是包括在queue header中
 
 using namespace std;
 
@@ -54,7 +56,8 @@ bool comp(const umap_it a, const umap_it b)
 //so the average time complexity would be O(N*logN)
 //Space Complexity: O(N)(size of map, worst case)+2*O(N)(size of v and res, worst case), so the average 
 //space complexity would be O(N)
-class Solution {
+//STL Sorting Solution
+class Solution_Sorting {
 public:    
     vector<string> topKFrequent(vector<string>& words, int k) 
     {
@@ -97,6 +100,57 @@ public:
       return res;
     }
 };
+
+
+typedef map<string, int>::iterator map_it;
+class Solution {
+private:
+    struct comp
+    {
+        comp()=default;
+        ~comp()=default;
+        bool operator()(const map_it a, const map_it b)
+        {
+            //Form a max heap by using following code
+            if(a->second < b->second) return true;
+            else if(a->second == b->second)
+            {
+                //Shorter string comes first
+                return a->first.compare(b->first)>0;
+            }
+            
+            else return false;
+        }
+    };
+
+public:
+    //PriorityQueue
+    //Time Complexity: O(???)
+    //Space Complexity: O(N)
+    vector<string> topKFrequent(vector<string>& words, int k) 
+    {
+        map<string, int> map;
+        for(auto d: words)
+        {
+            if(map.find(d)==map.end())  map.insert(pair<string, int>(d,1));
+            else    map[d]++;
+        }
+        
+        priority_queue<map_it, vector<map_it>, comp> p_queue;
+        for(map_it it=map.begin();it!=map.end();it++) p_queue.push(it);
+        
+        vector<string> res;
+        for(int i=0;i<k;i++)
+        {
+            res.push_back(p_queue.top()->first);
+            p_queue.pop();
+        }
+                
+        return res;
+    }
+};
+
+
 
 int main(int argc, char** argv)
 {
