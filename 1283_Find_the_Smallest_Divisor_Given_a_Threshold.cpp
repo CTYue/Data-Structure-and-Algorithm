@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-08 17:41:33
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-08 19:53:50
+ * @LastEditTime: 2019-12-08 19:57:22
  * @Description: To be added.
  */
 #include <iostream>
@@ -15,6 +15,8 @@
 using namespace std;
 class Solution {
 public:
+    //Time Complexity: O(N*logM) where M=max(nums) ???
+    //Space Complexity: O(1)
     int smallestDivisor(vector<int>& nums, int threshold) 
     {
         //找到一个divisor，使得vector中每个数除以它得到的sum<=threshold并最接近threshold
