@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-06 22:55:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-11 00:07:02
+ * @LastEditTime: 2019-12-11 00:07:36
  * @Description: To be added.
  */
 
@@ -37,6 +37,7 @@ public:
     }
 };
 
+
 class Solution_array
 {
 public:
@@ -54,7 +55,6 @@ public:
         return -1;
     }
 };
-
 
 
 string stringToString(string input) {
