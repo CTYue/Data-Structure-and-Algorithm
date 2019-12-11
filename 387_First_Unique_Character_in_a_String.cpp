@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-06 22:55:18
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-06 22:55:50
+ * @LastEditTime: 2019-12-11 00:07:02
  * @Description: To be added.
  */
 
@@ -13,7 +13,7 @@
 #include <string>
 
 using namespace std;
-class Solution {
+class Solution_map {
 public:
     //Linear Time Solution
     //Time Complexity: O(N)
@@ -36,6 +36,26 @@ public:
         return -1;
     }
 };
+
+class Solution_array
+{
+public:
+    int firstUniqChar(string s)
+    {
+        int arr[256];
+        memset(arr,0,sizeof(arr));//Initialize the array with all 0s explicitly
+        for(char ch:s)  arr[ch-'a']++;
+
+        for(int i=0;i<s.length();i++)
+        {
+        if(arr[s[i]-'a']==1)    return i;
+        }
+
+        return -1;
+    }
+};
+
+
 
 string stringToString(string input) {
     assert(input.length() >= 2);
@@ -68,7 +88,7 @@ int main() {
     while (getline(cin, line)) {
         string s = stringToString(line);
         
-        int ret = Solution().firstUniqChar(s);
+        int ret = Solution_map().firstUniqChar(s);
 
         string out = to_string(ret);
         cout << out << endl;
