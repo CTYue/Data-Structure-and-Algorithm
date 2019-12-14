@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-24 15:53:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-13 19:33:33
+ * @LastEditTime: 2019-12-13 20:03:50
  * @Description: 
  * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  * For example, given n = 3, a solution set is:
@@ -103,7 +103,38 @@ public:
     }
 };
 
-
+class Solution_Back_Tracking{
+public:
+    //Backtracking
+    //Time Complexity: O(???)
+    //Space Complexity: O(???)
+    vector<string> generateParenthesis(int n) 
+    {
+        vector<string> res;
+        if(n<1) return res;
+        
+        string cur;
+        backtracking(cur, 0, 0, n, res);
+        
+        return res;
+    }
+    
+    void backtracking(string cur, int open, int close, int max, vector<string>& res)
+    {
+        if(cur.length()==2*max)
+        {
+            res.push_back(cur);
+            return;
+        }
+        
+        //注意左值右值的问题！不要用string& cur传参数，否则cur会被不停的追加
+        //这里只能传右值???
+        if(open<max)    backtracking(cur+"(", open+1, close, max, res);
+        
+        if(close<open)   backtracking(cur+")", open, close+1, max, res);
+        
+    }
+};
 
 int main(int argc, char* argv[])
 {
