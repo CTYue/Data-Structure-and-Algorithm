@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-24 15:53:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-13 20:03:50
+ * @LastEditTime: 2019-12-13 23:02:51
  * @Description: 
  * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  * For example, given n = 3, a solution set is:
@@ -106,8 +106,8 @@ public:
 class Solution_Back_Tracking{
 public:
     //Backtracking
-    //Time Complexity: O(???)
-    //Space Complexity: O(???)
+    //Time Complexity: O(???) 太复杂，没理解
+    //Space Complexity: O(???) 没理解
     vector<string> generateParenthesis(int n) 
     {
         vector<string> res;
@@ -119,6 +119,11 @@ public:
         return res;
     }
     
+    //backtracking的核心思想是，尽早丢弃不合适的答案
+    //The "solution" should follow certain constraint satisfaction.
+    //这里的constraint就是if(open<max)和if(close<open)
+    //通过限定close<open, 使得左括号和右括号始终成对出现，反观暴力solution，
+    //生成的candidates中，左右括号并不一定成对出现，导致大量的time和space被浪费。
     void backtracking(string cur, int open, int close, int max, vector<string>& res)
     {
         if(cur.length()==2*max)
@@ -126,13 +131,11 @@ public:
             res.push_back(cur);
             return;
         }
-        
         //注意左值右值的问题！不要用string& cur传参数，否则cur会被不停的追加
         //这里只能传右值???
         if(open<max)    backtracking(cur+"(", open+1, close, max, res);
-        
+        //close<open 是为了保证右括号的数量始终与左括号相等。
         if(close<open)   backtracking(cur+")", open, close+1, max, res);
-        
     }
 };
 

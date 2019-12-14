@@ -1,9 +1,12 @@
-//
-//  Stack_Using_Queues.cpp
-//  
-//
-//  Created by Zidong Yu on 2/21/19.
-//
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2019-02-21 00:35:27
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2019-02-21 23:06:30
+ * @Description: To be added.
+ */
+
 
 #include <iostream>
 #include <queue>
