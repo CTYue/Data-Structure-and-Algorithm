@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-24 15:53:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-13 19:29:49
+ * @LastEditTime: 2019-12-13 19:33:33
  * @Description: 
  * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  * For example, given n = 3, a solution set is:
@@ -56,10 +56,10 @@ public:
 
 class Solution_Brute_Force {
 public:
-    //Brute force solution
+    //Brute force solution (Recursion)
     //小括号：Parentheses
-    //Time Complexity: O(???)
-    //Space Complexity: O(n)
+    //Time Complexity: O(2^(2*n)*n)
+    //Space Complexity: O(2^(2*n)*n)
     vector<string> generateParenthesis(int n) 
     {
         vector<string> res;
