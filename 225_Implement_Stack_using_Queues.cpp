@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-02-21 00:35:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-02-21 23:06:30
+ * @LastEditTime: 2019-12-13 23:12:57
  * @Description: To be added.
  */
 
@@ -18,10 +18,7 @@ private:
 
 public:  
     /** Initialize your data structure here. */
-    MyStack() 
-    {
-        ;
-    }
+    MyStack()=default;
 
     //Queue:
     /** Push element x onto stack. */
