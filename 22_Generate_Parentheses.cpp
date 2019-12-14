@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-24 15:53:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-13 19:13:39
+ * @LastEditTime: 2019-12-13 19:27:07
  * @Description: 
  * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  * For example, given n = 3, a solution set is:
@@ -73,9 +73,9 @@ public:
     
     void genAll(string& current, int pos, vector<string>& res)
     {
-        //
         if(pos==current.length())
         {
+            //注意：一定要验证后才能return
             if(valid(current))  res.push_back(current);
         }
         
