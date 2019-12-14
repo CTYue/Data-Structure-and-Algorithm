@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-05-24 15:53:28
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-10-24 16:15:52
+ * @LastEditTime: 2019-12-13 19:13:39
  * @Description: 
  * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  * For example, given n = 3, a solution set is:
@@ -52,6 +52,56 @@ public:
         if(close<open) backtracking(n, open, close+1, local+dict[1]);
     }
 };
+
+
+class Solution_Brute_Force {
+public:
+    //Brute force solution
+    //小括号：Parentheses
+    //Time Complexity: O(???)
+    //Space Complexity: O(n)
+    vector<string> generateParenthesis(int n) 
+    {
+        vector<string> res;
+        if(n<1) return res;
+        
+        string current(2*n,' ');
+        genAll(current, 0, res);
+        
+        return res;
+    }
+    
+    void genAll(string& current, int pos, vector<string>& res)
+    {
+        //
+        if(pos==current.length())
+        {
+            if(valid(current))  res.push_back(current);
+        }
+        
+        else
+        {
+            current[pos]='(';
+            genAll(current, pos+1, res);
+            current[pos]=')';
+            genAll(current, pos+1, res);
+        }
+    }
+    
+    bool valid(string current)
+    {
+        int balance=0;
+        for(char c: current)
+        {
+            if(c=='(') balance++;//Count open parentheses
+            else balance--;//Count close parentheses
+            if(balance<0)   return false;
+        }
+        
+        return balance==0;
+    }
+};
+
 
 
 int main(int argc, char* argv[])
