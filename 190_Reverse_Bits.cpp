@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-15 01:42:59
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-15 01:44:37
+ * @LastEditTime: 2019-12-15 02:12:00
  * @Description: To be added.
  */
 
@@ -13,6 +13,7 @@
 using namespace std;
 class Solution {
 public:
+    //翻转一个32位无符号数
     uint32_t reverseBits(uint32_t n) 
     {
         //不能用to_string方法，因为这种方法将原数字按每4位转换成unicode???总之，不能用to_string
