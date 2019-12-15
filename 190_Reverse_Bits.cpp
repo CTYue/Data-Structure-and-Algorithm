@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-15 01:42:59
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-15 01:43:39
+ * @LastEditTime: 2019-12-15 01:44:37
  * @Description: To be added.
  */
 
@@ -19,7 +19,7 @@ public:
        uint32_t res;
        for(int i=0;i<32;i++)
        {
-           res<<=1;
+           res<<=1;//为什么res也要左移？没理解！
            res|=(n&1);//这句没理解；
            n>>=1;
        }
