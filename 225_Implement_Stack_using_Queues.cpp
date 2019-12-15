@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-02-21 00:35:27
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-13 23:12:57
+ * @LastEditTime: 2019-12-13 23:15:01
  * @Description: To be added.
  */
 
@@ -11,6 +11,11 @@
 #include <iostream>
 #include <queue>
 
+//Using two queues
+//Time Complexity:
+//push:
+//pop:
+//Space Complexity: 
 class MyStack {
 private:
     std::queue<int> q_main;
