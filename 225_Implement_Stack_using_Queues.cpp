@@ -2,74 +2,90 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-02-21 00:35:27
- * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-13 23:15:01
+ * @LastEditors  : Zidong Yu
+ * @LastEditTime : 2019-12-18 23:48:57
  * @Description: To be added.
  */
-
 
 #include <iostream>
 #include <queue>
 
-//Using two queues
-//Time Complexity:
-//push:
-//pop:
-//Space Complexity: 
 class MyStack {
 private:
-    std::queue<int> q_main;
-    std::queue<int> q_top;
-
-public:  
+    //Complexity:
+    //Push: O(1)
+    //Pop: O(n)
+    //需要考虑两个queue之间的更新问题
+    std::queue<int> main_queue;
+    std::queue<int> top_queue;
+public:
+    //用两个queue实现
     /** Initialize your data structure here. */
-    MyStack()=default;
-
-    //Queue:
+    MyStack() 
+    {
+        ;
+    }
+    
     /** Push element x onto stack. */
     void push(int x) 
     {
-        q_main.push(x);
-        if(!q_top.empty()) q_top.front()=x;
+        //这里为什么
+        main_queue.push(x);
+        //将栈顶更新为x
+        if(!top_queue.empty()) top_queue.front()=x;
     }
     
     /** Removes the element on top of the stack and returns that element. */
     int pop() 
     {
-        int result=top();
-        q_top.pop();
-        return result;
+        int res=top();
+        top_queue.pop();
+        
+        return res;
     }
     
     /** Get the top element. */
     int top() 
     {
-        if(!q_top.empty())
-            return q_top.front();
+        //如果只用一个queue的话，这里就不方便处理了。
+        //所以，在这里return top_queue的top
+        if(!top_queue.empty())  return top_queue.front();
         
-        else if(!q_main.empty())
+        else if(!main_queue.empty())
         {
-            for(int i=0;i<q_main.size()-1;i++)
+            //Reverse the main queue
+            //Transform it
+            for(int i=0;i<main_queue.size()-1;i++)
             {
-                q_main.push(q_main.front());
-                q_main.pop();
+                main_queue.push(main_queue.front());
+                main_queue.pop();
             }
             
-            q_top.push(q_main.front());
-            q_main.pop();
+            //将main_queue的front pop到top_queue当中
+            top_queue.push(main_queue.front());
+            main_queue.pop();//
             
-            return q_top.front();
+            return top_queue.front();
         }
         
-        return 404;
+        return 404;    
     }
     
     /** Returns whether the stack is empty. */
     bool empty() 
     {
-        return q_main.empty() && q_top.empty();
+        return top_queue.empty() && main_queue.empty();
     }
 };
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->top();
+ * bool param_4 = obj->empty();
+ */
 
 /**
  * Your MyStack object will be instantiated and called as such:
