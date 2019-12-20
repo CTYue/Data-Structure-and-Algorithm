@@ -156,8 +156,8 @@ public:
 
 
 //Another heap
-//Time Complexity: 
-//Space Complexity: 
+//Time Complexity: O(klogk)+O(m)+O(n): m:单词的个数， n:words的长度
+//Space Complexity: 2*O(m)+O(k)
 class Solution_heap_2 {
 private:
 struct comp
@@ -192,8 +192,7 @@ public:
         // }
         
         //pair<int, string>的排序有问题, string被按照从长到短的顺序排列，
-        //然而要求是string从短到长排列.
-        //
+        //然而要求是string从短到长排列.所以要重写comp函数
         priority_queue<pair<int, string>, vector<pair<int, string> >, comp> max_heap;
         
         //Max heap
