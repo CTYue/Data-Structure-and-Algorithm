@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-06 15:27:35
- * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-06 21:58:11
+ * @LastEditors  : Zidong Yu
+ * @LastEditTime : 2019-12-19 23:16:22
  * @Description: To be added.
  */
 
@@ -103,7 +103,7 @@ public:
 
 
 typedef map<string, int>::iterator map_it;
-class Solution {
+class Solution_heap_1 {
 private:
     struct comp
     {
@@ -125,11 +125,12 @@ private:
 
 public:
     //PriorityQueue
-    //Time Complexity: O(???)
-    //Space Complexity: O(N)
+    //Time Complexity: O(n)+O(m)+O(k*logk)=O(n*logn)
+    //Space Complexity: O(m)+O(m)+O(k)
     vector<string> topKFrequent(vector<string>& words, int k) 
     {
         map<string, int> map;
+        //O(n) n是words的长度
         for(auto d: words)
         {
             if(map.find(d)==map.end())  map.insert(pair<string, int>(d,1));
@@ -137,18 +138,89 @@ public:
         }
         
         priority_queue<map_it, vector<map_it>, comp> p_queue;
+        //O(m) m是单词的个数
         for(map_it it=map.begin();it!=map.end();it++) p_queue.push(it);
         
         vector<string> res;
+        //O(k*logk)
         for(int i=0;i<k;i++)
         {
             res.push_back(p_queue.top()->first);
             p_queue.pop();
         }
-                
+
         return res;
     }
 };
+
+
+
+//Another heap
+//Time Complexity: 
+//Space Complexity: 
+class Solution_heap_2 {
+private:
+struct comp
+{
+bool operator()(const pair<int, string> a, const pair<int, string> b)
+{
+    //less: max_heap
+    if(a.first<b.first) return true;
+
+    else if(a.first==b.first)
+    {
+        return a.second.compare(b.second)>0;
+    }
+    else 
+        return false;
+}
+
+};
+public:
+    vector<string> topKFrequent(vector<string>& words, int k) 
+    {
+        unordered_map<string, int> count;
+        //O(n)
+        for(auto d: words)
+        {
+            count[d]++;//hashmap在[index]不存在的时候，依然可以访问
+        }
+        
+        // for(auto p:count)
+        // {
+            // cout<<p.first<<": "<<p.second<<endl;
+        // }
+        
+        //pair<int, string>的排序有问题, string被按照从长到短的顺序排列，
+        //然而要求是string从短到长排列.
+        //
+        priority_queue<pair<int, string>, vector<pair<int, string> >, comp> max_heap;
+        
+        //Max heap
+        //O(m) m是单词的个数
+        for(auto p: count)
+        {
+            //make_pair 
+            int freq=p.second;
+            string word=p.first;
+            auto new_pair=std::make_pair(freq, word);
+            max_heap.push(new_pair);
+        }
+        
+        vector<string> res;
+        //Extract的时间复杂度是O(klogk), 原因是因为需要maintaining the heap
+        //仅仅在删除的时候才重建heap，所以这里的复杂度是O(klogk)
+        while(!max_heap.empty() && k!=0)
+        {
+            res.push_back(max_heap.top().second);
+            max_heap.pop();
+            k--;
+        }
+    
+        return res;
+    }
+};
+
 
 
 
