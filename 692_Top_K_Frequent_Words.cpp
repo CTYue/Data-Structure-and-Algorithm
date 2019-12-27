@@ -154,7 +154,6 @@ public:
 };
 
 
-
 //Another heap
 //Time Complexity: O(klogk)+O(m)+O(n): m:单词的个数， n:words的长度
 //Space Complexity: 2*O(m)+O(k)
