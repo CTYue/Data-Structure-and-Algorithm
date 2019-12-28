@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-27 16:00:30
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2019-12-27 16:03:03
+ * @LastEditTime : 2019-12-28 16:05:09
  * @Description: To be added.
  */
 
@@ -24,31 +24,31 @@ struct TreeNode
 class Solution_BFS {
 public:
     //BFS
-    //要用到Queue
-    //Time Complexity: O(n)
-    //Space Complexity: ???
+    //Time Complexity: O(N) N is the number of nodes
+    //Space Complexity: O(N) N is the number of nodes
     vector<vector<int>> levelOrder(TreeNode* root) 
     {
         vector<vector<int>> res;
-        vector<int> level;
-        
-        if(root==nullptr)   return res;
-        queue<TreeNode*> queue;//queue用于存储什么?
+        if(root==nullptr)   return {};
+        queue<TreeNode*> queue;
         queue.push(root);
         int depth=0;
         
         while(!queue.empty())
         {
+            TreeNode* cur=nullptr;
             int size=queue.size();
-            res.push_back({});//每访问一次，则追加一个子集
+            res.push_back({});
+            
             for(int i=0;i<size;i++)
             {
-                TreeNode* cur=queue.front();
+                cur=queue.front();
                 queue.pop();
+                //
+                res[depth].push_back(cur->val);//push_back to each level
                 
-                res[depth].push_back(cur->val);//
-                
-                if(cur->left!=nullptr)  queue.push(cur->left);     
+                //push next level nodes to queue
+                if(cur->left!=nullptr)  queue.push(cur->left);
                 if(cur->right!=nullptr) queue.push(cur->right);
             }
             
@@ -58,6 +58,7 @@ public:
         return res;
     }
 };
+
 
 int main(int argc, char** argv)
 {
