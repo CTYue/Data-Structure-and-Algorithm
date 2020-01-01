@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-30 21:35:56
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2019-12-31 20:32:07
+ * @LastEditTime : 2019-12-31 22:27:08
  * @Description: A C++ program to demonstrate common Binary Heap Operations.
  */
 
@@ -53,6 +53,7 @@ MaxHeap::MaxHeap(int cap)
     heap_size=0;
     harr=new int[cap];
     memset(harr,0,cap);
+    harr[0]=INT_MAX;
 }
 
 //O(logN)
@@ -82,9 +83,8 @@ int MaxHeap::extractMax()
     
     int max=harr[0];
     harr[0]=harr[heap_size-1];
-    
     heap_size--;
-
+    
     MaxHeapify(0);
     return max;
 }
@@ -98,8 +98,7 @@ void MaxHeap::insertKey(int k)
         return;
     }
     //Push back new key to the tail of the array
-    heap_size++;
-    harr[heap_size-1]=k;
+    harr[++heap_size-1]=k;
     int index=heap_size-1;
     
     while(index>0 && harr[parent(index)]<harr[index])
@@ -130,6 +129,7 @@ void MaxHeap::deleteKey(int i)
 
 void MaxHeap::print_arr()
 {
+    cout<<"Heap size: "<<heap_size<<endl;
     for(int i=0;i<heap_size;i++)  cout<<harr[i]<<" ";
     cout<<endl;
 }
@@ -152,14 +152,11 @@ int main()
     h.insertKey(777); 
     h.insertKey(888); 
     h.insertKey(999); 
-
+    int size=h.heap_size;
     h.print_arr();
     cout<<"Max element: ";
-    cout<<h.getMax()<<endl;
-    // for(int i=0;i<h.heap_size;i++)  cout<<h.extractMax()<<endl;
-
-    //这里有问题，没删干净！
-    for(int i=0;i<h.heap_size;i++)  h.deleteKey(i);
+    cout<<h.getMax()<<endl;   
+    for(int i=0;i<size;i++)  h.deleteKey(i);
 
     h.print_arr();
 
