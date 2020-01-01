@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-30 21:35:56
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2019-12-31 20:09:08
+ * @LastEditTime : 2019-12-31 20:32:07
  * @Description: A C++ program to demonstrate common Binary Heap Operations.
  */
 
@@ -45,16 +45,7 @@ public:
 	void insertKey(int k);  //
 
     void print_arr();
-}; 
-//Complexity Analysis:
-//Time Complexity:
-//Insert: O(n)
-//GetMax: O(1)
-//Extract: O(logN)
-//IncreaseKey: O(logN)
-
-//Space Complexity:
-//
+};
 
 MaxHeap::MaxHeap(int cap)
 {
@@ -64,26 +55,22 @@ MaxHeap::MaxHeap(int cap)
     memset(harr,0,cap);
 }
 
+//O(logN)
 void MaxHeap::MaxHeapify(int i)
 {
-    //
     int l=left(i);//return left child of i
-    //
     int r=right(i);//return right child of i
-    //
-    int largest=i;//largest equals to i by default, 
-    
+    int largest=i;//largest equals to i by default,   
     if(l<heap_size && harr[l]>harr[i]) largest=l;
-    
     if(r<heap_size && harr[r]>harr[largest]) largest=r;
-    
-    if(largest!=i)  
+    if(largest!=i)
     {
         swap(&harr[i], &harr[largest]);
-        MaxHeapify(largest);
+        MaxHeapify(largest);//
     }
 }
 
+//O(logN)
 int MaxHeap::extractMax()
 {
     if (heap_size <= 0) return INT_MIN; 
@@ -102,6 +89,7 @@ int MaxHeap::extractMax()
     return max;
 }
 
+//O(logN)
 void MaxHeap::insertKey(int k)
 {
     if(heap_size==capacity)
@@ -121,6 +109,7 @@ void MaxHeap::insertKey(int k)
     }
 }
 
+//O(logN)
 void MaxHeap::increaseKey(int i, int new_val)
 {   
     harr[i]=new_val;
@@ -132,7 +121,7 @@ void MaxHeap::increaseKey(int i, int new_val)
     }
 }
 
-//Delete key at index i.
+//O(logN)
 void MaxHeap::deleteKey(int i)
 {
     increaseKey(i, INT_MAX);
@@ -157,10 +146,22 @@ int main()
 	h.insertKey(5); 
 	h.insertKey(4); 
 	h.insertKey(45); 
+    h.insertKey(1); 
+	h.insertKey(1); 
+	h.insertKey(1); 
+    h.insertKey(777); 
+    h.insertKey(888); 
+    h.insertKey(999); 
+
     h.print_arr();
     cout<<"Max element: ";
     cout<<h.getMax()<<endl;
-    for(int i=0;i<h.heap_size;i++)  cout<<h.extractMax()<<endl;
+    // for(int i=0;i<h.heap_size;i++)  cout<<h.extractMax()<<endl;
+
+    //这里有问题，没删干净！
+    for(int i=0;i<h.heap_size;i++)  h.deleteKey(i);
+
+    h.print_arr();
 
 	return 0; 
 } 
