@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-30 21:35:56
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2019-12-31 22:27:08
+ * @LastEditTime : 2020-01-01 22:20:51
  * @Description: A C++ program to demonstrate common Binary Heap Operations.
  */
 
@@ -19,13 +19,12 @@ void swap(int *x, int *y)
 
 class MaxHeap 
 {
-public: 
 	int *harr;
 	int capacity;//For array set up
 	int heap_size;
-
+public: 
 	MaxHeap(int capacity); 
-    
+    ~MaxHeap()=default;
 	void MaxHeapify(int i); 
 
     //Heap array starts from index 0
@@ -45,6 +44,8 @@ public:
 	void insertKey(int k);  //
 
     void print_arr();
+
+    int get_size(){return heap_size;}
 };
 
 MaxHeap::MaxHeap(int cap)
@@ -152,7 +153,7 @@ int main()
     h.insertKey(777); 
     h.insertKey(888); 
     h.insertKey(999); 
-    int size=h.heap_size;
+    int size=h.get_size();
     h.print_arr();
     cout<<"Max element: ";
     cout<<h.getMax()<<endl;   
