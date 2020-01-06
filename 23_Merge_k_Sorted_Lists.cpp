@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-23 19:31:20
- * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-23 19:34:50
+ * @LastEditors  : Zidong Yu
+ * @LastEditTime : 2020-01-04 00:43:17
  * @Description: To be added.
  *  */
 #include <iostream>
@@ -24,6 +24,7 @@ public:
     {
         if(lists.size()==0) return nullptr;
         if(lists.size()==1) return lists[0];
+        
         int min=INT_MIN;
         ListNode* new_head=nullptr;
         priority_queue<int> p_queue;//由上到下：从大到小
@@ -35,7 +36,6 @@ public:
                 head=head->next;
             }
         }
-        
         while(!p_queue.empty())
         {
             cout<<p_queue.top()<<" ";
