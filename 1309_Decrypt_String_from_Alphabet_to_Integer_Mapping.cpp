@@ -1,3 +1,12 @@
+/*
+ * @Author: Zidong Yu
+ * @Email: chitung.yue@gmail.com
+ * @Date: 2020-01-06 00:01:05
+ * @LastEditors  : Zidong Yu
+ * @LastEditTime : 2020-01-06 00:13:59
+ * @Description: To be added.
+ */
+
 #include <iostream>
 #include <string>
 
@@ -13,8 +22,8 @@ public:
         for(int i=0;i<s.length();i++)
         {
             //Translate each number separately
-            // if(s[i+2]=='#' && i+2<len)//这里有问题! heap-buffer-overflow!
-            if(i+2<len && s[i+2]=='#')
+            if(s[i+2]=='#' && i+2<len)//这里有问题! heap-buffer-overflow!
+            // if(i+2<len && s[i+2]=='#')
             {               
                 res+='j'+ (s[i]-'1')*10 + (s[i+1]-'0');//;
                 i+=2;
@@ -53,6 +62,7 @@ string stringToString(string input) {
     }
     return result;
 }
+
 
 int main() {
     string line;
