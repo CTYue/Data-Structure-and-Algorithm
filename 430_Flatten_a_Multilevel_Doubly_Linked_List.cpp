@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-01-09 23:47:52
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-01-09 23:58:16
+ * @LastEditTime : 2020-01-14 21:06:48
  * @Description:
  */
 
@@ -35,7 +35,7 @@ public:
         if(head==nullptr)   return nullptr;
         Node* dummy=new Node(0, nullptr, head, nullptr);
         Node* pre=dummy, *cur=head;
-            
+        
         stack<Node*> stack;
         stack.push(cur);
         
