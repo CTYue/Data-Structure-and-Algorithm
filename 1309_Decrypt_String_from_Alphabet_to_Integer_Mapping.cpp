@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-01-06 00:01:05
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-01-06 00:13:59
+ * @LastEditTime : 2020-01-19 20:23:19
  * @Description: To be added.
  */
 
@@ -24,7 +24,7 @@ public:
             //Translate each number separately
             if(s[i+2]=='#' && i+2<len)//这里有问题! heap-buffer-overflow!
             // if(i+2<len && s[i+2]=='#')
-            {               
+            {
                 res+='j'+ (s[i]-'1')*10 + (s[i+1]-'0');//;
                 i+=2;
             }
