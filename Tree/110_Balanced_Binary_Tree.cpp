@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-15 21:06:30
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-01-20 00:01:01
+ * @LastEditTime : 2020-01-20 20:59:00
  * @Description: To be added.
  * @AC: Solution_1: Yes: faster than 67.80%, less than 80.88%
  *      Solution_2: 
@@ -26,27 +26,31 @@ struct TreeNode
 class Solution_1 {
 public:
     //Top-down Approach
-    //Used DFS(Recursion) for nodes visiting,
-    //top-down for height calculation
-    //Time Complexity: O(???) 这个比较难分析！
-    //Space Complexity: O(n)
-    //注意，depth的形参也占用栈区的内存空间
-    //由于depth函数被调用n(数量级)次，所以这里的空间复杂度是O(n)
-    int depth(TreeNode* root)
+    //Time Complexity: O(n*logn) logN是树的总层数, in worst case, TC could be O(N*logN)
+    //Space Complexity: O(n) 
+    //树越倾斜，则空间复杂度越趋近于O(n)
+    //树越满，空间复杂度也趋近于O(n)
+    //总之，stack需要n数量级的内存。
+    int height(TreeNode* root)
     {
-        if(!root) return 0;
+        //若没有子树，则返回0
+        if(root==nullptr)   return 0;
         
-        return std::max(depth(root->left),depth(root->right))+1;        
+        //从当前点往下： 当前点的height加上子树的height
+        return 1+max(height(root->left), height(root->right));
     }
-
+    
     bool isBalanced(TreeNode* root) 
     {
         if(root==nullptr)   return true;
-
-        return abs(depth(root->left)-depth(root->right))<=1 && isBalanced(root->left) && isBalanced(root->right) ;
+        
+        cout<<"root->val == "<<root->val<<endl;
+        
+        //满足BBT的原始定义
+        return abs(height(root->left)-height(root->right))<=1 && isBalanced(root->left) && isBalanced(root->right);
     }
-
 };
+
 
 class Solution_2
 {
@@ -65,7 +69,6 @@ private:
         }
         int left=0, right=0;
 
-        //
         if( helper(root->left, left) && helper(root->right, right) && std::abs(left-right)<=1 )
         {
             height=1 + std::max(left, right);//
