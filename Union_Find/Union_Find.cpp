@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-15 09:07:00
- * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-11-15 15:24:33
+ * @LastEditors  : Zidong Yu
+ * @LastEditTime : 2020-01-21 16:05:23
  * @Description: 
  */
 
@@ -30,7 +30,6 @@ public:
     Edge* edge;
 };
 
-    //V和E分别代表什么?
     Graph* createGraph(int V, int E)
     {
         Graph* graph=new Graph();
@@ -41,8 +40,7 @@ public:
         return graph;
     }
 
-    //返回什么?
-    //return the subset of element i???
+    //return the identifier of the connected component
     int find(int parent[], int i)
     {
         if(parent[i]==-1)   return i;
@@ -50,21 +48,19 @@ public:
         return find(parent, parent[i]);
     }
 
-    //Do union of two subsets???
     void Union(int parent[], int x, int y)
     {
         int xset=find(parent, x);
         int yset=find(parent, y);
         
-        //什么意思?
-        if(xset!=yset)  parent[xset]=yset;        
+        if(xset!=yset)  parent[xset]=yset;//
     }
     
     //Return whether a given graph has a cycle
     //or not.
     bool isCycle(Graph* graph)
     {
-        int* parent = new int[graph->V* sizeof(int)];//sizeof
+        int* parent = new int[graph->V* sizeof(int)];
         
         //Initialize all subsets as singel element sets
         memset(parent, -1, sizeof(int)* graph->V);
