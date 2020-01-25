@@ -3,14 +3,15 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-16 22:03:01
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-01-24 18:32:15
+ * @LastEditTime : 2020-01-24 21:59:22
  * @Description: To be added.
  */
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
-class Solution {
+class Solution_Binary_Search {
 public:
     //Binary Search
     //Time Complexity: O(logN)
@@ -42,6 +43,47 @@ public:
         return right;
     }
 };
+
+
+class Solution_Bitwise {
+    //Time Complexity: O(logN)
+    //Space Complexity: O(logN)
+    //但凡涉及到乘法的地方，都要注意overflow的问题！积要转换成long型
+public:
+        int mySqrt(int x) {
+        if(x<2) return x;
+        
+        int left=mySqrt(x>>2)<<1;
+        int right=left+1;
+        cout<<"left == "<<left<<", right == "<<right<<endl;
+        //为什么要这一句？
+        return (long)right*right>x?left:right; 
+    }
+};
+
+
+class Solution_Newton {
+public:
+    //Time Complexity: O(logN)
+    //Space Complexity: O(1)
+    int mySqrt(int x) 
+    {
+        if(x<2) return x;
+        
+        double x0=x;
+        double x1=(x0+x/x0)/2;
+        
+        while(std::abs(x0-x1)>=1)
+        {
+            x0=x1;
+            x1=(x0+x/x0)/2;
+        }
+        
+        return (int)x1;
+    }
+};
+
+
 
 int stringToInteger(string input) {
     return stoi(input);
