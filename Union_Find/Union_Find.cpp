@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-11-15 09:07:00
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-01-21 16:05:23
+ * @LastEditTime : 2020-01-30 02:09:22
  * @Description: 
  */
 
@@ -30,73 +30,73 @@ public:
     Edge* edge;
 };
 
-    Graph* createGraph(int V, int E)
-    {
-        Graph* graph=new Graph();
-        graph->V=V;
-        graph->E=E;
+Graph* createGraph(int V, int E)
+{
+    Graph* graph=new Graph();
+    graph->V=V;
+    graph->E=E;
 
-        graph->edge=new Edge();
-        return graph;
-    }
+    graph->edge=new Edge();
+    return graph;
+}
 
-    //return the identifier of the connected component
-    int find(int parent[], int i)
-    {
-        if(parent[i]==-1)   return i;
+//return the identifier of the connected component
+int find(int parent[], int i)
+{
+    if(parent[i]==-1)   return i;
 
-        return find(parent, parent[i]);
-    }
+    return find(parent, parent[i]);
+}
 
-    void Union(int parent[], int x, int y)
-    {
-        int xset=find(parent, x);
-        int yset=find(parent, y);
-        
-        if(xset!=yset)  parent[xset]=yset;//
-    }
+void Union(int parent[], int x, int y)
+{
+    int xset=find(parent, x);
+    int yset=find(parent, y);
     
-    //Return whether a given graph has a cycle
-    //or not.
-    bool isCycle(Graph* graph)
+    if(xset!=yset)  parent[xset]=yset;//
+}
+
+//Return whether a given graph has a cycle
+//or not.
+bool isCycle(Graph* graph)
+{
+    int* parent = new int[graph->V* sizeof(int)];
+    
+    //Initialize all subsets as singel element sets
+    memset(parent, -1, sizeof(int)* graph->V);
+
+    for(int i=0;i<graph->E;++i)
     {
-        int* parent = new int[graph->V* sizeof(int)];
+        int x=find(parent, graph->edge[i].src);
+        int y=find(parent, graph->edge[i].dest);
+
+        if(x==y)    return 1;
         
-        //Initialize all subsets as singel element sets
-        memset(parent, -1, sizeof(int)* graph->V);
-
-        for(int i=0;i<graph->E;++i)
-        {
-            int x=find(parent, graph->edge[i].src);
-            int y=find(parent, graph->edge[i].dest);
-
-            if(x==y)    return 1;
-            
-            Union(parent, x, y);
-        }
-        return 0;
+        Union(parent, x, y);
     }
+    return 0;
+}
 
-    int main(int argc, char* argv[])
-    {
-        int V=3, E=3;
-        Graph* graph=createGraph(V, E);
+int main(int argc, char* argv[])
+{
+    int V=3, E=3;
+    Graph* graph=createGraph(V, E);
 
-        //Add edge 0-1
-        graph->edge[0].src=0;
-        graph->edge[0].dest=1;
+    //Add edge 0-1
+    graph->edge[0].src=0;
+    graph->edge[0].dest=1;
 
-        //Add edge 1-2
-        graph->edge[1].src=1;
-        graph->edge[1].dest=2;
+    //Add edge 1-2
+    graph->edge[1].src=1;
+    graph->edge[1].dest=2;
 
-        //Add edge 0-2
-        graph->edge[2].src=0;
-        graph->edge[2].dest=2;
+    //Add edge 0-2
+    graph->edge[2].src=0;
+    graph->edge[2].dest=2;
 
-        if(isCycle(graph))  cout<<"Yes, there's a cycle inside the graph."<<endl;
-        else cout<<"No, no cycle inside the graph."<<endl;
-        
+    if(isCycle(graph))  cout<<"Yes, there's a cycle inside the graph."<<endl;
+    else cout<<"No, no cycle inside the graph."<<endl;
+    
 
-        return 0;
-    }
+    return 0;
+}
