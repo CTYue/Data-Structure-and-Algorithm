@@ -3,11 +3,12 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-02-05 00:06:39
  * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-02-06 01:44:28
+ * @LastEditTime : 2020-02-06 16:08:12
  * @Description: To be added.
  */
 #include <iostream>
-
+#include <typeinfo>
+#include <cmath>
 using namespace std;
 
 
@@ -35,37 +36,44 @@ class Integer_Solution
 class Decimal_Solution
 {
   public:
-    //如果int和double相减会怎样？
-    double diff(int n, double m)
+    double diff(double n, double m)
     {
-        if(n>(m*m*m)) return n-m*m*m;
+        if(n>=(m*m*m)) return n-m*m*m;
         else  return m*m*m-n;
     }
 
-    //这里有问题！
-    double cbrt(int x)
+    double cbrt(double x)
     {
-      int left=0,right=x;
+      double left=0,right=x;
       double pivot=0;
-      double e=0.000000000000001;//double的精度是15位？
-      long num=0;
-      while(left<=right)
+      double e=0.0000001;//double的精度是15位？
+      
+      // while(left<=right)//这里为什么不能用传统的二分法？
+      while(true)//要使用while(true)而不是传统的二分法
       {
         pivot=left+(right-left)/2;
-        double error=diff(x, pivot);        
-        if(error<=e)  return pivot;        
+
+        double error=diff(x, pivot);     
+
+        if(error<=e)  return pivot;
         
-        else if(pivot*pivot*pivot>x)  right=pivot-1;
-        else  left=pivot;
-      }
+        cout<<"right = "<<right<<endl;
+        cout<<"left = "<<left<<endl;
+
+        if((pivot*pivot*pivot)>x)  right=pivot-1;
+        else  left=pivot+1;
       
+        // if((pivot*pivot*pivot)>x)  right=pivot;
+        // else  left=pivot;
+      }
+
       return right;
     }
 };
 
 int main(int argc, char** argv)
 {
-  int x=0;
+  double x=0;
   cin>>x;
 
   Integer_Solution i_s;
@@ -74,7 +82,11 @@ int main(int argc, char** argv)
   cout<<"Integer res == "<<res<<endl;
 
   Decimal_Solution d_s;
-  res=d_s.cbrt(x);
-  cout<<"Decimal res == "<<res<<endl;
+
+  auto res_1=d_s.cbrt(x);
+  
+  cout<<"Decimal res == "<<res_1<<endl;
+  
+  cout<<"cbrt(x) = "<<cbrt(x)<<endl;
 
 }
