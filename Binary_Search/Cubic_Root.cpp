@@ -43,7 +43,7 @@ class Decimal_Solution
         else  return m*m*m-n;
     }
 
-//    My solution
+    //    My solution
     double cbrt(double x)
     {
       double left=0,right=x;
@@ -76,6 +76,8 @@ int main(int argc, char** argv)
   Integer_Solution i_s;
   auto res=i_s.cbrt(x);
 
+  cout<<"cbrt(x) = "<<cbrt(x)<<endl;
+
   cout<<"Integer res == "<<res<<endl;
 
   Decimal_Solution d_s;
@@ -83,8 +85,5 @@ int main(int argc, char** argv)
   auto res_1=d_s.cbrt(x);
   
   cout<<"My cbrt(x) = "<<res_1<<endl;
-
-
-  cout<<"cbrt(x) = "<<cbrt(x)<<endl;
 
 }
