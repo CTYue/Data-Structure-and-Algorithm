@@ -6,6 +6,7 @@
  * @LastEditTime : 2020-02-06 16:08:12
  * @Description: To be added.
  */
+
 #include <iostream>
 #include <typeinfo>
 #include <cmath>
@@ -42,34 +43,30 @@ class Decimal_Solution
         else  return m*m*m-n;
     }
 
+    //    My solution
     double cbrt(double x)
     {
       double left=0,right=x;
-      double pivot=0;
-      double e=0.0000001;//double的精度是15位？
-      
-      // while(left<=right)//这里为什么不能用传统的二分法？
-      while(true)//要使用while(true)而不是传统的二分法
-      {
-        pivot=left+(right-left)/2;
+      double e=0.00000001;//double的精度是15位？
 
-        double error=diff(x, pivot);     
+       while(left<=right)
+       {
+            double pivot=left+(right-left)/2;
 
-        if(error<=e)  return pivot;
-        
-        cout<<"right = "<<right<<endl;
-        cout<<"left = "<<left<<endl;
+            double error=diff(x, pivot);
 
-        if((pivot*pivot*pivot)>x)  right=pivot-1;
-        else  left=pivot+1;
-      
-        // if((pivot*pivot*pivot)>x)  right=pivot;
-        // else  left=pivot;
+            if(error<=e)  return pivot;
+
+            //不能使用pivot+1和pivot-1,这样会损失精度
+            if((pivot*pivot*pivot)>x)  right=pivot;
+            else  left=pivot;
       }
 
       return right;
     }
+
 };
+
 
 int main(int argc, char** argv)
 {
@@ -79,14 +76,14 @@ int main(int argc, char** argv)
   Integer_Solution i_s;
   auto res=i_s.cbrt(x);
 
+  cout<<"cbrt(x) = "<<cbrt(x)<<endl;
+
   cout<<"Integer res == "<<res<<endl;
 
   Decimal_Solution d_s;
 
   auto res_1=d_s.cbrt(x);
   
-  cout<<"Decimal res == "<<res_1<<endl;
-  
-  cout<<"cbrt(x) = "<<cbrt(x)<<endl;
+  cout<<"My cbrt(x) = "<<res_1<<endl;
 
 }
