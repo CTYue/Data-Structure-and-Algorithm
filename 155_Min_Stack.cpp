@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-02-17 20:42:46
- * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-02-17 21:53:58
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2020-02-18 17:30:53
  * @Description: To be added.
  */
 #include <iostream>
@@ -27,6 +27,8 @@ public:
     void push(int x) 
     {
         main_stack.push(x);
+        
+        //min stack按大小顺序排序
         if(min_stack.empty() || x<=getMin()) min_stack.push(x);
     }
     
@@ -75,6 +77,8 @@ public:
     
     void pop() 
     {
+        //如果当前栈顶的元素是min
+        //那么pop两次，因为栈中实际上存了两次,min(上次的元素)和x(本次元素，如果小于min的话)
         if(main_stack.top()==min)
         {
             main_stack.pop();
