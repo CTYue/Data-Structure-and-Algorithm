@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-08-06 14:48:40
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2020-02-22 22:08:09
+ * @LastEditTime: 2020-02-22 22:25:29
  * @Description: To be added.
  * @AC:  Yes, faster than 74%, less than 100%.
  */
@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 
 using namespace std;
 //Time Complexity: O(n^3)
@@ -45,7 +46,12 @@ public:
 
 int main(int argc, char* argv[])
 {
-    //TODO
-
+    //Read from matrix_input.txt
+    ofstream input;
+    input.open("matrix_input.txt");
+    //A和B中间空一行
+    
+    
+    
     return 1;
 }
