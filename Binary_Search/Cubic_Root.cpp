@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-02-05 00:06:39
- * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-02-06 16:08:12
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2020-03-06 13:50:05
  * @Description: To be added.
  */
 
@@ -11,7 +11,6 @@
 #include <typeinfo>
 #include <cmath>
 using namespace std;
-
 
 class Integer_Solution
 {
