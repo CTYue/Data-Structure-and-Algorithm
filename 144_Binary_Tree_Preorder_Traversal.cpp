@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-21 00:06:03
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-28 13:24:47
+ * @LastEditTime: 2020-03-11 13:41:22
  * @Description:
  * Pre-order Traversal:
  *         1
@@ -28,36 +28,31 @@ struct TreeNode
      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-class Solution_1
-{
+class Solution_1 {
 public:
-    //Iteration solution
-    //Time complexity: O(n)
-    //Space complexity: O(n)
+    //Iteration Traversal
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     vector<int> preorderTraversal(TreeNode* root) 
     {
+        //Pre-order: root->left->right
+        //Top to Bottom
+        if(!root) return {};
         vector<int> res={};
-        if(root==nullptr)   return res;
-        
         stack<TreeNode*> stack;
-        TreeNode* cur=root;
+        stack.push(root);
+        TreeNode* node=root;
         
-        while(cur!=nullptr || !stack.empty())
+        while(!stack.empty())
         {
-            while(cur!=nullptr)
-            {
-                stack.push(cur);
-                std::cout << "cur->val = " << cur->val << std::endl;
-                res.push_back(cur->val);
-                cur=cur->left;
-            }
-            
-            //Update cur
-            cur=stack.top();
-            std::cout << "Updated cur->val = " << cur->val << std::endl;
-            std::cout << "========"<< std::endl;
+            node=stack.top();
             stack.pop();
-            cur=cur->right;
+            cout<<node->val<<" ";
+            res.push_back(node->val);
+            
+            //注意这里的顺序！stack FILO, 所以要先push right，然后push left
+            if(node->right!=nullptr)    stack.push(node->right);
+            if(node->left!=nullptr)     stack.push(node->left);
         }
         
         return res;
