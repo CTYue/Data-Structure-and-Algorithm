@@ -74,7 +74,19 @@ std::vector<std::string> split_2(const std::string &str, const std::string &patt
 int main()
 {
     /*<---Test case--->*/
+    string records="Zidong,Male,12/27/1992,Syracuse";
+    auto res=split_0(records, ",");
+    for(auto item: res) cout<<item<<" ";
+    cout<<endl;
 
+    vector<int> v1={6,4,3,2,5,8,7,1,9,0};
+    // auto fun=[](int& a, int& b){return a>b;};//non-anonymous lambda function
+
+    // sort(v1.begin(), v1.end(), fun);
+    sort(v1.begin(), v1.end(), [](const int a, const int b){return a>b;});//anonymous lambda function
+
+    for(auto i: v1) cout<<i<<" ";
+    cout<<endl;
 
     return 0;
 }
