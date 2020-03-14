@@ -3,12 +3,14 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-02-23 00:25:07
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2020-03-14 11:20:27
+ * @LastEditTime: 2020-03-14 12:33:51
  * @Description: To be added.
  */
 #include<iostream>
 #include<string>
 #include <typeinfo>
+#include <limits>
+#include <float.h>
 
 using namespace std;
 
@@ -57,10 +59,9 @@ int main()
   
   //Demo string compare
   //str1.compare(s2): 
-  //returns >0: 按照字典顺序返回结果(靠后的字母大于靠前的字母), 回忆下字典顺序什么
+  //returns >0: 按照字典顺序返回结果(靠后的字母大于靠前的字母), 回忆下字典顺序...
   //returns =0: 两个字符串完全相同
   //returns <0: 反之
-  //还是没弄明白
   // string str1="abCDc";
   // string str2="abCDe";
   // string str1="ca";
@@ -68,42 +69,45 @@ int main()
   // cout<<"str1.compare(str2) == "<<str1.compare(str2)<<endl;
   // cout<<"str1.compare(0, 2, str2, 2) == "<<str1.compare(0, 2, str2, 2)<<endl;
 
-  string F=" Sound Hound";
-  cout<<"F before:"<<F<<endl;
-  if(F.find(" ")==string::npos) 
-  {
-      cout<<"No place in the string!"<<endl;
-  }
-  else 
-  {
-  cout<<"Yes, there're spaces in the string"<<endl;
-  }
+  // string F=" Sound Hound";
+  // cout<<"F before:"<<F<<endl;
+  // if(F.find(" ")==string::npos) 
+  // {
+  //     cout<<"No place in the string!"<<endl;
+  // }
+  // else 
+  // {
+  // cout<<"Yes, there're spaces in the string"<<endl;
+  // }
+  
   // F.erase(F.begin());
   // F.erase(F.end()-1);//这里可以-1，map不能这样用!
-  F.erase(F.find_last_of(" "),1);//这里要注意, 如果不指定第二个参数，那么就删除从指定位置开始的所有char
-  F.erase(F.find_first_of(" "),1);
-  //写点验证？？？
+  // F.erase(F.find_last_of(" "),1);//这里要注意, 如果不指定第二个参数，那么就删除从指定位置开始的所有char
+  // F.erase(F.find_first_of(" "),1);
+  // //写点验证？？？
 
-  cout<<"F after:"<<F<<endl;
-  if(F.find(" ")==string::npos) cout<<"No place in the string!"<<endl;
+  // cout<<"F after:"<<F<<endl;
+  // if(F.find(" ")==string::npos) cout<<"No place in the string!"<<endl;
 
-  cout<<endl<<endl<<endl;
+  // cout<<endl<<endl<<endl;
 
-  try
-  {
-    string int_str="asmhdfghjk";
-
-    int res=std::stoi(int_str);
-    cout<<res<<endl;
-  }
-  catch(std::exception e)
-  {
-    cerr<<e.what()<<endl;
-  }
+  // try
+  // {
+  //   // string float_str="3.1415926";
+  //   string float_str="2.4791E2";
+  //   auto res=std::stof(float_str);//如何设置精度？
+    
+  //   cout<<res<<endl;
+  // }
+  
+  // //catch这里一定要传引用，否则不会显示错误详情.
+  // catch(std::exception& e)
+  // {
+  //   cerr<<e.what()<<endl;
+  // }
   
   //C++ doesn't have "finally" keyword, but anything we put behind the catch
   //block will be executed, this is like how finnaly works.
-  cout<<"Finally"<<endl;
-
-  return 1;
+  // cout<<"Finally"<<endl;
+  // cout<<endl;
 }
