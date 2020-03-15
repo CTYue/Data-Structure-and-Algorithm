@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-03-14 12:33:02
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2020-03-14 13:11:23
+ * @LastEditTime: 2020-03-14 14:43:27
  * @Description: To be added.
  */
 
@@ -115,10 +115,9 @@ int main()
   cout<<"Input: "<<float_str<<endl;
   cout<<"float min: "<<std::numeric_limits<float>::min()<<endl;
   cout<<"float max: "<<std::numeric_limits<float>::max()<<endl;
-    
+  
   auto res=str2float(float_str);
 
   cout<<"res = "<<res<<endl;
-
   return 1;
 }
