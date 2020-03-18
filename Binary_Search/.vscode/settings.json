@@ -78,6 +78,7 @@
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "*.tcc": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "ctype.h": "c"
     }
 }

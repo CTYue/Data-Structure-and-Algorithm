@@ -3,7 +3,7 @@
  # @Email: chitung.yue@gmail.com
  # @Date: 2020-03-15 00:26:22
  # @LastEditors: Zidong Yu
- # @LastEditTime: 2020-03-16 10:37:53
+ # @LastEditTime: 2020-03-16 12:42:36
  # @Description: To be added.
  ###
 
@@ -109,3 +109,5 @@
 
 # 删除每行的前n个字符： sed 's/^.\{N\}//' linux.txt
 # 查看文件的大小: wc -l
+# 使用awk呢？
+# 删除每行前5个元素：sed 's/^.\{50\}//' linux.txt

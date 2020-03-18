@@ -9,62 +9,40 @@
  * Here I provide a few options for
  * string splitting.
  */
-
 #include<iostream>
 #include<string>
 #include <vector>
 #include <sstream>
+#include <list>
 
 using namespace std;
-//Approach 0:
-//Split function written with stringstream provided by C++
-std::vector<std::string> split_0(const std::string &source, const char* pattern)
+//SoundHound Tech View
+//不能使用strok()和getline()
+//test case:
+//  "aa,bb,ccc" => "aa" "bb" "ccc"
+//  *    "a123,,X"   => "a123" "" "X"
+//  *    "aAa,bBb,"  => "aAa" "bBb"
+//
+std::list<std::string> split(const std::string& inStr, char sep)
 {
-    std::vector<std::string> res;
-    std::stringstream input(source);
-    std::string temp;
-    while(getline(input, temp, *pattern))
-    {       
-        res.push_back(temp);
-    }
-    return res;
-}
+    std::list<std::string> res;
+    if(inStr=="")   return res;
+    if(inStr.find(sep)==std::string::npos) res.push_back(inStr);
 
+    std::string str="";
+    if(inStr.find_last_of(sep)!=inStr.size()-1) str=inStr+sep;
+    else str=inStr;
 
-//Approach 1:
-//Using strok(), this is a C-type solution
-std::vector<std::string> split_1(const std::string &str, const string &pattern)
-{
-    char * strc = new char[strlen(str.c_str())+1];
-    strcpy(strc, str.c_str()); 
-    std::vector<std::string> res;
-    char* tmp = strtok(strc, pattern.c_str());
-    while(tmp != nullptr)
+    size_t pos=str.find(sep);
+    if(pos==std::string::npos) return res;
+
+    while(pos!=std::string::npos)
     {
-        res.push_back(std::string(tmp));
-        tmp = strtok(nullptr, pattern.c_str());
-    }
-    delete[] strc;
-    return res;
-}
-
-//Approach 2:
-std::vector<std::string> split_2(const std::string &str, const std::string &pattern)
-{
-    std::vector<std::string> res;
-    if(str == "")
-        return res;
-
-    //Add separator in each sub string
-    std::string strs = str + pattern;
-    size_t pos = strs.find(pattern);
-
-    while(pos != strs.npos)
-    {
-        std::string temp = strs.substr(0, pos);
-        res.push_back(temp);
-        strs = strs.substr(pos+1, strs.size());
-        pos = strs.find(pattern);
+        res.push_back(str.substr(0,pos));
+        //Update pos
+        str=str.substr(pos+1);
+        pos=str.find(sep);
+        if(pos==std::string::npos) break;
     }
 
     return res;
@@ -74,19 +52,22 @@ std::vector<std::string> split_2(const std::string &str, const std::string &patt
 int main()
 {
     /*<---Test case--->*/
-    string records="Zidong,Male,12/27/1992,Syracuse";
-    auto res=split_0(records, ",");
-    for(auto item: res) cout<<item<<" ";
+    string test1="aa,bb,ccc";
+    string test2="a123,,X";
+    string test3="aAa,bBb,";
+    char sep=',';
+
+    auto res=split(test1,',');
+    for(auto item: res) cout<<"["<<item<<"]"<<" ";
+    cout<<endl;
+    res=split(test2, sep);
+    for(auto item: res) cout<<"["<<item<<"]"<<" ";
+    cout<<endl;
+    res=split(test3, sep);
+    for(auto item: res) cout<<"["<<item<<"]"<<" ";
     cout<<endl;
 
-    vector<int> v1={6,4,3,2,5,8,7,1,9,0};
-    // auto fun=[](int& a, int& b){return a>b;};//non-anonymous lambda function
 
-    // sort(v1.begin(), v1.end(), fun);
-    sort(v1.begin(), v1.end(), [](const int a, const int b){return a>b;});//anonymous lambda function
-
-    for(auto i: v1) cout<<i<<" ";
-    cout<<endl;
 
     return 0;
 }
