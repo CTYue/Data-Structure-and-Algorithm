@@ -62,6 +62,15 @@ std::list<std::string> split_getline(const std::string& inStr, char sep)
     return res;
 }
 
+//strok()
+//strok(): return char*, 
+/
+std::list<std::string> split_strok(const std::string& inStr, char sep)
+{
+    char* 
+
+
+}
 
 //Test Stub
 int main()
