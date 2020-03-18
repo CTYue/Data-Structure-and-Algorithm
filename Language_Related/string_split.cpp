@@ -42,11 +42,25 @@ std::list<std::string> split(const std::string& inStr, char sep)
         //Update pos
         str=str.substr(pos+1);
         pos=str.find(sep);
-        if(pos==std::string::npos) break;
     }
 
     return res;
 }
+
+std::list<std::string> split_getline(const std::string& inStr, char sep)
+{
+    std::list<std::string> res;
+    std::string temp="";
+    stringstream in(inStr);
+
+    while(std::getline(in, temp, sep))
+    {
+        res.push_back(temp);
+    }
+
+    return res;
+}
+
 
 //Test Stub
 int main()
@@ -57,7 +71,7 @@ int main()
     string test3="aAa,bBb,";
     char sep=',';
 
-    auto res=split(test1,',');
+    auto res=split_getline(test1,',');
     for(auto item: res) cout<<"["<<item<<"]"<<" ";
     cout<<endl;
     res=split(test2, sep);
