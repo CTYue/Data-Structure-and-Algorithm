@@ -55,7 +55,7 @@ std::list<std::string> split_getline(const std::string& inStr, char sep)
     std::list<std::string> res;
     std::string temp="";
     // stringstream in(inStr);
-    istringstream in(inStr);
+    istringstream in(inStr);//只能是istringstream或stringstream，不能是ostringstream
 
     //getline的第一个参数必须是Xstream类型的
     while(std::getline(in, temp, sep))
@@ -66,24 +66,22 @@ std::list<std::string> split_getline(const std::string& inStr, char sep)
     return res;
 }
 
-//strok()
-// char * strtok ( char * str, const char * delimiters );
-std::list<std::string> split_strok(const std::string& inStr, char sep)
+//strtok()
+//char * strtok ( char * str, const char * delimiters );
+std::list<std::string> split_strok(std::string& inStr, char* sep)
 {
     //是strtok而不是strok
     std::list<std::string> res;
-    int size=inStr.size();
-    char str[size];
-    for(size_t i=0;i<size;++i)  str[i]=inStr[i];
 
-    //How to cast string to char* ???
-    //左边是C语言的char array，右边是???
-    char* res_str=strtok(str ,&sep);
-    for(int i=0;i<5;++i) cout<<res_str[i]<<" ";
-    cout<<endl;
+    char* str=(char*)inStr.c_str();
+    char* res_str=strtok(str, sep);
 
     //如何确定res_str的大小？貌似不容易
-
+    while(res_str!=NULL)
+    {
+        res.push_back(res_str);//
+        res_str=strtok(NULL, sep);
+    }
 
     return res;
 }
@@ -97,7 +95,7 @@ int main()
     string test3="aAa,bBb,";
     char sep=',';
 
-    auto res=split_strok(test1,',');
+    auto res=split_strok(test1, &sep);
     for(auto item: res) cout<<"["<<item<<"]"<<" ";
     cout<<endl;
     res=split(test2, sep);
