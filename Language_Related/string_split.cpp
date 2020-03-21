@@ -9,14 +9,13 @@
  * Here I provide a few options for
  * string splitting.
  */
+
 #include<iostream>
+#include <typeinfo>
 #include<string>
 #include <vector>
 #include <sstream>
 #include <list>
-//这两个库有问题？
-#include <stdio.h>  //
-#include <string.h> //
 
 using namespace std;
 //SoundHound Tech View
@@ -55,9 +54,8 @@ std::list<std::string> split_getline(const std::string& inStr, char sep)
     std::list<std::string> res;
     std::string temp="";
     // stringstream in(inStr);
-    istringstream in(inStr);//只能是istringstream或stringstream，不能是ostringstream
+    istringstream in(inStr);
 
-    //getline的第一个参数必须是Xstream类型的
     while(std::getline(in, temp, sep))
     {
         res.push_back(temp);
@@ -68,19 +66,36 @@ std::list<std::string> split_getline(const std::string& inStr, char sep)
 
 //strtok()
 //char * strtok ( char * str, const char * delimiters );
-std::list<std::string> split_strok(std::string& inStr, char* sep)
+std::list<std::string> split_strtok(std::string& inStr, char sep, const char* sep_ptr)
 {
-    //是strtok而不是strok
     std::list<std::string> res;
-
     char* str=(char*)inStr.c_str();
-    char* res_str=strtok(str, sep);
+    //strtok is NOT thread-safe!
+    cout<<"sep == "<<sep<<endl;
+    cout<<"*sep == "<<*sep_ptr<<endl;
+    cout<<"strlen(sep) == "<<strlen(&sep)<<endl;//
+    cout<<"strlen(sep_ptr) == "<<strlen(sep_ptr)<<endl;
+    char* str_ptr="1234";
+    char* test=".";
+    cout<<"strlen(str_ptr) == "<<strlen(str_ptr)<<endl;
+    cout<<"strlen(test) == "<<strlen(test)<<endl<<endl;
 
-    //如何确定res_str的大小？貌似不容易
+    //注意：当split_strok的第二个参数使用char型时，split结果正确
+    //当split_strtok的第二个参数为char*时，split结果错误
+    //原因是？？？
+    // char* res_str=std::strtok(str, &sep);
+    char* res_str=std::strtok(str, sep_ptr);
+    
+    // res_str=std::strtok(NULL, &sep);
+    // cout<<"res_str == "<<res_str<<endl;
+
+
     while(res_str!=NULL)
     {
-        res.push_back(res_str);//
-        res_str=strtok(NULL, sep);
+        res.push_back(res_str);
+        //pass NULL to make strtok continue tokenizing previous C string we just passed to it.
+        //by giving NULL, strtok will continue tokenizing the C string until terminator
+        res_str=strtok(NULL, &sep);
     }
 
     return res;
@@ -95,7 +110,9 @@ int main()
     string test3="aAa,bBb,";
     char sep=',';
 
-    auto res=split_strok(test1, &sep);
+    //问题：第二个参数为什么不能传指针？
+    auto res=split_strtok(test1, sep, &sep);
+
     for(auto item: res) cout<<"["<<item<<"]"<<" ";
     cout<<endl;
     res=split(test2, sep);
