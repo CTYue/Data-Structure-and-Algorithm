@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-07-16 20:55:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-07-28 13:24:37
+ * @LastEditTime: 2020-03-11 11:46:38
  * @Description:
  *                1
  *             2     3
@@ -32,44 +32,36 @@ struct TreeNode
 
 class Solution_1 {
 public:
-    //Iteration
-    //Time Complexity: O(logN)???
-    //Space Complexity: ???
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     vector<int> postorderTraversal(TreeNode* root) 
     {
-        vector<int> res;
-        if(root==nullptr) return res;
+        if(!root) return {};
+        vector<int> res={};
         
-        stack<TreeNode*> stack;
-        TreeNode* cur=root;
-        TreeNode* last=nullptr;
+        stack<TreeNode*> stack;//in-order的时候,stack不需要提前push root
+        TreeNode* node=root;
+        stack.push(root);
+        //这里为什么要用stack？模拟递归行为
+        //和in-order traversal为什么不一样？
         
-        while(cur!=nullptr || !stack.empty())
+        //这里还没理解                                                                    
+        while(!stack.empty())
         {
-            //遍历左子树
-            if(cur!=nullptr)
-            {
-                stack.push(cur);
-                //std::cout << "stack.size() = " << stack.size() << std::endl;
-                
-                cur=cur->left;
-            }
-            //遍历右子树
-            else
-            {
-                TreeNode* r_cur=stack.top();
-                //Update cur to right child
-                if(r_cur->right!=nullptr && last!=r_cur->right)   cur=r_cur->right;                    
-                
-                //if cur is not 
-                else
-                {
-                    res.push_back(r_cur->val);
-                    last=r_cur;//这是什么意思？
-                    stack.pop();
-                }
-            }
+            node=stack.top();
+            stack.pop();
+            //此时，实际的顺序是，root-right-left
+            //而我们需要的顺序是left-right-root
+            //而且此时的顺序实际上是top to bottom, 而我们要的是bottom to top
+            
+            // res.push_back(node->val);//
+            res.insert(res.begin(), node->val);//这样也可以，不需要resize
+            
+            if(node->left!=nullptr) stack.push(node->left);
+            if(node->right!=nullptr) stack.push(node->right);
         }
+        
+        // std::reverse(res.begin(),res.end());//O(n)
         return res;
     }
 };
@@ -78,6 +70,8 @@ public:
 class Solution_2
 {
 public:
+    //Time Complexity: O(n)
+    //Space Complexity: O(???)
     vector<int> postorderTraversal(TreeNode* root) 
     {
         vector<int> res;

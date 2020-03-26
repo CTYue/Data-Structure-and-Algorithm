@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-12-30 21:35:56
- * @LastEditors  : Zidong Yu
- * @LastEditTime : 2020-01-01 22:20:51
+ * @LastEditors: Zidong Yu
+ * @LastEditTime: 2020-03-05 16:06:33
  * @Description: A C++ program to demonstrate common Binary Heap Operations.
  */
 
@@ -31,7 +31,7 @@ public:
 	int parent(int i) { return (i-1)/2; }
 	int left(int i) { return (2*i + 1); }
 	int right(int i) { return (2*i + 2); }
-
+    
 	int extractMax(); 
 
 	void increaseKey(int i, int new_val); 
