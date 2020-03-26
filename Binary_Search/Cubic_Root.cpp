@@ -43,7 +43,7 @@ class Decimal_Solution
         else  return m*m*m-n;
     }
 
-    //    My solution
+    // My solution
     double cbrt(double x)
     {
       double left=0,right=x;
