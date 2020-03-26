@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-03-25 16:32:12
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2020-03-25 16:33:56
+ * @LastEditTime: 2020-03-25 20:38:01
  * @Description: To be added.
  */
 #include <iostream>
@@ -51,7 +51,7 @@ public:
             if(nums[mid]>target)   right=mid-1;//如果只有一个target，那么此时right和left重合
             //如果mid小于等于target，那么确定下界为mid
             else left=mid;//下界往上移
-                            
+            
             cout<<"Find right: "<<endl;
             cout<<"left == "<<left<<endl;
             cout<<"right == "<<right<<endl;
