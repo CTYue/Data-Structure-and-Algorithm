@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-03-31 21:51:38
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2020-03-31 22:00:32
+ * @LastEditTime: 2020-04-03 01:17:20
  * @Description: To be added.
  */
 #include <iostream>
@@ -20,6 +20,7 @@ public:
         long ans=0;
         //If dividend and divisor have different signs, then set sign=-1
         //otherwise sign=1
+        
         int sign=(dividend>0)^(divisor>0)?-1:1;
         
         if(dividend==INT_MIN && divisor==-1) 
