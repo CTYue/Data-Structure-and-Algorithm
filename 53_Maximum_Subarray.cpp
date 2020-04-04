@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2020-04-04 16:33:48
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2020-04-04 16:34:11
+ * @LastEditTime: 2020-04-04 16:38:29
  * @Description: To be added.
  */
 #include <iostream>
@@ -14,8 +14,8 @@
 using namespace std;
 
 class Solution {
-    //Time Complexity: O(nlogn)
-    //Space Complexity: 
+    //Time Complexity: O(nlogn) ???
+    //Space Complexity: O(logn) ???
 public:
     int maxSubArray(vector<int> nums) 
     {
