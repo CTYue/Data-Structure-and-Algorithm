@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-03-12 23:51:00
  * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-12-04 22:22:09
+ * @LastEditTime: 2020-04-10 01:23:45
  * @Description: To be added.
  */
 
@@ -36,7 +36,7 @@ public:
             int right=n-1;
             
             //Two pointers
-            //无论targets找没找到，左右pointers都要移动            
+            //无论targets找没找到，左右pointers都要移动
             //仅当找到targets的时候，才需要去重
             while(left<right)
             {
