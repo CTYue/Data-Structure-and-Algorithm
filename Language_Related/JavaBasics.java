@@ -1,9 +1,8 @@
-package Assignments;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 
-public class Assignment
+public class JavaBasics
 {
     public static <T> T mostCommon(List<T> list) {
         Map<T, Integer> map = new HashMap<>();
