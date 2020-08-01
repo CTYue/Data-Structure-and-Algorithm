@@ -2,8 +2,8 @@
  * @Author: Zidong Yu
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-04 12:56:25
- * @LastEditors: Zidong Yu
- * @LastEditTime: 2019-06-10 08:28:19
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-01 17:08:44
  * @Description: To be added.
  */
 
@@ -18,75 +18,75 @@ public:
 //     //Time Complexity:Unknown
 //     //Space Complexity:Unknown
 //     //Problem in this solution
-//     bool isMatch(string s, string p)
-//     {
-//         if(s.empty() || p.empty())
-//             return false;
+    bool isMatch(string s, string p)
+    {
+        if(s.empty() || p.empty())
+            return false;
         
-//         //if length of pattern is 1
-//         bool first_match=(!s.empty() && (p[0]==s[0] || p[0]=='.'));
+        //if length of pattern is 1
+        bool first_match=(!s.empty() && (p[0]==s[0] || p[0]=='.'));
         
-//         //if length of pattern >= 2
-//         //
-//         if(p.length()>=2 && p[1]=='*')
-//             return ( isMatch(s, p.substr(2,p[p.length()-1])) || (first_match && isMatch(s.substr(1,s[s.length()-1]),p)));
+        //if length of pattern >= 2
+        //
+        if(p.length()>=2 && p[1]=='*')
+            return ( isMatch(s, p.substr(2,p[p.length()-1])) || (first_match && isMatch(s.substr(1,s[s.length()-1]),p)));
 
         
-//         //if length of pattern <2 or p[1]!='*'
-//         //
-//         else
-//             return (first_match && isMatch(s.substr(1,s[s.length()-1]),p.substr(1,p[p.length()-1])));
-//     }
+        //if length of pattern <2 or p[1]!='*'
+        //
+        else
+            return (first_match && isMatch(s.substr(1,s[s.length()-1]),p.substr(1,p[p.length()-1])));
+    }
     
 
     //Dynamic programming
     //Time Complexity: ???
     //Space Complexity: ???
-    bool isMatch(string s, string p) 
-    {        
-        //Construct the DP array.
-        bool T[s.length()+1][p.length()+1]={};
+//     bool isMatch(string s, string p) 
+//     {        
+//         //Construct the DP array.
+//         bool T[s.length()+1][p.length()+1]={};
         
-        T[0][0]=true;
-        //Handle patterns like a* a*b or a*b*c*
-        for(int i=1;i<(sizeof(T[0])/sizeof(T[0][0]));i++)
-        {
-            if(p[i-1]=='*')
-            {
-                T[0][i]=T[0][i-2];
-            }   
-        }
+//         T[0][0]=true;
+//         //Handle patterns like a* a*b or a*b*c*
+//         for(int i=1;i<(sizeof(T[0])/sizeof(T[0][0]));i++)
+//         {
+//             if(p[i-1]=='*')
+//             {
+//                 T[0][i]=T[0][i-2];
+//             }   
+//         }
         
-        //std::cout << "s.length() = " << s.length() << std::endl;
-        //std::cout << "p.length() = " << p.length() << std::endl;
-        // std::cout << "sizeof(T)/sizeof(T[0]) = " << sizeof(T)/sizeof(T[0]) << std::endl;
-        // std::cout << "sizeof(T[0])/sizeof(T[0][0]) = " << sizeof(T[0])/sizeof(T[0][0]) << std::endl;
-        // std::cout << "sizeof(T[1])/sizeof(T[1][0]) = " << sizeof(T[1])/sizeof(T[1][0]) << std::endl;// sizeof(T[1])/sizeof(T[1][0]) = 6
+//         //std::cout << "s.length() = " << s.length() << std::endl;
+//         //std::cout << "p.length() = " << p.length() << std::endl;
+//         // std::cout << "sizeof(T)/sizeof(T[0]) = " << sizeof(T)/sizeof(T[0]) << std::endl;
+//         // std::cout << "sizeof(T[0])/sizeof(T[0][0]) = " << sizeof(T[0])/sizeof(T[0][0]) << std::endl;
+//         // std::cout << "sizeof(T[1])/sizeof(T[1][0]) = " << sizeof(T[1])/sizeof(T[1][0]) << std::endl;// sizeof(T[1])/sizeof(T[1][0]) = 6
         
-        for(int i=1;i<(sizeof(T)/sizeof(T[0]));i++)
-        {
-            for(int j=1;j<(sizeof(T[0])/sizeof(T[0][0]));j++)
-            {
-                if(p[j-1]=='.' || p[j-1]==s[i-1])
-                    T[i][j]=T[i-1][j-1];
-                else if(p[j-1]=='*')
-                {  
-                    T[i][j]=T[i][j-2];
-                    if(p[j-2]=='.' || p[j-2]==s[i-1])
-                    {
-                        std::cout << "i = " << i << std::endl;
-                        std::cout << "j = " << j << std::endl;
-                        T[i][j]=T[i][j] | T[i-1][j];
-                    }
-                }  
-                else
-                        T[i][j]=false;
-            }
-        }
+//         for(int i=1;i<(sizeof(T)/sizeof(T[0]));i++)
+//         {
+//             for(int j=1;j<(sizeof(T[0])/sizeof(T[0][0]));j++)
+//             {
+//                 if(p[j-1]=='.' || p[j-1]==s[i-1])
+//                     T[i][j]=T[i-1][j-1];
+//                 else if(p[j-1]=='*')
+//                 {  
+//                     T[i][j]=T[i][j-2];
+//                     if(p[j-2]=='.' || p[j-2]==s[i-1])
+//                     {
+//                         std::cout << "i = " << i << std::endl;
+//                         std::cout << "j = " << j << std::endl;
+//                         T[i][j]=T[i][j] | T[i-1][j];
+//                     }
+//                 }  
+//                 else
+//                         T[i][j]=false;
+//             }
+//         }
         
-        return T[s.length()][p.length()];
-    }
-};
+//         return T[s.length()][p.length()];
+//     }
+// };
 
 string stringToString(string input) {
     assert(input.length() >= 2);
