@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-04 12:56:25
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-01 17:08:44
+ * @LastEditTime: 2020-08-01 19:14:54
  * @Description: To be added.
  */
 
@@ -14,80 +14,40 @@ using namespace std;
 class Solution {
 public:
     
-//     //Recursion Approach
-//     //Time Complexity:Unknown
-//     //Space Complexity:Unknown
-//     //Problem in this solution
-    bool isMatch(string s, string p)
+    //Recursion Approach
+    //Time Complexity: O(n)
+    bool isMatch(string str, string pattern)
     {
-        if(s.empty() || p.empty())
+        if(pattern.size()==0) return str.size()==0;
+
+        //Consider that the 2nd char of pattern is '*', following a preceding char
+        if(pattern.size()>1 && pattern[1]=='*')
+        {
+            //If remaining chars in given string matches the pattern
+            //Then return true
+            if(isMatch(str, pattern.substr(2)))
+                return true;
+            
+            if((str[0]==pattern[0] || pattern[0]=='.') && str.length()>0)
+                return isMatch(str.substr(1), pattern);
             return false;
-        
-        //if length of pattern is 1
-        bool first_match=(!s.empty() && (p[0]==s[0] || p[0]=='.'));
-        
-        //if length of pattern >= 2
-        //
-        if(p.length()>=2 && p[1]=='*')
-            return ( isMatch(s, p.substr(2,p[p.length()-1])) || (first_match && isMatch(s.substr(1,s[s.length()-1]),p)));
-
-        
-        //if length of pattern <2 or p[1]!='*'
-        //
+        }
+        //If the second char is NOT '*', then
         else
-            return (first_match && isMatch(s.substr(1,s[s.length()-1]),p.substr(1,p[p.length()-1])));
+        {
+            //Consider if the first chars match (or if pattern begins with a wildcard)
+            //then compare the remainning chars
+            if( (str[0]==pattern[0] || pattern[0]=='.') && str.size()>0)
+                return isMatch(str.substr(1), pattern.substr(1));
+                
+            //if the first char in given string doesn't match the pattern (consider two cases: 
+            //1. the pattern begins with '*' or '.'), then return false.
+            return false;
+        }
     }
+
+};
     
-
-    //Dynamic programming
-    //Time Complexity: ???
-    //Space Complexity: ???
-//     bool isMatch(string s, string p) 
-//     {        
-//         //Construct the DP array.
-//         bool T[s.length()+1][p.length()+1]={};
-        
-//         T[0][0]=true;
-//         //Handle patterns like a* a*b or a*b*c*
-//         for(int i=1;i<(sizeof(T[0])/sizeof(T[0][0]));i++)
-//         {
-//             if(p[i-1]=='*')
-//             {
-//                 T[0][i]=T[0][i-2];
-//             }   
-//         }
-        
-//         //std::cout << "s.length() = " << s.length() << std::endl;
-//         //std::cout << "p.length() = " << p.length() << std::endl;
-//         // std::cout << "sizeof(T)/sizeof(T[0]) = " << sizeof(T)/sizeof(T[0]) << std::endl;
-//         // std::cout << "sizeof(T[0])/sizeof(T[0][0]) = " << sizeof(T[0])/sizeof(T[0][0]) << std::endl;
-//         // std::cout << "sizeof(T[1])/sizeof(T[1][0]) = " << sizeof(T[1])/sizeof(T[1][0]) << std::endl;// sizeof(T[1])/sizeof(T[1][0]) = 6
-        
-//         for(int i=1;i<(sizeof(T)/sizeof(T[0]));i++)
-//         {
-//             for(int j=1;j<(sizeof(T[0])/sizeof(T[0][0]));j++)
-//             {
-//                 if(p[j-1]=='.' || p[j-1]==s[i-1])
-//                     T[i][j]=T[i-1][j-1];
-//                 else if(p[j-1]=='*')
-//                 {  
-//                     T[i][j]=T[i][j-2];
-//                     if(p[j-2]=='.' || p[j-2]==s[i-1])
-//                     {
-//                         std::cout << "i = " << i << std::endl;
-//                         std::cout << "j = " << j << std::endl;
-//                         T[i][j]=T[i][j] | T[i-1][j];
-//                     }
-//                 }  
-//                 else
-//                         T[i][j]=false;
-//             }
-//         }
-        
-//         return T[s.length()][p.length()];
-//     }
-// };
-
 string stringToString(string input) {
     assert(input.length() >= 2);
     string result;
