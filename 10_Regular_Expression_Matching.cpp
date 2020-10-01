@@ -3,7 +3,7 @@
  * @Email: chitung.yue@gmail.com
  * @Date: 2019-06-04 12:56:25
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-01 19:14:54
+ * @LastEditTime: 2020-08-01 22:58:57
  * @Description: To be added.
  */
 
@@ -32,7 +32,7 @@ public:
                 return isMatch(str.substr(1), pattern);
             return false;
         }
-        //If the second char is NOT '*', then
+        //If the second char is NOT '*', then do as below
         else
         {
             //Consider if the first chars match (or if pattern begins with a wildcard)
