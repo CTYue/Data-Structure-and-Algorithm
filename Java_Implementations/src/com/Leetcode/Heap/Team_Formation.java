@@ -2,23 +2,27 @@ package com.Leetcode.Heap;
 
 import java.util.*;
 
+class myComparator implements Comparator<int[]>
+{
+    @Override
+    public int compare(int[] x, int[] y)
+    {
+        if(x[0]==y[0])
+            return x[1]-y[1];//lower index first
+        else
+            return y[0]-x[0];//higher score first
+    }
+}
+
+//Audible/Ford Online Assessment
 public class Team_Formation
 {
-    public static long getScores(int[] scores, int size, int m) {
-
-        Comparator<int[]> comparator = new Comparator<int[]>(){
-            @Override
-            public int compare(int[] a, int[] b) {
-                if (a[0] == b[0]) {
-                    return a[1] - b[1];//a[1]<b[1], 将a[1]放前面
-                }
-                return b[0] - a[0];
-            }
-        };
+    public static long getScores(int[] scores, int team_size, int m) {
+        long res=0;
 
         //将原有的列表分成左右两部分，左边保存的是first m个人，右边保存的是last m个人
-        PriorityQueue<int[]> leftPart = new PriorityQueue(comparator);
-        PriorityQueue<int[]> rightPart = new PriorityQueue(comparator);
+        PriorityQueue<int[]> leftPart = new PriorityQueue(new myComparator());
+        PriorityQueue<int[]> rightPart = new PriorityQueue(new myComparator());
 
         int left = m - 1;
         int right = scores.length - m;
@@ -32,26 +36,28 @@ public class Team_Formation
             rightPart.offer(new int[]{scores[i], i});//{score, index}
         }
 
-        long result = 0;
-        while (size-- > 0 && (!leftPart.isEmpty() || !rightPart.isEmpty())) {
+        while (team_size-- > 0 && (!leftPart.isEmpty() || !rightPart.isEmpty())) {
             int leftMax = !leftPart.isEmpty() ? leftPart.peek()[0]: -1;
             int rightMax = !rightPart.isEmpty() ? rightPart.peek()[0]: -1;
 
             if (leftMax >= rightMax) {
-                result += leftMax;
+                res += leftMax;
                 leftPart.poll();
                 if (left + 1 < right && left + 1 < scores.length) {
                     leftPart.offer(new int[]{scores[++left], left});
                 }
             } else {
-                result += rightMax;
+                res += rightMax;
                 rightPart.poll();
-                if (right - 1 > left && right - 1 >= 0) {
+
+                //Refill the priorityQueue in case the team size is bigger than 2 times of m
+                if (right - 1 > left && right - 1 >= 0)
+                {
                     rightPart.offer(new int[]{scores[--right], right});
                 }
             }
         }
-        return result;
+        return res;
     }
 
     public static void main(String[] args) {
