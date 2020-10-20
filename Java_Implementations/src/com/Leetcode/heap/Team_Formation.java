@@ -1,4 +1,4 @@
-package com.Leetcode.Heap;
+package com.Leetcode.heap;
 
 import java.util.*;
 
@@ -50,7 +50,7 @@ public class Team_Formation
                 res += rightMax;
                 rightPart.poll();
 
-                //Refill the priorityQueue in case the team size is bigger than 2 times of m
+                //Refill the priorityQueue in case the team size is larger than 2*m
                 if (right - 1 > left && right - 1 >= 0)
                 {
                     rightPart.offer(new int[]{scores[--right], right});

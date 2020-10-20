@@ -1,4 +1,4 @@
-package com.Leetcode.Design;
+package com.Leetcode.design;
 
 abstract class Cuisine
 {

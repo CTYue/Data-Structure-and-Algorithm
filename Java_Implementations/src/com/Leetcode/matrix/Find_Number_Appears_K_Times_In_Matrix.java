@@ -1,6 +1,4 @@
-package com.Leetcode.Matrix;
-
-import sun.tools.tree.InstanceOfExpression;
+package com.Leetcode.matrix;
 
 import java.util.*;
 
