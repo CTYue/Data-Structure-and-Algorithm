@@ -29,7 +29,6 @@ public class LongestSubArray
             if(sum==target)
                 maxLen=i+1;
 
-            //如果当前sum已经在前序subArray中出现过，那么说明中间有一段加起来为0
             if(hashmap.containsKey(sum-target))
             {
                 maxLen=Math.max(maxLen, i - hashmap.get(sum-target));
@@ -40,7 +39,7 @@ public class LongestSubArray
             if(!hashmap.containsKey(sum))
                 hashmap.put(sum,i);
         }
-
+        
         System.out.println("\n==========\nmaxLen == "+maxLen);
         System.out.println("left: "+left+" right: "+right+"\n================");
 
@@ -51,5 +50,4 @@ public class LongestSubArray
 
         System.out.println();
     }
-
 }
