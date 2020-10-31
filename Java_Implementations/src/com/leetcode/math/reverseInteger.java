@@ -21,7 +21,7 @@ public class reverseInteger<StringBuild>
         int tmp = n%10;//取得当前digit
         n/=10;//
 
-        res = res*10 + tmp;//res*10用于将上一次的digit增位，tmp是这次的本位
+        res = res*10 + tmp;
         if(res >= Integer.MAX_VALUE || res<=Integer.MIN_VALUE)
         {
             res=0;
@@ -38,5 +38,4 @@ public class reverseInteger<StringBuild>
         int ans = reverseInteger(input);
         System.out.println("output: "+ans);
     }
-
 }
